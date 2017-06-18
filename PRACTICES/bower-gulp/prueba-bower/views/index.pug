@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title= titulo
+		link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/sass.css')
+		script(src='/jquery/dist/jquery.min.js')
+		script(src='/bootstrap/dist/js/bootstrap.min.js')
+		script {console.log($);}
+
+	body
+		.jumbotron
+			p #{texto}
+
+		h1.titulo Hello, my name is Leo
+		h2 and I like to programming in the next languages:
+
+		ul
+			li Javascript
+			li Objective-C
+			li .NET Framework

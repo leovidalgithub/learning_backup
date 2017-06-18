@@ -1,0 +1,22 @@
+@import "variables";
+
+body {
+	background-color: $myBodyColor;
+}
+h2:first-of-type {
+	background: #E10909;
+}
+h2 {
+	background-color: #0C0CD5;
+	padding: 20px;
+	border-radius: 10px;
+	color: white;
+}
+h3 {
+	color: #137143;
+	font-weight: bold;
+	font-size: 22px;
+}
+span {
+	font-size: 42px;
+}

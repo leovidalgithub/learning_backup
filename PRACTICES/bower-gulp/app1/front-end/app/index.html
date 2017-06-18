@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="frontApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Front - Gulp & Bower</title>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container" ng-controller="myController">
+
+		<div class="row">
+			<h2 class="col-xs-12 col-sm-7 col-md-8 col-lg-9">Welcome to my Front-end Bower-Gulp App</h2>
+			<h2 class="col-xs-12 col-sm-5 col-md-4 col-lg-3">You will see the magic!</h2>
+		</div>
+
+		<h3>Simple add: 5 + 7 = {{5+7}}</h3>
+		<h3>Variable from main controller = {{ myVar }}</h3>
+
+		<div ng-controller="myOtherController">
+			<h3>From child controller = {{ myVar }}</h3>
+		</div>
+
+		<span class="myIcon glyphicon glyphicon-sound-5-1" aria-hidden="true"> < over me </span>
+
+	</div>
+
+	<script src="vendors.js"></script>
+	<script src="js/build/built.js"></script>
+
+</body>
+</html>

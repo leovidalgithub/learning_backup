@@ -1,0 +1,14 @@
+body {
+	background-color: #F2FAAD;
+}
+
+#divContent {
+	height: 150px;
+	background-color: #F2B443;
+	color: black;
+}
+
+#div3 {
+	min-height: 50px;
+	background-color: #4DDB4A;
+}

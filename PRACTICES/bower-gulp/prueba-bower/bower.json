@@ -1,0 +1,23 @@
+{
+  "name": "bower test",
+  "description": "just as title says",
+  "main": "app.js",
+  "authors": [
+    "Me"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/codeheroco/prueba-bower",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
