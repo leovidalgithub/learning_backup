@@ -1,0 +1,27 @@
+#main {
+    text-align: center;
+    font-family: monospace;
+    font-variant: small-caps;
+    font-size: 1.7rem;
+    h4 {
+        margin: 10px;
+    }
+    button {
+        font-family: monospace;
+        font-variant: small-caps;
+        background-color: white;
+        color: #333;
+        font-size: 1.2rem;
+    }
+}
+.myContent {
+    width: 90%;
+    min-height: 250px;
+    margin: 20px auto;
+    background-color: #287dfc;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
