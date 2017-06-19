@@ -86,6 +86,31 @@
         <td>async</td>
         <td>{{valorDePromesa | async}}</td>
       </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date</td>
+        <td>{{fecha | date}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:'medium'</td>
+        <td>{{fecha | date:'medium'}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:'MMMM - dd'</td>
+        <td>{{fecha | date:'MMMM - dd'}}</td>
+      </tr>
+      <tr>
+        <td>{{name2}}</td>
+        <td>capitalizado:true:'Arg1':'Arg2'</td>
+        <td>{{name2 | capitalizado:true:'Arg1':'Arg2'}}</td>
+      </tr>
+      <tr>
+        <td>{{name2}}</td>
+        <td>capitalizado:false:'Arg1':'Arg2'</td>
+        <td>{{name2 | capitalizado:false:'Arg1':'Arg2'}}</td>
+      </tr>
     </tbody>
   </table>
 <hr>
@@ -98,6 +123,9 @@
 
 <h4>JSON Pipe</h4>
   <pre>{{heroe | json}}</pre>
-</div>
+<hr>
+<h4>Youtube Video <small>Escobar</small></h4>
+<iframe width="560" height="315" [src]="urlVideo | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
 
+</div>
 <br><br><br><br><br>
