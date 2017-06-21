@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stress Server</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <h2>Stress Server</h2>
+            <form id="myForm" class="form-inline">
+                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                <div id="requestsInput" class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">#</div>
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="(default 100)">
+                </div>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+
+                <div class="btn-group-sm options" data-toggle="buttons">
+                    <label class="btn btn-outline-primary active">
+                        <input type="radio" name="options" value="local" autocomplete="off" checked> Local
+                    </label>
+                    <label class="btn btn-outline-primary">
+                        <input type="radio" name="options" value="server" autocomplete="off"> Server
+                    </label>
+                </div>
+            </form>
+
+            <div id="results" class="rounded">
+                <ul></ul>
+            </div>
+        </div>
+
+        <!-- /***************************************************************** -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="./js.js"></script>
+    </body>
+</html>
