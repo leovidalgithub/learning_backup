@@ -58,4 +58,9 @@ https://angular.io/guide/cheatsheet
 ```
 
 ```html
+elvis operator
+<dd>{{user?.age}}</dd>
+```
+
+```html
 ```
