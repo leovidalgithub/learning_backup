@@ -1,50 +1,82 @@
+let socket;
 $( document ).ready( function() {
     $( '#requestsInput input' ).focus();
+    socket = io.connect( 'http://stress-server.leovidal.es/' );
 });
 
 $( "#myForm" ).submit( function( event ) {
-    let radio = $( 'input:radio[name=options]:checked' ).val();
-    let url = radio == 'local' ? 'http://localhost:8085/' : 'http://stress-server.leovidal.es/';
     event.preventDefault();
-    $( '#results' ).find( 'ul' ).empty();
+    let resultsElement = $( '#results' ).find( 'ul' );
+    resultsElement.empty();
     let num = $( '#requestsInput input' ).val() || 100;
     $( '#requestsInput input' ).val( num );
-    stressServer();
+    let radio = $( 'input:radio[name=options]:checked' ).val();
     let cont = 0;
     let average = 0;
     let beginGlobalTime = Date.now();
-    let resultsElement = $( '#results' ).find( 'ul' );
 
-        function stressServer() {
+    if( radio == 'socket' ) {
+        runSocket();
+    } else {
+        let url = radio == 'local' ? 'http://localhost:8085/' : 'http://stress-server.leovidal.es/';
+        runRequest( url );
+    }
+
+        function runSocket() {
+            let beginTime;
+            socket.on( 'token', function ( data ) {
+                if( data.success ) {
+                    printLine( data, beginTime );
+                }
+                if( cont >= num ) {
+                    printFinish();
+                    // socket.disconnect();
+                } else {
+                    emit();
+                }
+            });
+            emit();
+            function emit() {
+                beginTime = Date.now();
+                socket.emit( 'giveMyTokenBack', { msg : 'give me my token' } );
+            }
+        }
+
+        function runRequest( url ) {
             let beginTime = Date.now();
             $.get( url )
             .done( function( data ) {
                 if( data.success ) {
-                    let endTime = Date.now();
-                    let timeSpent = ( endTime - beginTime );
-                    average += timeSpent;
-                    resultsElement.append( `<li>${++cont} - ${data.token} - ${timeSpent} mill</li>` );
-                    scrollDownPlease();
+                    printLine( data, beginTime );
                 }
-            })
-            .fail( function( err ) {
-                console.log( err );
-            })
-            .always( function() {
                 if( cont >= num ) {
-                    let endTime = Date.now();
-                    let timeSpent = ( endTime - beginGlobalTime );
-                    let inOneSecond = ( ( num * 1000 ) / timeSpent ).toFixed( 2 );
-                    resultsElement.append( `<li class="result">AVERAGE PER REQUEST = ${average / num} mill</li>` );
-                    resultsElement.append( `<li class="result">GLOBAL TIME SPENT = ${timeSpent} mill</li>` );
-                    resultsElement.append( `<li class="result">IN ONE SECOND = ${inOneSecond} REQUESTS</li>` );
-                    scrollDownPlease();
-                    return
+                    printFinish();
                 } else {
-                    stressServer();
+                    runRequest( url );
                 }
             });
         }
+
+//****************************************************************************************
+        function printLine( data, beginTime ) {
+            let endTime = Date.now();
+            let timeSpent = ( endTime - beginTime );
+            average += timeSpent;
+            resultsElement.append( `<li>${++cont} - ${data.token} - ${timeSpent} mill</li>` );
+            scrollDownPlease();
+        }
+
+        function printFinish() {
+            let endTime = Date.now();
+            let timeSpent = ( endTime - beginGlobalTime );
+            let inOneSecond = ( ( num * 1000 ) / timeSpent ).toFixed( 2 );
+            average = ( average / num ).toFixed( 2 );
+            resultsElement.append( `<li class="result">AVERAGE PER REQUEST = ${average} mill</li>` );
+            resultsElement.append( `<li class="result">GLOBAL TIME SPENT = ${timeSpent} mill</li>` );
+            resultsElement.append( `<li class="result">IN ONE SECOND = ${inOneSecond} REQUESTS</li>` );
+            scrollDownPlease();
+        }
+
 });
 
     function scrollDownPlease() {

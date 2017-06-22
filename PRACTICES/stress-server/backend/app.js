@@ -1,5 +1,7 @@
 let express = require( 'express' );
 let app     = express();
+let server = require('http').Server(app);
+let io = require('socket.io')(server);
 
 app.use(function(req, res, next) {
   res.header( 'Access-Control-Allow-Origin', '*' );
@@ -8,13 +10,11 @@ app.use(function(req, res, next) {
 });
 
 app.get( '/', function( req, res, next ) {
-	// setTimeout(function(){
 		let token = generateToken();
-		res.status( 200 ).json( { success : true , token: token} );
-	// },1000);
+		res.status( 200 ).json( { success : true , token: token } );
 })
 
-app.listen( '8085', function() {
+server.listen(8085, function() {
 	console.log( 'Now running on port 8085!' );
 });
 
@@ -34,3 +34,10 @@ function generateToken() {
 	};
 	return charRetVal + numRetVal;
 };
+
+io.on('connection', function ( socket ) {
+  socket.on( 'giveMyTokenBack', function ( data ) {
+      let token = generateToken();
+      io.to( socket.id ).emit( 'token', { success : true , token: token } );
+  });
+});
