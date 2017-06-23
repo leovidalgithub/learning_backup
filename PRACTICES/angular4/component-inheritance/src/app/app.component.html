@@ -1,0 +1,19 @@
+<button type="button" (click)="displayTable = true">Table</button>
+<button type="button" (click)="displayTable = false">List</button>
+
+<p>
+    Selected Employee: <br>
+    {{selectedEmployee.firstName}} {{selectedEmployee.lastName}}
+</p>
+
+<app-employee-list
+            *ngIf="!displayTable"
+            [employees]="employees"
+            (select)="selectEmployee($event)">
+</app-employee-list>
+
+<app-employee-table
+            *ngIf="displayTable"
+            [employees]="employees"
+            (select)="selectEmployee($event)">
+</app-employee-table>
