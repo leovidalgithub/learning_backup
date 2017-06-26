@@ -32,4 +32,7 @@ export class AppComponent {
   fecha = new Date();
   urlVideo:string = 'RtU_mdL2vBM';
 
+  nombre:string = 'Fernando';
+  activar:boolean = true;
+
 }
