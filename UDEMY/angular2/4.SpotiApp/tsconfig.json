@@ -16,5 +16,14 @@
       "es2016",
       "dom"
     ]
+<<<<<<< HEAD
   }
+=======
+    },
+    "exclude" : [
+        "../node_modules"
+    ],
+    "compileOnSave": false
+
+>>>>>>> 9a435a2aec7a194d8a5aa356716df1d4096ff0a6
 }
