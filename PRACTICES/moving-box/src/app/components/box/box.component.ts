@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 declare var $ :any;
 
 @Component({
@@ -8,41 +8,57 @@ declare var $ :any;
 })
 export class BoxComponent implements OnInit, OnChanges {
     queueLength: number;
+    time1:any[] = [];
     @Input() varX:number;
     @Input() varY:number;
+    @Output() eventToParent: EventEmitter<Object> = new EventEmitter<Object>();
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() { }
+    ngOnInit() { }
 
-   ngOnChanges(changes:SimpleChanges) {
-       this.fn1();
+    ngOnChanges(changes:SimpleChanges) {
+        if(!this.time1[0]) {
+            this.time1[0] = new Date();
+            this.time1[1] = this.time1[0];
+        } else {
+            this.time1[1] = new Date();
+        }
+
+        if ( (this.time1[0] - this.time1[1]) < 500 ) {
+            this.fn1();
+        } else {
+            this.time1[0] = this.time1[1];
+        }
+
+
    }
 
-   fn1() {
-       let myColor = Math.floor(Math.random()*16777215).toString(16);
-       let myColor2 = Math.floor(Math.random()*16777215).toString(16);
+    fn1() {
+        let myColor  = Math.floor( Math.random() * 16777215 ).toString( 16 );
+        let myColor2 = Math.floor( Math.random() * 16777215 ).toString( 16 );
+        this.eventToParent.next( { myColor : myColor } );
 
-       $( '#box' ).animate({
-           'top' : this.varY + 'px',
-           'left' : this.varX + 'px',
-           backgroundColor: '#' + myColor,
-           color : '#' + myColor2
-       },{
-           queue    : false,
-           duration : 300
+        $( '#box' ).animate({
+            'top' : this.varY + 'px',
+            'left' : this.varX + 'px',
+            backgroundColor: '#' + myColor,
+            color : '#' + myColor2
+        },{
+            queue    : true,
+            duration : 100
        });
     //    setTimeout(() => {this.fn1();},500);
    }
-   fn2() {}
 
     showtIt() {
-       let n = $( '#box' ).queue( 'fx' ).length;
-       this.queueLength = n;
-       setTimeout(() => { this.showtIt();}, 500 );
-   }
-   stop() {
-       let n = $( '#box' ).queue( 'fx', [] ).stop();
-   }
+        let n = $( '#box' ).queue( 'fx' ).length;
+        this.queueLength = n;
+        setTimeout(() => { this.showtIt();}, 500 );
+    }
+
+    stop() {
+        let n = $( '#box' ).queue( 'fx', [] ).stop();
+    }
 
 }

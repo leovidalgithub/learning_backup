@@ -13,5 +13,9 @@
 #buttonDiv {
     position: fixed;
     bottom: 200px;
+}
 
+::selection {
+    background-color: #333;
+    color: pink;
 }
