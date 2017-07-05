@@ -1,0 +1,9 @@
+body {
+    padding: 20px;
+}
+#div1 {
+    padding: 10px;
+    background-color: #37904f;
+    display: inline-block;
+    color: white;
+}
