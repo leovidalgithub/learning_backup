@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="es")
+head
+    meta(charset="UTF-8")
+    title DolarToday
+    link(rel="stylesheet" href="./style.css")
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="./js.js")
+body
+    p ABAJO DICTADURA !!!
+    hr
+    if success
+        .box US$ #{json.dolar}
+        .box EUR #{json.euro}
+    else
+        .box.error.
+            ups! No hay datos
+    .footer copyright Leo Vidal
