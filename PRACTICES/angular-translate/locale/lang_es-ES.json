@@ -1,0 +1,11 @@
+{
+ "HEADLINE": "Épale!",
+ "LANG_ES-ES": "Español",
+ "LANG_EN-US": "Inglés",
+ "LANG_CA-CA": "Catalán",
+ "main": {
+     "thing" : "Vamos a la playa",
+     "show" : "Mostrar idioma actual"
+ },
+ "sometext": "Traducido directamente desde el controlador"
+}

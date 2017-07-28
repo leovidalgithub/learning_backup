@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cors</title>
+    </head>
+    <body>
+
+        <h2>Cors</h2>
+        <div class="result">
+        </div>
+
+        <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+        <script>
+            $( document ).ready(function() {
+                $.get( "http://localhost:3000/products/1234", function( data ) {
+                    console.log(data);
+                    $( ".result" ).text( data.msg );
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "HEADLINE": "Hello there!",
+ "LANG_ES-ES": "Spanish",
+ "LANG_EN-US": "English",
+ "LANG_CA-CA": "Catalan",
+ "MISSING": "I got it",
+ "main": {
+     "thing" : "Go to the beach",
+     "show" : "Show current language"
+ },
+ "sometext": "Translated directly from the controller"
+}

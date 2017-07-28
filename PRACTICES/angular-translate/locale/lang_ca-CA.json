@@ -1,0 +1,11 @@
+{
+ "HEADLINE": "Hola per a tots!",
+ "LANG_ES-ES": "Espanyol",
+ "LANG_EN-US": "Anglès",
+ "LANG_CA-CA": "Català",
+ "main": {
+     "thing" : "Anar a la platja",
+     "show" : "Mostra el llenguatge actual"
+ },
+ "sometext": "Traduït directament des del controlador"
+}
