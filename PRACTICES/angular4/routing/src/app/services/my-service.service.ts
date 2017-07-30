@@ -12,11 +12,13 @@ export class MyService {
         this.logged = logged;
         this.subject.next(logged);
     }
+
     getLogged(): Observable<Logged> {
         return this.subject.asObservable();
     }
 
   constructor() { }
+
   fn() { // test function for HomeComponent
       return 'method from MyService';
   }

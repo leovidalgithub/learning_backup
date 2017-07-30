@@ -3,7 +3,7 @@ import { giveMeRandom } from './../../classes';
 import { MyService } from './../../services/my-service.service';
 import { Logged } from './../../definitions';
 
-let lapse:number = 300;
+let lapse:number = 700;
 
 //****************************CHILD*1*****************************************
 @Component({

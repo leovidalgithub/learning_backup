@@ -36,7 +36,7 @@ https://angular.io/guide/cheatsheet
 <li class="nav-item" routerLinkActive="active">
     <a class="nav-link" [routerLink]="['home']">Home</a>
 </li>
-[routerLink]="['/app',home','33'] -> 'localhost:8080/app/home/33'
+[routerLink]="['/app','home','33'] -> 'localhost:8080/app/home/33'
 [routerLink]="['home'] -> 'localhost:8080/heroes/home'
 [routerLink]="['/home'] -> 'localhost:8080/home'
 ```
@@ -50,6 +50,10 @@ https://angular.io/guide/cheatsheet
 
 ```html
 <input (keyup.enter)="search()">
+<input #newHero
+       (keyup.enter)="addHero(newHero.value)"
+       (blur)="addHero(newHero.value); newHero.value='' ">
+<button (click)="addHero(newHero.value)">Add</button>
 ```
 
 ```html

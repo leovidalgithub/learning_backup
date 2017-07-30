@@ -9,12 +9,10 @@
     <h1 translate>HEADLINE</h1>
     <h2>Missing translate line = <code>{{'MISSING' | translate}}</code></h2>
     <h2 translate="main.thing"></h2>
-
     <h2>{{sometext}}</h2>
-    <!-- <h2 translate>sometext</h2> -->
-
     <h3>Date = {{myDate | date : 'longDate'}}</h3>
     <h3>Money = {{myMoney | currency}}</h3>
+
     <button ng-click="switchLanguage('es-ES')" translate="LANG_ES-ES"></button>
     <button ng-click="switchLanguage('en-US')" translate="LANG_EN-US"></button>
     <button ng-click="switchLanguage('ca-CA')" translate="LANG_CA-CA"></button>
@@ -25,7 +23,6 @@
     <script src="./scripts/vendor/angular-translate.js"></script>  <!-- angular-translate - v2.15.2 - 2017-06-22 -->
     <script src="./scripts/vendor/angular-translate-loader-static-files.js"></script> <!-- angular-translate - v2.15.2 - 2017-06-22 -->
     <script src="./scripts/vendor/tmhDynamicLocale.js"></script> <!-- Angular Dynamic Locale - 0.1.32 -->
-
     <script src="./scripts/app.js"></script>
 
 </body>

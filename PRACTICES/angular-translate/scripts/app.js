@@ -41,7 +41,7 @@ angular.module('myApp', ['pascalprecht.translate','tmh.dynamicLocale'])
             $rootScope.$on('$translateChangeSuccess', function () { // event triggered when language has been changed
                 $scope.sometext = $translate.instant('sometext');
             });
-            // $scope.$on('$localeChangeSuccess', function(){ // another event from tmhDynamicLocale.set
+            // $scope.$on('$localeChangeSuccess', function() { ... // another event from tmhDynamicLocale.set
 
             $scope.switchLanguage = function(key) {
                 $translate.use(key);
@@ -50,6 +50,5 @@ angular.module('myApp', ['pascalprecht.translate','tmh.dynamicLocale'])
             $scope.show_language = function() {
                 $scope.currentLanguage = $translate.use();
             }
-            // $scope.$on('$localeChangeSuccess'... event when lang is set by tmhDynamicLocale.set
     }
     ]);
