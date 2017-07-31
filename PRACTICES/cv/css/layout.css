@@ -38,15 +38,21 @@ header {
 	-webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
+
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
 }
 
 /* vertically center banner section */
-header:before {
+/*header:before {
    content: '';
    display: inline-block;
    vertical-align: middle;
    height: 100%;
-}
+   border: 1px solid red;
+}*/
 header .banner {
    display: inline-block;
    vertical-align: middle;
@@ -80,6 +86,7 @@ header .banner-text hr {
    margin: 18px auto 24px auto;
    border-color: #2F2D2E;
    border-color: rgba(150, 150, 150, .1);
+   /*border: 1px solid green;*/
 }
 
 /* header social links */
@@ -112,10 +119,10 @@ header .scrolldown a {
    color: #fff;
    border-radius: 100%;
 
-   -webkit-transition: all .3s ease-in-out;
-   -moz-transition: all .3s ease-in-out;
-   -o-transition: all .3s ease-in-out;
-   transition: all .3s ease-in-out;
+   -webkit-transition: all .6s ease-in-out;
+   -moz-transition: all .6s ease-in-out;
+   -o-transition: all .6s ease-in-out;
+   transition: all .6s ease-in-out;
 }
 header .scrolldown a:hover { color: #11ABB0; }
 
@@ -630,7 +637,7 @@ call-to-action .button {
    color: #0D0D0D;
 }
 #call-to-action p span {
-	font-family: 'opensans-semibold', sans-serif; 
+	font-family: 'opensans-semibold', sans-serif;
 	color: #D8D8D8;
 }
 
@@ -654,7 +661,7 @@ call-to-action .button {
    padding-bottom: 66px;
 }
 #testimonials h1 {
-   font: 18px/24px 'opensans-bold', sans-serif;   
+   font: 18px/24px 'opensans-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 3px;
    color: #fff;
@@ -1003,4 +1010,3 @@ footer .social-links li:first-child { margin-left: 0; }
  	border-radius: 100%;
 }
 #go-top a:hover { background-color: #0F9095; }
-

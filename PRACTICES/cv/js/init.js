@@ -12,7 +12,7 @@
 
     setTimeout(function() {
 	   $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
-   }, 3100);
+   }, 800);
 
 
 /*----------------------------------------------------*/
@@ -48,6 +48,8 @@
 
 			active_section = $(this);
 			if (direction === "up") active_section = active_section.prev();
+
+            console.log('** ' + active_section.attr("id"));
 
 			var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
 
