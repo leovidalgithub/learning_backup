@@ -14,14 +14,12 @@ header {
    justify-content: center;
    align-items: center;
 }
-
 /* vertically center banner section */
 /*header:before {
    content: '';
    display: inline-block;
    vertical-align: middle;
    height: 100%;
-   border: 1px solid red;
 }*/
 header .banner {
    display: inline-block;
@@ -88,7 +86,6 @@ header .scrolldown a {
    line-height: 42px;
    color: #fff;
    border-radius: 100%;
-   border: 1px solid red;
 
    -webkit-transition: all .6s ease-in-out;
    -moz-transition: all .6s ease-in-out;
