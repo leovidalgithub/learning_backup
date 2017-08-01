@@ -2,11 +2,10 @@ let express = require( 'express' );
 let app     = express();
 var winston = require('winston');
 
-  winston.log('info', 'Hello distributed log files!');
-  winston.info('Hello again distributed logs');
+  winston.log('winston.log', 'Hello distributed log files!');
+  winston.info('winston.info again distributed logs');
   winston.level = 'debug';
   winston.log('debug', 'Now my debug messages are written to console!');
-
 
   var logger = new winston.Logger({
       level: 'info',

@@ -1,5 +1,3 @@
-body { background: #0f0f0f; }
-/*HEADER init */
 header {
    position: relative;
    height: 800px;
@@ -10,15 +8,21 @@ header {
 	-webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
+
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
 }
 
 /* vertically center banner section */
-header:before {
+/*header:before {
    content: '';
    display: inline-block;
    vertical-align: middle;
    height: 100%;
-}
+   border: 1px solid red;
+}*/
 header .banner {
    display: inline-block;
    vertical-align: middle;
@@ -52,6 +56,7 @@ header .banner-text hr {
    margin: 18px auto 24px auto;
    border-color: #2F2D2E;
    border-color: rgba(150, 150, 150, .1);
+   /*border: 1px solid green;*/
 }
 
 /* header social links */
@@ -83,11 +88,12 @@ header .scrolldown a {
    line-height: 42px;
    color: #fff;
    border-radius: 100%;
+   border: 1px solid red;
 
-   -webkit-transition: all .3s ease-in-out;
-   -moz-transition: all .3s ease-in-out;
-   -o-transition: all .3s ease-in-out;
-   transition: all .3s ease-in-out;
+   -webkit-transition: all .6s ease-in-out;
+   -moz-transition: all .6s ease-in-out;
+   -o-transition: all .6s ease-in-out;
+   transition: all .6s ease-in-out;
 }
 header .scrolldown a:hover { color: #11ABB0; }
 
@@ -152,9 +158,3 @@ ul#nav li a {
 
 ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
-
-
-
-
-
-/*HEADER end */
