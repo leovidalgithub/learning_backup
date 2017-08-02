@@ -1,7 +1,20 @@
 @import url("reset.css");
-/* impot fonts*/
+@import url("fonts.css");
 
 /* ------------------------------------------------------------------ */
 /* a. General Styles
 /* ------------------------------------------------------------------ */
 body { background: #0f0f0f; }
+
+/*section p {
+    font-family: comfortaa, sans-serif;
+    font-size: 1.2rem;
+    color: orange;
+}
+section p span {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+section {
+    margin-top: 25px;
+}*/
