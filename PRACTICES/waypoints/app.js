@@ -15,18 +15,12 @@ $(document).ready(function() {
             // element: $('section')[1],
             element: $('#section2'),
             enter: function(direction) {
-<<<<<<< HEAD
-=======
                 $('#section2').css('color','yellow');
->>>>>>> e6af4e8388d517c7bdbd2b889ecf746628eb3794
                 console.log('Enter triggered with direction ' + direction)
         },
             entered: function(direction) {
                 console.log('Entered triggered with direction ' + direction)
-<<<<<<< HEAD
-=======
                 $('#section2').css('color','white');
->>>>>>> e6af4e8388d517c7bdbd2b889ecf746628eb3794
         },
             exit: function(direction) {
                 console.log('Exit triggered with direction ' + direction)
@@ -42,11 +36,7 @@ $(document).ready(function() {
         });
 
         setTimeout(function(){
-<<<<<<< HEAD
-            sticky.destroy();
-=======
             // sticky.destroy();
->>>>>>> e6af4e8388d517c7bdbd2b889ecf746628eb3794
         },3000);
     // *******************************************************
 
