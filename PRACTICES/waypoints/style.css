@@ -22,6 +22,19 @@ section {
     text-align: justify;
     padding: 15px;
     margin-bottom: 20px;
+    transition: all 7.4s ease;
+}
+
+#sticky {
+    width: 100%;
+    text-align: center;
+    transition: all 7.4s ease;
+}
+
+.stuck {
+  position:fixed;
+  top:0;
+  opacity: .6;
 }
 
 #sticky {
