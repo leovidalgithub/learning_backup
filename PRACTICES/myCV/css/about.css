@@ -3,18 +3,29 @@
 /* ------------------------------------------------------------------ */
 
 #about {
+    /*height: 768px;*/
+    /*min-height: 500px;*/
+    width: 100%;
    background: #2B2B2B;
    padding-top: 96px;
    padding-bottom: 66px;
    overflow: hidden;
 }
+#about .main-col {
+    width: 90%;
+    margin: auto;
+}
+#about .main-col .about-me p {
+    padding-right: 45px;
+}
+
 #about a {
     font-family: 'opensans-bold', sans-serif;
     display: inline-block;
     padding: 14px;
     border-radius: 3px;
     background-color: #333;
-    color: #11ABB0;
+    color: white;
     transition: all .6s ease;
     text-decoration: none;
 }
@@ -22,7 +33,7 @@
     background-color: white;
     color: #333;
 }
-#about a:hover, #about a:focus { color: #11ABB0; }
+/*#about a:hover { color: #333; }*/
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;

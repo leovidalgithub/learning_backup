@@ -41,23 +41,25 @@
 		var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
         navigation_links.parent().removeClass("current");
 		active_link.parent().addClass("current");
-        console.log('*/*/*/*/*/');
-
 		},
 		offset: '18%'
 
 	});
-
 
 /*----------------------------------------------------*/
 /*	Make sure that #header-background-image height is
 /* equal to the browser height.
 ------------------------------------------------------ */
 
-   $('header').css({ 'height': $(window).height() });
-   $(window).on('resize', function() {
+    var windowHeight =  $(window).height();
+   $('header').css({ 'height': windowHeight });
 
-        $('header').css({ 'height': $(window).height() });
+    if( parseInt($('#about').css('height'),10) < windowHeight ) {
+       $('#about').css({ 'height': windowHeight });
+   };
+
+   $(window).on('resize', function() {
+        $('header').css({ 'height': windowHeight });
         $('body').css({ 'width': $(window).width() })
    });
 
