@@ -69,7 +69,10 @@ header .social li {
    margin: 0 15px;
    padding: 0;
 }
-header .social li a { color: #fff; }
+header .social li a {
+    color: #fff;
+    transition: all .7s ease-in-out;
+ }
 header .social li a:hover { color: #11ABB0; }
 
 /* scrolldown link */
@@ -87,10 +90,10 @@ header .scrolldown a {
    color: #fff;
    border-radius: 100%;
 
-   -webkit-transition: all .6s ease-in-out;
-   -moz-transition: all .6s ease-in-out;
-   -o-transition: all .6s ease-in-out;
-   transition: all .6s ease-in-out;
+   -webkit-transition: all .7s ease-in-out;
+   -moz-transition: all .7s ease-in-out;
+   -o-transition: all .7s ease-in-out;
+   transition: all .7s ease-in-out;
 }
 header .scrolldown a:hover { color: #11ABB0; }
 
@@ -115,7 +118,10 @@ header .scrolldown a:hover { color: #11ABB0; }
    left: 0;
    top: 0;
 }
-.opaque { background-color: #333; }
+.opaque {
+    background-color: #333;
+    opacity: .92;
+ }
 
 /* hide toggle button */
 #nav-wrap > a.mobile-btn { display: none; }
