@@ -1,8 +1,27 @@
+/*section {
+    margin: 10px 0 20px 0;
+}
+.container {
+    width: 100%;
+    height:  400px;
+}
+section.parallax-1 {
+    background-image: url("./img/img4.jpg");
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: '50% 0px';
+    background-repeat: no-repeat;
+    background-size: contain;
+}*/
+
+/****************************************************/
 body {
     width: 90%;
     margin: auto;
     background-color: #666;
     color: #feffee;
+    margin-top: 100px;
 }
 .parallax-window {
 	min-height: 300px;

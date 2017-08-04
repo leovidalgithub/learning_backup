@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flexslider</title>
+        <link rel="stylesheet" href="flexslider.css" type="text/css">
+    </head>
+    <style>
+        body {
+            background-color: #333;
+        }
+        .flexslider {
+            width: 70%;
+            margin: auto;
+            border: 8px solid white;
+        }
+    </style>
+    <body>
+
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="./images/cassie-boca-296277.jpg" alt="">
+                </li>
+                <li>
+                    <img src="./images/jason-wong-305496.jpg" alt="">
+                </li>
+                <li>
+                    <img src="./images/paul-morris-295077.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="jquery.flexslider.js"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            $(window).load(function() {
+                $('.flexslider').flexslider({
+                    initDelay: 0,
+                    animation: "fade", // slide
+                    slideshowSpeed: 2000,
+                    animationSpeed: 600,
+                    slideshow: true,
+                    randomize: true,
+                    pauseOnAction: true,
+                    pauseOnHover: false,
+                    controlNav: true, // not working
+                    directionNav: true,  // not working
+                    prevText: "Previous", // not working
+                    nextText: "Next", // not working
+                    start: function(){console.log('start');},
+                    before: function(){console.log('before');},
+                    after: function(){console.log('after');},
+                    end: function(){console.log('end');}
+                });
+            });
+        </script>
+
+    </body>
+</html>
