@@ -1,26 +1,17 @@
 header {
-   position: relative;
-   height: 800px;
-   min-height: 500px;
-   width: 100%;
-   background: #161415 url(../images/header-background.jpg) no-repeat top center;
-   background-size: cover !important;
-	-webkit-background-size: cover !important;
-   text-align: center;
-   overflow: hidden;
-
-   display: flex;
-   flex-flow: column nowrap;
-   justify-content: center;
-   align-items: center;
+    position: relative;
+    min-height: 400px;
+    width: 100%;
+    background: #161415 url(../images/nasa-89127.jpg) no-repeat top center;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
-/* vertically center banner section */
-/*header:before {
-   content: '';
-   display: inline-block;
-   vertical-align: middle;
-   height: 100%;
-}*/
 header .banner {
    display: inline-block;
    vertical-align: middle;
@@ -54,7 +45,6 @@ header .banner-text hr {
    margin: 18px auto 24px auto;
    border-color: #2F2D2E;
    border-color: rgba(150, 150, 150, .1);
-   /*border: 1px solid green;*/
 }
 
 /* header social links */
@@ -71,7 +61,7 @@ header .social li {
 }
 header .social li a {
     color: #fff;
-    transition: all .7s ease-in-out;
+    transition: color .3s ease-in-out;
  }
 header .social li a:hover { color: #11ABB0; }
 
@@ -81,19 +71,16 @@ header .scrolldown a {
    bottom: 30px;
    left: 50%;
    margin-left: -29px;
+   opacity: .9;
    color: #fff;
    display: block;
-   height: 42px;
-   width: 42px;
-   font-size: 46px;
-   line-height: 42px;
+   font-size: 54px;
    color: #fff;
-   border-radius: 100%;
 
-   -webkit-transition: all .7s ease-in-out;
-   -moz-transition: all .7s ease-in-out;
-   -o-transition: all .7s ease-in-out;
-   transition: all .7s ease-in-out;
+   -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   transition: all .3s ease-in-out;
 }
 header .scrolldown a:hover { color: #11ABB0; }
 
@@ -148,16 +135,17 @@ ul#nav li a {
    display: inline-block;
    padding: 8px 13px;
    line-height: 32px;
-	text-decoration: none;
+   text-decoration: none;
    text-align: left;
    color: #fff;
 
-	-webkit-transition: color .2s ease-in-out;
-	-moz-transition: color .2s ease-in-out;
-	-o-transition: color .2s ease-in-out;
-	-ms-transition: color .2s ease-in-out;
-	transition: color .2s ease-in-out;
+	-webkit-transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+	-o-transition: color .3s ease-in-out;
+	-ms-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
 }
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #F06000; }
+ul#nav li a:hover { color: #11ABB0; background-color: transparent !important;}
+ul#nav li.current a { color: #F06000; } // orange

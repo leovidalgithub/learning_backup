@@ -1,23 +1,40 @@
-var gulp      = require( 'gulp' );
-var sass      = require( 'gulp-sass' );
-var minifyCSS = require( 'gulp-csso' );
-var concat    = require( 'gulp-concat' );
-var connect   = require( 'gulp-connect' );
-var uglify    = require( 'gulp-uglify' );
+var gulp         = require( 'gulp' );
+var sass         = require( 'gulp-sass' );
+var minifyCSS    = require( 'gulp-csso' );
+var concat       = require( 'gulp-concat' );
+var connect      = require( 'gulp-connect' );
+var uglify       = require( 'gulp-uglify' );
+var autoprefixer = require( 'gulp-autoprefixer' );
 
 //********************************* SASS
 gulp.task( 'sass', function () {
   return gulp.src( 'sass/**/*.scss' )
     .pipe( sass().on( 'error', sass.logError))
 	.pipe( concat( 'default.css' ))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
     .pipe( minifyCSS())
     .pipe( gulp.dest( 'css' ))
+    .pipe( connect.reload() );
+});
+//********************************* JS
+gulp.task( 'js', function () {
+  return gulp.src( 'js/**/*.js' )
+    .pipe( connect.reload() );
+});
+//********************************* HTML
+gulp.task( 'html', function () {
+  return gulp.src( './*.html' )
     .pipe( connect.reload() );
 });
 
 //********************************* WATCH
 gulp.task( 'watch', function() {
 	gulp.watch( 'sass/**/*.scss', [ 'sass' ] );
+	gulp.watch( 'js/**/*.js', [ 'js' ] );
+	gulp.watch( './*.html', [ 'html' ] );
 });
 
 //********************************* CONNECT

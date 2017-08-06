@@ -1,22 +1,20 @@
 /* ------------------------------------------------------------------ */
 /* c. About Section
 /* ------------------------------------------------------------------ */
-
 #about {
-    /*height: 768px;*/
-    /*min-height: 500px;*/
+    min-height: 500px;
     width: 100%;
-   background: #2B2B2B;
-   padding-top: 96px;
-   padding-bottom: 66px;
-   overflow: hidden;
+    background-color: #2B2B2B;
+    padding-top: 76px;
+    padding-bottom: 66px;
+    overflow: hidden;
 }
 #about .main-col {
-    width: 90%;
+    width: 85%;
     margin: auto;
 }
 #about .main-col .about-me p {
-    padding-right: 45px;
+    padding-right: 10%;
 }
 
 #about a {
@@ -33,7 +31,6 @@
     background-color: white;
     color: #333;
 }
-/*#about a:hover { color: #333; }*/
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
@@ -44,11 +41,12 @@
     font: 18px/30px 'comfortaa', sans-serif;
     line-height: 30px;
     color: #7A7A7A;
+    margin: 0;
 }
 #about .profile-pic { // photo
    position: relative;
-   width: 120px;
-   height: 120px;
+   width: 160px;
+   height: 160px;
    border-radius: 100%;
 }
 #about .contact-details {

@@ -14,13 +14,15 @@ html {
 }
 
 body {
-   background: #fff;
+    background-color: #0f0f0f;
    font-family: 'opensans-regular', sans-serif;
    font-weight: normal;
    font-size: 15px;
    line-height: 30px;
-    color: #838C95;
+   color: #838C95;
+   width: 100%;
+   overflow-x: hidden;
 
    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
 }

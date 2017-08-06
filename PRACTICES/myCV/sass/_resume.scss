@@ -5,10 +5,10 @@
 // #resume a:hover, #resume a:focus { color: #313131; }
 
 #resume {
-   background-color: #fff;
+   background-color: #F5F5F5;
    padding-bottom: 72px;
-   padding-top: 90px;
-       overflow: hidden;
+   padding-top: 76px;
+   overflow: hidden;
 
    .content {
        width: 85%;
@@ -39,24 +39,26 @@
         padding: 0 12% 0 5%;
     }
 
+    .parallax-window {
+        min-height: 300px;
+        background: transparent;
+    }
 
+    .skill {
+    }
+    .header-col {
+        text-align: center;
+        padding-top: 9px;
+        margin-bottom: 51px;
+        &.mySkills {
+            position: relative;
+            top: -80px;
+        }
+    }
 }
-
-
-
-
-
-#resume .header-col {
-    text-align: center;
-    padding-top: 9px;
-}
-
-
-
-
 
 .education, .work {
-   margin-bottom: 48px;
+   margin-bottom: 20px;
    padding-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;
 }
@@ -78,81 +80,89 @@
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/
-
 .bars {
 	width: 95%;
 	float: left;
-	padding: 0;
 	text-align: left;
+    background-color: rgba(black, .65);
+    padding: 28px;
+    border-radius: 20px 3px 3px 20px;
+    margin: 50px auto;
 }
 .bars .skills {
   	margin-top: 36px;
-   list-style: none;
+    list-style: none;
 }
 .bars li {
-   position: relative;
-  	margin-bottom: 60px;
-  	background: #ccc;
-  	height: 42px;
+    position: relative;
+  	margin-bottom: 40px;
+    background-color: rgba(black, .08);
+  	height: 22px;
   	border-radius: 3px;
+    &:nth-child(1) { transform: rotate(-.6deg); }
+    &:nth-child(2) { transform: rotate(.8deg); }
+    &:nth-child(3) { transform: rotate(.3deg); }
+    &:nth-child(4) { transform: rotate(-1deg); }
+    &:nth-child(5) { transform: rotate(-.3deg); }
+    &:nth-child(6) { transform: rotate(1deg); }
 }
 .bars li em {
 	font: 15px 'opensans-bold', sans-serif;
-   color: #313131;
+    color: white;
 	text-transform: uppercase;
-   letter-spacing: 2px;
+    letter-spacing: 2.5px;
 	font-weight: normal;
-   position: relative;
-	top: -36px;
+    position: relative;
+	top: -31px;
+
 }
 .bar-expand {
-   position: absolute;
-   left: 0;
-   top: 0;
-
-   margin: 0;
-   padding-right: 24px;
-  	background: #313131;
-   display: inline-block;
-  	height: 42px;
-   line-height: 42px;
-   border-radius: 3px 0 0 3px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding-right: 24px;
+    background-color: rgba(#11ABB0, .65);
+    display: inline-block;
+  	height: 22px;
+    line-height: 22px;
+    border-radius: 3px 0 0 3px;
 }
 
 .photoshop {
-  	width: 60%;
-  	-moz-animation: photoshop 2s ease;
-  	-webkit-animation: photoshop 2s ease;
+  	width: 95%;
+  	-moz-animation: photoshop 6s ease;
+  	-webkit-animation: photoshop 6s ease;
 }
 .illustrator {
   	width: 55%;
-  	-moz-animation: illustrator 2s ease;
-  	-webkit-animation: illustrator 2s ease;
+  	-moz-animation: illustrator 6s ease;
+  	-webkit-animation: illustrator 6s ease;
 }
 .wordpress {
   	width: 50%;
-  	-moz-animation: wordpress 2s ease;
-  	-webkit-animation: wordpress 2s ease;
+  	-moz-animation: wordpress 6s ease;
+  	-webkit-animation: wordpress 6s ease;
 }
 .css {
   	width: 90%;
-  	-moz-animation: css 2s ease;
-  	-webkit-animation: css 2s ease;
+  	-moz-animation: css 6s ease;
+  	-webkit-animation: css 6s ease;
 }
 .html5 {
   	width: 80%;
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
+  	-moz-animation: html5 6s ease;
+  	-webkit-animation: html5 6s ease;
 }
 .jquery {
   	width: 50%;
-  	-moz-animation: jquery 2s ease;
-  	-webkit-animation: jquery 2s ease;
+  	-moz-animation: jquery 6s ease;
+  	-webkit-animation: jquery 6s ease;
 }
 
 @-moz-keyframes photoshop {
   0%   { width: 0px;  }
-  100% { width: 60%;  }
+  100% { width: 95%;  }
 }
 @-moz-keyframes illustrator {
   0%   { width: 0px;  }
@@ -177,7 +187,7 @@
 
 @-webkit-keyframes photoshop {
   0%   { width: 0px;  }
-  100% { width: 60%;  }
+  100% { width: 95%;  }
 }
 @-webkit-keyframes illustrator {
   0%   { width: 0px;  }
