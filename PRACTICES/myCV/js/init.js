@@ -4,6 +4,38 @@
  jQuery(document).ready(function($) {
 
      /*----------------------------------------------------*/
+     /* Idioms options show/hide
+     ------------------------------------------------------ */
+    $('#idioms .selected').mouseenter(function(event) {
+        $('#idioms .choose').clearQueue().show().animate({
+            opacity: '1',
+            left: '5px'
+        },'slow',idiomsClose);
+    });
+
+    let idiomsClose = function() {
+        $('#idioms .choose').bind('mouseleave click',function(event) {
+            $('#idioms .choose').animate({
+                opacity: '0',
+                left: '-70px'
+            },'slow',function() {
+                $('#idioms .choose').hide().unbind();
+            });
+        });
+    };
+
+
+
+    /*----------------------------------------------------*/
+    /* FitText Settings for Header H1
+    /* Show Header for the first time
+    ------------------------------------------------------ */
+    setTimeout(function() {
+        $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
+        $('header').css('opacity', '1');
+    }, 800);
+
+     /*----------------------------------------------------*/
      /* Parallax Settings
      ------------------------------------------------------ */
      $('.jsInit').parallax({
@@ -14,13 +46,6 @@
          androidFix: false,
          iosFix: false
      });
-
-    /*----------------------------------------------------*/
-    /* FitText Settings
-    ------------------------------------------------------ */
-    setTimeout(function() {
-        $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
-   }, 800);
 
     /*----------------------------------------------------*/
     /* Smooth Scrolling

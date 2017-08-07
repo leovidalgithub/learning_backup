@@ -2,7 +2,7 @@ header {
     position: relative;
     min-height: 400px;
     width: 100%;
-    background: #161415 url(../images/nasa-89127.jpg) no-repeat top center;
+    // background: #161415 url(../images/nasa-89127.jpg) no-repeat top center;
     background-size: cover !important;
     -webkit-background-size: cover !important;
     text-align: center;
@@ -11,6 +11,8 @@ header {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 header .banner {
    display: inline-block;

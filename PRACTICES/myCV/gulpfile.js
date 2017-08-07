@@ -41,7 +41,7 @@ gulp.task( 'watch', function() {
 gulp.task( 'connect', function () {
     connect.server({
         root: '',
-        port: 8080,
+        port: 8085,
         livereload: true,
         fallback: 'index.html'
     });
@@ -65,4 +65,4 @@ gulp.task( 'connect', function () {
 // 		.pipe( gulp.dest( 'bower_components/' ))
 // });
 
-gulp.task( 'start',   [ 'connect', 'watch' ] );
+gulp.task( 'start', [ 'connect', 'watch' ] );

@@ -2,10 +2,13 @@ angular
     .module('myAppCV', [])
     .config(function(){})
     .run(function(){})
-    .controller('mainController',['myFactory', function(myFactory){
+    .controller('mainController',[function(){
         this.data = {};
+        this.myIdiom = 'en';
         this.submit = function() {
-            console.log(this.data,myFactory.fn());
+        };
+        this.idiomChange = function(idiom) {
+            this.myIdiom = idiom;
         };
     }])
     .factory('myFactory',[function(){

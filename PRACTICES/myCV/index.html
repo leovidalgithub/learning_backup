@@ -7,7 +7,8 @@
         <meta name="theme-color" content="#2B2B2B">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/flexslider.css">
+        <link rel="stylesheet" href="./css/flexslider.css"> <!-- jQuery FlexSlider v2.6.3 -->
+        <link rel="stylesheet" href="./css/flags/flags.css"> <!-- Generated with CSS Flag Sprite -->
         <link rel="stylesheet" href="./css/default.css">
     </head>
     <body ng-controller="mainController as mc">
@@ -33,7 +34,7 @@
 
            <div class="banner">
               <div class="banner-text">
-                 <h1 class="responsive-headline">I'm Leo Rdgz Vidal</h1>
+                 <h1 class="responsive-headline">I'm Leo Rdgz-Vidal</h1>
                  <h3>I'm a Manila based <span>graphic designer</span>, <span>illustrator</span> and <span>webdesigner</span> creating awesome and
                  effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
                  and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
@@ -44,7 +45,7 @@
                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="mailto:info@leovidal.es?Subject=CV-" target="_top" title="Mail"><i class="fa fa-envelope-o"></i></a></li>
                     <li><a href="#"><i class="fa fa-skype"></i></a></li>
                  </ul>
               </div>
@@ -58,9 +59,9 @@
         <!-- About Section
         ================================================== -->
         <section id="about">
-            <div class="row main-col www">
+            <div class="row main-col">
                 <div class="col-md-3">
-                    <img class="profile-pic img-responsive center-block"  src="images/me.jpg" alt="This is my photo" />
+                    <img class="profile-pic img-responsive center-block"  src="images/Xme.jpg" alt="This is my photo" />
                 </div>
 
                 <div class="col-md-9 about-me">
@@ -355,8 +356,29 @@
                   <a class="smoothscroll" href="#home"><i class="fa fa-arrow-circle-up"></i></a>
               </p>
            </div>
-
         </footer> <!-- Footer End-->
+
+        <!-- idiom box
+        ================================================== -->
+        <div id="idioms">
+            <div class="selected">
+                <div class="btn-group" role="group">
+                    <!-- <img src="./css/flags/blank.png" class="flag flag-us" alt="EN" /> -->
+                    <button type="button" class="btn btn-secondary">
+                        <i ng-show="mc.myIdiom=='en'" class="flag flag-gb"></i>
+                        <i ng-show="mc.myIdiom=='es'" class="flag flag-es"></i>
+                        <i ng-show="mc.myIdiom=='fr'" class="flag flag-fr"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="choose">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-secondary" ng-click="mc.idiomChange('en')"><i class="flag flag-gb" title="English"></i></button>
+                    <button type="button" class="btn btn-secondary" ng-click="mc.idiomChange('es')"><i class="flag flag-es" title="Español"></i></button>
+                    <button type="button" class="btn btn-secondary" ng-click="mc.idiomChange('fr')"><i class="flag flag-fr" title="Fran&ccedil;ais"></i></button>
+                </div>
+            </div>
+        </div>
 
 
     <script src="http://code.jquery.com/jquery-2.2.4.js"></script>
