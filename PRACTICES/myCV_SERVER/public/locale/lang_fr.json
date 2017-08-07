@@ -1,0 +1,6 @@
+{
+    "test": "Test d'une, deux, trois",
+    "main": {
+        "thing" : "Plus de choses"
+    }
+}

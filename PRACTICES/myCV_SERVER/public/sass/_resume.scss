@@ -1,0 +1,211 @@
+/* ------------------------------------------------------------------ */
+/* d. Resume Section
+/* ------------------------------------------------------------------ */
+// #resume a, #resume a:visited  { color: #11ABB0; }
+// #resume a:hover, #resume a:focus { color: #313131; }
+
+#resume {
+   background-color: #F5F5F5;
+   padding-bottom: 72px;
+   padding-top: 76px;
+   overflow: hidden;
+
+   .content {
+       width: 85%;
+       margin: auto;
+   }
+
+    h3 {
+       font: 25px/30px 'opensans-bold', sans-serif;
+   }
+
+    h1 {
+       font: 18px/24px 'opensans-bold', sans-serif;
+       text-transform: uppercase;
+       letter-spacing: 1px;
+
+       span {
+           border-bottom: 3px solid #11ABB0;
+           padding-bottom: 6px;
+       }
+    }
+    .item {
+        margin-bottom: 20px;
+        p {
+            text-align: justify;
+        }
+    }
+    .main-col {
+        padding: 0 12% 0 5%;
+    }
+
+    .parallax-window {
+        min-height: 300px;
+        background: transparent;
+    }
+
+    .skill {
+    }
+    .header-col {
+        text-align: center;
+        padding-top: 9px;
+        margin-bottom: 51px;
+        &.mySkills {
+            position: relative;
+            top: -80px;
+        }
+    }
+}
+
+.education, .work {
+   margin-bottom: 20px;
+   padding-bottom: 24px;
+   border-bottom: 1px solid #E8E8E8;
+}
+#resume .info {
+   font: 16px/24px 'librebaskerville-italic', serif;
+   color: #6E7881;
+   margin-bottom: 18px;
+   margin-top: 9px;
+}
+#resume .info span {
+   margin-right: 5px;
+   margin-left: 5px;
+}
+#resume .date {
+   font: 15px/24px 'opensans-regular', sans-serif;
+   margin-top: 6px;
+}
+
+/*----------------------------------------------*/
+/*	Skill Bars
+/*----------------------------------------------*/
+.bars {
+	width: 95%;
+	float: left;
+	text-align: left;
+    background-color: rgba(black, .65);
+    padding: 28px;
+    border-radius: 20px 3px 3px 20px;
+    margin: 50px auto;
+}
+.bars .skills {
+  	margin-top: 36px;
+    list-style: none;
+}
+.bars li {
+    position: relative;
+  	margin-bottom: 40px;
+    background-color: rgba(black, .08);
+  	height: 22px;
+  	border-radius: 3px;
+    &:nth-child(1) { transform: rotate(-.6deg); }
+    &:nth-child(2) { transform: rotate(.8deg); }
+    &:nth-child(3) { transform: rotate(.3deg); }
+    &:nth-child(4) { transform: rotate(-1deg); }
+    &:nth-child(5) { transform: rotate(-.3deg); }
+    &:nth-child(6) { transform: rotate(1deg); }
+}
+.bars li em {
+	font: 15px 'opensans-bold', sans-serif;
+    color: white;
+	text-transform: uppercase;
+    letter-spacing: 2.5px;
+	font-weight: normal;
+    position: relative;
+	top: -31px;
+
+}
+.bar-expand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding-right: 24px;
+    background-color: rgba(#11ABB0, .65);
+    display: inline-block;
+  	height: 22px;
+    line-height: 22px;
+    border-radius: 3px 0 0 3px;
+}
+
+.photoshop {
+  	width: 95%;
+  	-moz-animation: photoshop 6s ease;
+  	-webkit-animation: photoshop 6s ease;
+}
+.illustrator {
+  	width: 55%;
+  	-moz-animation: illustrator 6s ease;
+  	-webkit-animation: illustrator 6s ease;
+}
+.wordpress {
+  	width: 50%;
+  	-moz-animation: wordpress 6s ease;
+  	-webkit-animation: wordpress 6s ease;
+}
+.css {
+  	width: 90%;
+  	-moz-animation: css 6s ease;
+  	-webkit-animation: css 6s ease;
+}
+.html5 {
+  	width: 80%;
+  	-moz-animation: html5 6s ease;
+  	-webkit-animation: html5 6s ease;
+}
+.jquery {
+  	width: 50%;
+  	-moz-animation: jquery 6s ease;
+  	-webkit-animation: jquery 6s ease;
+}
+
+@-moz-keyframes photoshop {
+  0%   { width: 0px;  }
+  100% { width: 95%;  }
+}
+@-moz-keyframes illustrator {
+  0%   { width: 0px;  }
+  100% { width: 55%;  }
+}
+@-moz-keyframes wordpress {
+  0%   { width: 0px;  }
+  100% { width: 50%;  }
+}
+@-moz-keyframes css {
+  0%   { width: 0px;  }
+  100% { width: 90%;  }
+}
+@-moz-keyframes html5 {
+  0%   { width: 0px;  }
+  100% { width: 80%;  }
+}
+@-moz-keyframes jquery {
+  0%   { width: 0px;  }
+  100% { width: 50%;  }
+}
+
+@-webkit-keyframes photoshop {
+  0%   { width: 0px;  }
+  100% { width: 95%;  }
+}
+@-webkit-keyframes illustrator {
+  0%   { width: 0px;  }
+  100% { width: 55%;  }
+}
+@-webkit-keyframes wordpress {
+  0%   { width: 0px;  }
+  100% { width: 50%;  }
+}
+@-webkit-keyframes css {
+  0%   { width: 0px;  }
+  100% { width: 90%;  }
+}
+@-webkit-keyframes html5 {
+  0%   { width: 0px;  }
+  100% { width: 80%;  }
+}
+@-webkit-keyframes jquery {
+  0%   { width: 0px;  }
+  100% { width: 50%;  }
+}
