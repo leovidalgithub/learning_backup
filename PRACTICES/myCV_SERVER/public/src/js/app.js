@@ -21,7 +21,7 @@ angular
     }])
     .run([function(){}])
     .controller('mainController',['$translate','$timeout','$http',function($translate,$timeout,$http){
-        let vm = this;
+        var vm = this;
         vm.data = {};
 
         $timeout(function(){
@@ -37,9 +37,9 @@ angular
         };
 
         $timeout(function(){
-            $http.get('http://localhost:8080/cc/123?var=456')
+            $http.get('http://localhost:8080/cc/')
                 .then(function(data){
-                    console.log(data.data);
+                    console.log(data.data,'11');
                 })
                 .catch(function(err){
                 });
