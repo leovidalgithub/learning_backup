@@ -8,11 +8,10 @@
         <meta name="theme-color" content="#2B2B2B">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <!-- vendor:css -> jQuery FlexSlider v2.6.3 & Flag Sprite -->
         <link rel="stylesheet" href="./build/vendor/css/vendor.css?v=1.0">
         <link rel="stylesheet" href="./build/css/default.css?v=1.0">
     </head>
-    <body ng-controller="mainController as mc">
+    <body ng-controller="mainController as vm">
 
         <!-- Header
         ================================================== -->
@@ -277,14 +276,14 @@
                  <div class="col-md-offset-1 col-md-10">
 
                     <!-- form -->
-                    <form ng-submit="mc.submit()" id="contactForm" name="contactForm">
+                    <form ng-submit="vm.submit()" id="contactForm" name="contactForm">
                         <fieldset>
                        <div class="row">
                            <div class="col-md-3">
                                <label for="contactName">Name <span class="required">*</span></label>
                            </div>
                            <div class="col-md-9">
-                               <input type="text" maxlength="30" ng-model="mc.data.name" required />
+                               <input type="text" maxlength="30" ng-model="vm.data.name" required />
                            </div>
                        </div>
                        <div class="row">
@@ -292,7 +291,7 @@
      						   <label for="contactEmail">Email <span class="required">*</span></label>
                            </div>
                            <div class="col-md-9">
-     						   <input type="email" maxlength="30" ng-model="mc.data.email" required />
+     						   <input type="email" maxlength="30" ng-model="vm.data.email" required />
                            </div>
                        </div>
                        <div class="row">
@@ -300,7 +299,7 @@
                                <label for="contactSubject">Subject</label>
                            </div>
                            <div class="col-md-9">
-     						   <input type="text" maxlength="50" ng-model="mc.data.subject">
+     						   <input type="text" maxlength="50" ng-model="vm.data.subject">
                            </div>
                        </div>
                        <div class="row">
@@ -308,7 +307,7 @@
                               <label for="contactMessage">Message <span class="required">*</span></label>
                           </div>
                           <div class="col-md-9">
-                              <textarea cols="50" rows="12" ng-model="mc.data.msg" required></textarea>
+                              <textarea cols="50" rows="12" maxlength="720" ng-model="vm.data.msg" required></textarea>
                           </div>
                        </div>
 
@@ -368,31 +367,23 @@
                 <div class="btn-group" role="group">
                     <!-- <img src="./css/flags/blank.png" class="flag flag-us" alt="EN" /> -->
                     <button type="button" class="btn btn-secondary">
-                        <i ng-show="mc.myIdiom=='en'" class="flag flag-gb"></i>
-                        <i ng-show="mc.myIdiom=='es'" class="flag flag-es"></i>
-                        <i ng-show="mc.myIdiom=='fr'" class="flag flag-fr"></i>
+                        <i ng-show="vm.myIdiom=='en'" class="flag flag-gb"></i>
+                        <i ng-show="vm.myIdiom=='es'" class="flag flag-es"></i>
+                        <i ng-show="vm.myIdiom=='fr'" class="flag flag-fr"></i>
                     </button>
                 </div>
             </div>
             <div class="choose">
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-secondary" ng-click="mc.idiomChange('en')"><i class="flag flag-gb" title="English"></i></button>
-                    <button type="button" class="btn btn-secondary" ng-click="mc.idiomChange('es')"><i class="flag flag-es" title="Español"></i></button>
-                    <button type="button" class="btn btn-secondary" ng-click="mc.idiomChange('fr')"><i class="flag flag-fr" title="Fran&ccedil;ais"></i></button>
+                    <button type="button" class="btn btn-secondary" ng-click="vm.idiomChange('en')"><i class="flag flag-gb" title="English"></i></button>
+                    <button type="button" class="btn btn-secondary" ng-click="vm.idiomChange('es')"><i class="flag flag-es" title="Español"></i></button>
+                    <button type="button" class="btn btn-secondary" ng-click="vm.idiomChange('fr')"><i class="flag flag-fr" title="Fran&ccedil;ais"></i></button>
                 </div>
             </div>
         </div>
 
-    <script src="http://code.jquery.com/jquery-2.2.4.js"></script>
-    <script src="./build/js/vendor/angular.js?v=1.0"></script> <!-- AngularJS v1.6.4 -->
-    <script src="./build/js/vendor/angular-translate.js?v=1.0"></script> <!-- angular-translate - v2.15.2 - 2017-06-22 -->
-    <script src="./build/js/vendor/angular-translate-loader-static-files.js?v=1.0"></script> <!-- angular-translate - v2.15.2 - 2017-06-22 -->
-    <script src="./build/js/vendor/waypoint/jquery.waypoints.js?v=1.0"></script> <!-- Waypoints - 4.0.1 -->
-    <script src="./build/js/vendor/jquery.fittext.js?v=1.0"></script> <!-- FitText.js 1.2 -->
-    <script src="./build/js/vendor/parallax.min.js?v=1.0"></script> <!-- parallax.js v1.4.2 -->
-    <script src="./build/js/vendor/jquery.flexslider.js?v=1.0"></script> <!-- jQuery FlexSlider v2.6.3 -->
+    <script src="./build/vendor/js/vendor.js?v=1.0"></script>
     <script src="./build/js/built.js?v=1.0"></script>
-    <!-- <script src="./js/init.js?v=1.0"></script> -->
-    <!-- <script src="./js/app.js?v=1.0"></script> -->
+
     </body>
 </html>

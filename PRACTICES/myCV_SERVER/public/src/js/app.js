@@ -29,21 +29,21 @@ angular
         });
 
         vm.submit = function() {
+            let protocol = location.protocol;
+            let hostname = location.hostname;
+            let url = `${protocol}//${hostname}/`;
+
+            $http.post(url + 'contact/', vm.data)
+                .then(function(data){
+                })
+                .catch(function(err){
+                });
         };
 
         vm.idiomChange = function(idiom) {
             vm.myIdiom = idiom;
             $translate.use(idiom);
         };
-
-        $timeout(function(){
-            $http.get('http://localhost:8080/cc/')
-                .then(function(data){
-                    console.log(data.data,'11');
-                })
-                .catch(function(err){
-                });
-        },2000);
 
     }])
     .factory('myFactory',[function(){
