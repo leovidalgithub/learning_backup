@@ -11,26 +11,28 @@ angular
                 'en': 'en',
                 'uk': 'en',
                 'us': 'en',
-                'es-ES': 'es',
                 'fr': 'fr'
             })
             .useStaticFilesLoader({
                 prefix: 'locale/lang_',
                 suffix: '.json'
             })
-            // .preferredLanguage('en')
-            // .use('fr');
-            .determinePreferredLanguage();
-//             .determinePreferredLanguage( function(){
-//                 console.log((window.navigator.userLanguage || window.navigator.language));
-//                 // console.log(window.navigator.browserLanguage);
-//                 // console.log(window.navigator.userLanguage);
-//                 // console.log(window.navigator.systemLanguage);
-//                 // console.log(window.navigator.language);
-// return (window.navigator.userLanguage || window.navigator.language);
-//                 // return 'es';
-//             })
-            // .fallbackLanguage('en'); // si no se consigue alguna traducción se usrará la de este idioma
+            .preferredLanguage('en')
+            .fallbackLanguage('en') // si no se consigue alguna traducción se usrará la de este idioma
+            .useSanitizeValueStrategy(null)
+            .determinePreferredLanguage( function(){
+                let currentIdiom = (window.navigator.browserLanguage ||
+                                window.navigator.userLanguage ||
+                                window.navigator.systemLanguage ||
+                                window.navigator.language ||
+                                window.navigator.languages[0]).toLowerCase();
+                if(currentIdiom.indexOf('es') > -1) $translateProvider.use('es');
+                if(currentIdiom.indexOf('sp') > -1) $translateProvider.use('es');
+                if(currentIdiom.indexOf('en') > -1) $translateProvider.use('en');
+                if(currentIdiom.indexOf('us') > -1) $translateProvider.use('en');
+                if(currentIdiom.indexOf('uk') > -1) $translateProvider.use('en');
+                if(currentIdiom.indexOf('fr') > -1) $translateProvider.use('fr');
+            });
     }])
     .run([function(){}])
     .controller('mainController',['$rootScope','$translate','$timeout','$http',function($rootScope,$translate,$timeout,$http){
@@ -42,7 +44,12 @@ angular
         vm.data.msg=' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
         $timeout(function(){
-            vm.myIdiom = $translate.use();
+            let currentIdiom = $translate.use();
+            if(currentIdiom) {
+                vm.myIdiom = currentIdiom;
+            } else {
+                vm.myIdiom = 'en';
+            }
         });
 
         vm.submit = function() {
