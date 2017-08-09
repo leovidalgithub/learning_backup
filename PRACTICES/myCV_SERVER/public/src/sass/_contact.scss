@@ -72,12 +72,18 @@
     background-color: #333;
     color: white;
     transition: all .6s ease;
-    border: 1px solid #333;
+    border: none;
+    outline:none;
+    i {
+        color: #11ABB0;
+    }
+    &:hover, &:active {
+        background-color: white;
+        color: #333;
+    }
 }
-#contact form button:hover {
-    background-color: white;
-    color: #333;
-}
+
+
 
 #contact span.required {
 	color: #11ABB0;

@@ -35,8 +35,8 @@
            <div class="banner">
               <div class="banner-text">
                  <h1 class="responsive-headline">I'm Leo Rdgz-Vidal</h1>
-<h2 translate>test</h2>
-<h2>{{'main.thing' | translate}}</h2>
+<!-- <h2 translate>test</h2> -->
+<!-- <h2>{{'main.thing' | translate}}</h2> -->
                  <h3>I'm a Manila based <span>graphic designer</span>, <span>illustrator</span> and <span>webdesigner</span> creating awesome and
                  effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
                  and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
@@ -311,19 +311,20 @@
                           </div>
                        </div>
 
-
                        <div class="row">
                            <div class="col-md-offset-3 col-md-3">
-                               <button type="submit">
-                                   <i class="fa fa-send"></i>
-                                   <!-- <i class="fa fa-refresh fa-spin"></i> -->
+                               <button id="www" type="submit">
+                                   <i ng-hide="vm.data.sending" class="fa fa-send"></i>
+                                   <i ng-show="vm.data.sending" class="fa fa-refresh fa-spin"></i>
                                     &nbsp;Submit
                                 </button>
                             </div>
                        </div>
 
+
      					</fieldset>
  				    </form> <!-- Form End -->
+
                  </div>
 
            </div>
@@ -381,6 +382,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- ALERT MESSAGES -->
+        <alert-message></alert-message>
 
     <script src="./build/vendor/js/vendor.js?v=1.0"></script>
     <script src="./build/js/built.js?v=1.0"></script>

@@ -383,9 +383,12 @@
 
    /* footer
    ------------------------------------------------------------------------ */
-
    /* social links */
    footer .social-links { font-size: 20px; }
    footer .social-links li { margin-left: 14px; }
+
+   /* alert messages
+   ------------------------------------------------------------------------ */
+   #alertMessage { width: 280px; }
 
 }

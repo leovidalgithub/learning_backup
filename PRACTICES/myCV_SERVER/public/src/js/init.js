@@ -9,7 +9,7 @@
      ------------------------------------------------------ */
      setTimeout(function() {
          $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
-         $('header, #idioms').css('opacity', '1');
+         $(document.body).css('opacity', '1');
      }, 800);
 
      /*----------------------------------------------------*/

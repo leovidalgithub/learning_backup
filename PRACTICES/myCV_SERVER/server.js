@@ -12,15 +12,17 @@ app.use(express.static('public'));
 app.use( bodyParser.json());
 app.use( bodyParser.urlencoded({ extended: true }));
 
-app.post('/contact',function(req,res,next){
+app.post('/contact', function(req,res,next){
     var contactData = req.body;
+    var randomMS = Math.floor(Math.random() * (1500 - 400 + 1)) + 400;
 
-    sendThisMail(contactData, function( error, info ) {
-        if(error) {
+    sendThisMail(contactData, function( err, data ) {
+        if(err) {
             res.status(200).json({success:false,err:err});
         } else {
-            console.log('Good');
-            res.status(200).json({success:true,data:data});
+            setTimeout(function(){
+                res.status(200).json({success:true,data:data,randomMS:randomMS});
+            },randomMS);
         }
     });
 });

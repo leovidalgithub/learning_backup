@@ -71,8 +71,8 @@ gulp.task( 'js', function () {
         .pipe(babel({
             presets: ['env']
         }))
-		.pipe( uglify() )
         .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+		.pipe( uglify() )
 		.pipe( gulp.dest( 'public/build/js' ))
         .pipe(bs.reload({stream: true}));
 });

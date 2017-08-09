@@ -1,4 +1,8 @@
 {
+    "email": {
+        "ok" : "Mensaje enviado. Gracias!",
+        "err" : "Oh! Tu mensaje no pudo enviarse"
+    },
     "test": "Probando uno, dos, tres",
     "main": {
         "thing" : "Más cosas"
