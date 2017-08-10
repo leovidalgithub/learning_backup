@@ -14,7 +14,7 @@
     /* header styles
    ------------------------------------------------------------------ */
    header .banner-text h1 {
-      font: 80px/1.1em 'opensans-bold', sans-serif;
+    //   font: 80px/1.1em 'opensans-bold', sans-serif;
       letter-spacing: -1px;
       margin: 0 auto 12px auto;
    }
@@ -29,7 +29,7 @@
    ------------------------------------------------------------------ */
    header .banner { padding-bottom: 12px; }
    header .banner-text h1 {
-      font: 78px/1.1em 'opensans-bold', sans-serif;
+    //   font: 78px/1.1em 'opensans-bold', sans-serif;
       letter-spacing: -1px;
    }
    header .banner-text h3 {
@@ -42,7 +42,7 @@
    }
    /* nav-wrap */
    #nav-wrap {
-      font: 11px 'opensans-bold', sans-serif;
+    //   font: 13px 'opensans-bold', sans-serif;
       letter-spacing: 1.5px;
    }
 
@@ -87,13 +87,12 @@
    }
    #contact .section-head p.lead { font: 17px/33px opensans-light, sans-serif; }
 
-
 }
 
 /* mobile wide/smaller tablets
 ---------------------------------------------------------------------- */
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 830px) { //767
 
    /* mobile navigation
    -------------------------------------------------------------------- */
@@ -111,17 +110,12 @@
         height: 48px;
         text-align: left;
         background-color: #CC5200;
-        position: relative;
         border: none;
-        float: right;
-
-    //   font: 0/0;
-      text-shadow: none;
-      color: transparent;
-
-      position: relative;
-      top: 25px;
-      right: 30px;
+        text-shadow: none;
+        color: transparent;
+        position: fixed;
+        top: 50px;
+        right: 7px;
    }
 
     #nav-wrap > a:before, // nav-button with white lines over orange
@@ -144,23 +138,24 @@
    /* hide menu panel */
    #nav-wrap ul#nav {
         height: auto;
-        display: none;
+        // display: none;
         clear: both;
-        width: auto;
-        float: right;
-        position: relative;
-        top: 32px;
-        right: 0;
-        transition: all 3s ease;
+        width: 30%;
+        position: fixed;
+        top: 55px;
+        right: 35px;
+        opacity: 0;
+        transition: all .7s ease;
    }
 
    /* display menu panels */
 	#nav-wrap:target > ul#nav	{
-        display: block;
-        padding: 30px 20px 48px 20px;
+        // display: block;
+        opacity: 1;
+        padding: 20px 20px 20px 20px;
         background-color: #1f2024;
         margin: 0 30px;
-        clear: both;
+        // clear: both;
    }
 
    ul#nav li {
@@ -169,8 +164,8 @@
       margin: 0 auto;
       padding: 0 4%;
       text-align: left;
-      border-bottom: 1px solid #2D2E34;
-      border-bottom-style: dotted;
+      border-bottom: 1px solid #3b3c40;
+    //   border-bottom-style: dotted;
    }
 
    ul#nav li a {
@@ -188,7 +183,7 @@
       padding-bottom: 12px;
       padding-top: 6px;
    }
-   header .banner-text h1 { font: 68px/1.1em 'opensans-bold', sans-serif; }
+   // header .banner-text h1 { font: 68px/1.1em 'opensans-bold', sans-serif; }
    header .banner-text h3 {
       font: 16px/1.9em 'librebaskerville-regular', serif;
       width: 85%;
@@ -352,7 +347,7 @@
    -------------------------------------------------------------------- */
    header .banner { padding-top: 24px; }
    header .banner-text h1 {
-      font: 40px/1.1em 'opensans-bold', sans-serif;
+    //   font: 40px/1.1em 'opensans-bold', sans-serif;
       margin: 0 auto 24px auto;
    }
    header .banner-text h3 {

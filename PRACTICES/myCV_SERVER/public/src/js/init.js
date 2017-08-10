@@ -8,7 +8,7 @@
      /* Show Header (and Idioms) for the first time
      ------------------------------------------------------ */
      setTimeout(function() {
-         $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
+         $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '75px' });
          $(document.body).css('opacity', '1');
      }, 800);
 
@@ -18,22 +18,28 @@
     $('#idioms .selected').mouseenter(function(event) {
         $('#idioms .choose').clearQueue().show().animate({
             opacity: '1',
-            left: '5px',
+            right: '8px',
             'z-index': '15'
         },'slow', idiomsClose);
     });
-
     let idiomsClose = function() {
         $('#idioms .choose').bind('mouseleave click',function(event) {
             $('#idioms .choose').animate({
                 opacity: '0',
-                left: '-70px',
+                right: '-70px',
                 'z-index': '5'
             },'slow',function() {
                 $('#idioms .choose').hide().unbind();
             });
         });
     };
+    // opacity: '1',
+    // left: '5px',
+    // 'z-index': '15'
+    //
+    // opacity: '0',
+    // left: '-70px',
+    // 'z-index': '5'
 
      /*----------------------------------------------------*/
      /* Parallax Settings
@@ -56,7 +62,7 @@
 	    $target = $(target);
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
-	    }, 800, 'swing', function () {
+	    }, 1100, 'swing', function () {
 	        window.location.hash = target;
 	    });
 	});
@@ -132,7 +138,10 @@
     };
 
    $(window).on('resize', function() {
-        $('header').css({ 'height': $(window).height() });
+       if( parseInt($('header').css('height'),10) < windowHeight ) {
+           $('header').css({ 'height': windowHeight });
+       };
+        // $('header').css({ 'height': $(window).height() });
         $('body').css({ 'width': $(window).width() })
    });
 
@@ -199,50 +208,5 @@
     //    after: function(){console.log('after');},
     //    end: function(){console.log('end');}
    });
-
-
-/*----------------------------------------------------*/
-/*	contact form
-------------------------------------------------------*/
-
-   $('form#contactForm button.submit').click(function() {
-
-      $('#image-loader').fadeIn();
-
-      let contactName = $('#contactForm #contactName').val();
-      let contactEmail = $('#contactForm #contactEmail').val();
-      let contactSubject = $('#contactForm #contactSubject').val();
-      let contactMessage = $('#contactForm #contactMessage').val();
-
-      let data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
-
-      $.ajax({
-
-	      type: "POST",
-	      url: "inc/sendEmail.php",
-	      data: data,
-	      success: function(msg) {
-
-            // Message was sent
-            if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
-
-	      }
-
-      });
-      return false;
-   });
-
 
 });

@@ -1,10 +1,14 @@
 {
+    "header": {
+        "iam" : "Je suis",
+        "home" : "Home",
+        "about" : "About",
+        "resume" : "Resume",
+        "portfolio" : "Portfolio",
+        "contact" : "Contact"
+    },
     "email": {
         "ok" : "Message envoyé. Merci!",
         "err" : "Oops! Votre message n'a pas pu être envoyé"
-    },
-    "test": "Test d'une, deux, trois",
-    "main": {
-        "thing" : "Plus de choses"
     }
 }

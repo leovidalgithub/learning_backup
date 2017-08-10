@@ -1,5 +1,5 @@
 angular
-    .module('myAppCV', ['pascalprecht.translate','tmh.dynamicLocale','miscellaneous'])
+    .module('myAppCV', ['pascalprecht.translate','miscellaneous'])
     .config(['$translateProvider',function($translateProvider){
 
     $translateProvider
@@ -9,90 +9,38 @@ angular
             'uk*': 'en-US',
             'es*': 'es-ES',
             'fr*': 'fr-FR'
-        });
-        $translateProvider.useStaticFilesLoader({
+        })
+        .useStaticFilesLoader({
             prefix: 'locale/lang_',
             suffix: '.json'
-        });
-
-        // $translateProvider.preferredLanguage('es-ES');
-        $translateProvider.fallbackLanguage('en-US'); // si no se consigue alguna traducción se usrará la de este idioma
-        $translateProvider.determinePreferredLanguage();
-        $translateProvider.useSanitizeValueStrategy(null);
-
-
-        // .determinePreferredLanguage()
-        // .fallbackLanguage('en')
-        // .preferredLanguage('en')
-
-            // $translateProvider.translations('en',
-            //     {
-            //         "email": {
-            //             "ok" : "Message send. Thanks!",
-            //             "err" : "Oops! Your message could not be sent"
-            //         },
-            //         "test": "Testing one, two, three",
-            //         "main": {
-            //             "thing" : "More things"
-            //         }
-            // });
-            // $translateProvider.translations('es',
-            //     {
-            //         "email": {
-            //             "ok" : "Mensaje enviado. Gracias!",
-            //             "err" : "Oh! Tu mensaje no pudo enviarse"
-            //         },
-            //         "test": "Probando uno, dos, tres",
-            //         "main": {
-            //             "thing" : "Más cosas"
-            //         }
-            // });
-            // // $translateProvider.preferredLanguage('en');
-            // $translateProvider.fallbackLanguage('en');
-            // // $translateProvider.determinePreferredLanguage();
-            // $translateProvider.determinePreferredLanguage(function(){
-            //                     let currentIdiom = (window.navigator.browserLanguage ||
-            //                                     window.navigator.userLanguage ||
-            //                                     window.navigator.systemLanguage ||
-            //                                     window.navigator.language ||
-            //                                     window.navigator.languages[0]).toLowerCase();
-            //                                     console.log(currentIdiom);
-            //                                     return currentIdiom;
-            // });
-
-
-            // $translateProvider.preferredLanguage('en');
-//             .fallbackLanguage('en') // si no se consigue alguna traducción se usrará la de este idioma
-//             .useSanitizeValueStrategy(null)
-//             .determinePreferredLanguage( function(){
-//                 let currentIdiom = (window.navigator.browserLanguage ||
-//                                 window.navigator.userLanguage ||
-//                                 window.navigator.systemLanguage ||
-//                                 window.navigator.language ||
-//                                 window.navigator.languages[0]).toLowerCase();
-//                 // if(currentIdiom.indexOf('es') > -1) $translateProvider.use('es');
-//                 // if(currentIdiom.indexOf('sp') > -1) $translateProvider.use('es');
-//                 // if(currentIdiom.indexOf('en') > -1) $translateProvider.use('en');
-//                 // if(currentIdiom.indexOf('us') > -1) $translateProvider.use('en');
-//                 // if(currentIdiom.indexOf('uk') > -1) $translateProvider.use('en');
-//                 // if(currentIdiom.indexOf('fr') > -1) $translateProvider.use('fr');
-// console.log(currentIdiom);
-//                 $translateProvider.use(currentIdiom);
-//             });
+        })
+        .preferredLanguage('en-US')
+        .fallbackLanguage('en-US') // si no se consigue alguna traducción se usrará la de este idioma
+        .determinePreferredLanguage()
+        .useSanitizeValueStrategy(null);
+        // $translateProvider.determinePreferredLanguage(function(){
+            // let currentIdiom = (window.navigator.browserLanguage ||
+            //                 window.navigator.userLanguage ||
+            //                 window.navigator.systemLanguage ||
+            //                 window.navigator.language ||
+            //                 window.navigator.languages[0]).toLowerCase();
+            //                 console.log(currentIdiom);
+            //                 return currentIdiom;
+        // });
     }])
     .run([function(){}])
     .controller('mainController',['$rootScope','$translate','$timeout','$http',function($rootScope,$translate,$timeout,$http){
         var vm = this;
         vm.data = {};
-        vm.data.name='Pedro';
-        vm.data.email='pdro@hotmail.com';
-        vm.data.subject= new Date();
-        vm.data.msg=' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+        // vm.data.name='Pedro';
+        // vm.data.email='pdro@hotmail.com';
+        // vm.data.subject= new Date();
+        // vm.data.msg=' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
         $timeout(function(){
-            vm.myIdiom = $translate.use();
-            console.log('idiom',vm.myIdiom);
-            // $translate.use('es-ES');
+            let currentIdom = $translate.use() || 'en-US';
+            vm.myIdiom = currentIdom;
+            $translate.use(currentIdom);
         });
 
         vm.submit = function() {

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>Leo Resume</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <meta name="theme-color" content="#11ABB0">
+        <meta name="theme-color" content="black">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="./build/vendor/css/vendor.css?v=1.0">
@@ -22,24 +22,22 @@
               <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
               <ul id="nav" class="nav">
-                 <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-                 <li><a class="smoothscroll" href="#about">About</a></li>
-                 <li><a class="smoothscroll" href="#resume">Resume</a></li>
-                 <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
-                 <!-- <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li> -->
-                 <li><a class="smoothscroll" href="#contact">Contact</a></li>
+                 <li class="current"><a class="smoothscroll" href="#home">{{'header.home' | translate}}</a></li>
+                 <li><a class="smoothscroll" href="#about">{{'header.about' | translate}}</a></li>
+                 <li><a class="smoothscroll" href="#resume">{{'header.resume' | translate}}</a></li>
+                 <li><a class="smoothscroll" href="#portfolio">{{'header.portfolio' | translate}}</a></li>
+                 <li><a class="smoothscroll" href="#contact">{{'header.contact' | translate}}</a></li>
               </ul> <!-- end #nav -->
 
            </nav> <!-- end #nav-wrap -->
 
            <div class="banner">
               <div class="banner-text">
-                 <!-- <h1 class="responsive-headline">I'm Leo Rdgz-Vidal</h1> -->
-<h2 translate>test</h2>
-<!-- <h2>{{'main.thing' | translate}}</h2> -->
-                 <h3>I'm a Manila based <span>graphic designer</span>, <span>illustrator</span> and <span>webdesigner</span> creating awesome and
-                 effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
-                 and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+                 <h1 class="responsive-headline">{{'header.iam' | translate}} Leo Rdgz-Vidal</h1>
+                 <h3>I'm a Canadian based <span>fullstack MEAN developer</span>, que disfruta profundamente el mundo del desarrollo Web,
+                     creando páginas y aplicaciones de las más diversas formas y necesidades, buscando siempre la perfección.<br>
+                     Empieza <a class="smoothscroll" href="#about">a navegar </a>
+                 y conoce mucho más <a class="smoothscroll" href="#about">acerca de mí</a>.</h3>
                  <hr />
                  <ul class="social">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -63,7 +61,7 @@
         <section id="about">
             <div class="row main-col">
                 <div class="col-md-3">
-                    <!-- <img class="profile-pic img-responsive center-block"  src="images/me.jpg" alt="This is my photo" /> -->
+                    <img class="profile-pic img-responsive center-block"  src="images/me.jpg" alt="This is my photo" />
                 </div>
 
                 <div class="col-md-9 about-me">
@@ -387,7 +385,6 @@
         <alert-message></alert-message>
 
     <script src="./build/vendor/js/vendor.js?v=1.0"></script>
-    <script src="./build/vendor/js/tmhDynamicLocale.js"></script> <!-- Angular Dynamic Locale - 0.1.32 -->
     <script src="./build/js/built.js?v=1.0"></script>
 
     </body>

@@ -1,7 +1,13 @@
 angular.module('myApp', ['pascalprecht.translate','tmh.dynamicLocale'])
     .config(['$translateProvider','tmhDynamicLocaleProvider',
       function($translateProvider,tmhDynamicLocaleProvider) {
-
+          // $translateProvider.translations('en',
+          //     {
+          //         "email": {
+          //             "ok" : "Message send. Thanks!",
+          //             "err" : "Oops! Your message could not be sent"
+          //         }
+          // });
         $translateProvider
             .registerAvailableLanguageKeys(['es-ES', 'en-US', 'ca-CA'], {
                 // 'en-us': 'en-US',
@@ -18,14 +24,20 @@ angular.module('myApp', ['pascalprecht.translate','tmh.dynamicLocale'])
             })
             .preferredLanguage('es-ES')
             .fallbackLanguage('en-US') // si no se consigue alguna traducción se usrará la de este idioma
-            .determinePreferredLanguage();
-    //         .determinePreferredLanguage( function(){
-    //             return (window.navigator.userLanguage || window.navigator.language).toLowerCase();
-    //         });
-     // ********************** ANGULAR DYNAMIC LOCALE (tmhDynamicLocale)
-        // tmhDynamicLocaleProvider.localeLocationPattern('locale/angular-locale_{{locale}}.js');
-        // tmhDynamicLocaleProvider.defaultLocale('es-ES');
+            .determinePreferredLanguage()
+            .useSanitizeValueStrategy(null);
+    // $translateProvider.determinePreferredLanguage(function(){
+    //             let currentIdiom = (window.navigator.browserLanguage ||
+    //                                 window.navigator.userLanguage ||
+    //                                 window.navigator.systemLanguage ||
+    //                                 window.navigator.language ||
+    //                                 window.navigator.languages[0]).toLowerCase();
+    //             return currentIdiom;
+    // });
 
+     // ********************** ANGULAR DYNAMIC LOCALE (tmhDynamicLocale)
+        tmhDynamicLocaleProvider.localeLocationPattern('locale/angular-locale_{{locale}}.js');
+        tmhDynamicLocaleProvider.defaultLocale('es-ES');
       }
     ])
     .run([function() {}])
@@ -35,9 +47,9 @@ angular.module('myApp', ['pascalprecht.translate','tmh.dynamicLocale'])
             $scope.myMoney = 12954;
 
             $timeout(function(){
-                $scope.currentIdiom = $translate.use();
-                // $translate.use('es-ES');
-                // $scope.currentIdiom = $translate.use() || 'es';
+                var currentIdom = $translate.use() || 'es-ES';
+                $scope.currentIdiom = currentIdom;
+                $translate.use(currentIdom);
             });
 
             //NO SE RECOMIENDA HACER LAS TRADUCCIONES EN EL CONTROLADOR
@@ -48,7 +60,7 @@ angular.module('myApp', ['pascalprecht.translate','tmh.dynamicLocale'])
 
             $scope.switchLanguage = function(key) {
                 $translate.use(key);
-                // tmhDynamicLocale.set(key);
+                tmhDynamicLocale.set(key);
             }
             $scope.show_language = function() {
                 $scope.currentLanguage = $translate.use();

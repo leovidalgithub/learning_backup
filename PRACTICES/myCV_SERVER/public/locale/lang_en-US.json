@@ -1,10 +1,14 @@
 {
+    "header": {
+        "iam" : "I'm",
+        "home" : "Home",
+        "about" : "About",
+        "resume" : "Resume",
+        "portfolio" : "Portfolio",
+        "contact" : "Contact"
+    },
     "email": {
         "ok" : "Message send. Thanks!",
         "err" : "Oops! Your message could not be sent"
-    },
-    "test": "Testing one, two, three",
-    "main": {
-        "thing" : "More things"
     }
 }
