@@ -6,6 +6,10 @@
 </head>
 <body ng-controller="someController">
 
+<br><br><br>
+
+    <h3>*CURRENT* : {{currentIdiom}}</h3>
+
     <h1 translate>HEADLINE</h1>
     <h1 ng-bind="'HEADLINE' | translate"></h1> <!-- to avoid flickr we use ng-bind instead of {{}} -->
     <h2>Missing translate line = <code>{{'MISSING' | translate}}</code></h2>
@@ -24,7 +28,7 @@
     <script src="./scripts/vendor/angular-translate.js"></script> <!-- angular-translate - v2.15.2 - 2017-06-22 -->
     <script src="./scripts/vendor/angular-translate-loader-static-files.js"></script> <!-- angular-translate - v2.15.2 - 2017-06-22 -->
     <script src="./scripts/vendor/tmhDynamicLocale.js"></script> <!-- Angular Dynamic Locale - 0.1.32 -->
-    <script src="./scripts/app.js"></script>
+    <script src="./scripts/build/built.js"></script>
 
 </body>
 </html>
