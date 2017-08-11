@@ -1,3 +1,4 @@
+// #NOTE: IN ORDER TO WORK PROPERLY, IT MUST HAVE AT LEAST ONE TRANSLATION IN USE (<h1> translate>main.name</h1>)
 angular.module('myApp', ['pascalprecht.translate','tmh.dynamicLocale'])
     .config(['$translateProvider','tmhDynamicLocaleProvider',
       function($translateProvider,tmhDynamicLocaleProvider) {

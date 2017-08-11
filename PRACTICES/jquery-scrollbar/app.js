@@ -6,10 +6,10 @@ angular
         $scope.var = 'jQuery CSS Customizable Scrollbar';
 
         $scope.jqueryScrollbarOptions = {
-            "onScroll":function(y, x) {
-                if(y.scroll == y.maxScroll){
-                }
-            }
+            'showArrows' : true
+            // "onScroll":function(y, x) {
+            //     if(y.scroll == y.maxScroll){}
+            // }
         };
 
     }]);
