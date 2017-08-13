@@ -4,3 +4,20 @@ $rejectedColor : #f12919;
 $approvedColor : #11ABB0;
 $warningColor  : #f9c011;
 $infoColor     : #1864d7;
+
+// ***************************** MIXINS
+
+@mixin myButton($var) {
+    font-family: 'opensans-bold', sans-serif;
+    display: inline-block;
+    padding: 14px;
+    border-radius: 3px;
+    background-color: #333;
+    color: white;
+    transition: all .6s ease;
+    text-decoration: none;
+    &:hover {
+        background-color: white;
+        color: #333;
+    }
+}

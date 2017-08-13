@@ -130,9 +130,9 @@
     if( parseInt($('#about').css('height'),10) < windowHeight ) {
        $('#about').css({ 'height': windowHeight });
     };
-    if( parseInt($('#portfolio').css('height'),10) < windowHeight ) {
-        $('#portfolio').css({ 'height': windowHeight });
-    };
+    // if( parseInt($('#portfolio').css('height'),10) < windowHeight ) {
+    //     $('#portfolio').css({ 'height': windowHeight });
+    // };
     if( parseInt($('#contact').css('height'),10) < windowHeight ) {
         $('#contact').css({ 'height': windowHeight });
     };
@@ -202,7 +202,8 @@
        slideshow: true,
        randomize: false,
        pauseOnAction: true,
-       pauseOnHover: false
+       pauseOnHover: false,
+       smoothHeight: true
     //    start: function(){console.log('start');},
     //    before: function(){console.log('before');},
     //    after: function(){console.log('after');},

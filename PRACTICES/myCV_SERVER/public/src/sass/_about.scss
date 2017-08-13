@@ -18,18 +18,7 @@
 }
 
 #about a {
-    font-family: 'opensans-bold', sans-serif;
-    display: inline-block;
-    padding: 14px;
-    border-radius: 3px;
-    background-color: #333;
-    color: white;
-    transition: all .6s ease;
-    text-decoration: none;
-}
-#about a:hover {
-    background-color: white;
-    color: #333;
+    @include myButton(10px);
 }
 
 #about h2 {
