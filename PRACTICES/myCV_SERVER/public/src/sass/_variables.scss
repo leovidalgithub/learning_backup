@@ -1,12 +1,34 @@
 // ***************************** COLORS
 $rejectedColor : #f12919;
-// $approvedColor : #3AA33E; // original color
-$approvedColor : #11ABB0;
+$approvedColor : #11ABB0; // original color #3AA33E
 $warningColor  : #f9c011;
 $infoColor     : #1864d7;
 
-// ***************************** MIXINS
+// ***************************** APTITUDE SKILLS BAR
+$AngularJS : 85%;
+$Angular4 : 71%;
+$NodeJS : 85%;
+$ExpressJS : 85%;
+$JavaScript : 88%;
+$Sass : 95%;
+$jQuery : 90%;
+$MongoDB : 75%;
+$HTML_CSS : 90%;
+$Bootstrap : 79%;
+$Git : 70%;
+$Gulp : 80%;
+$PHP : 60%;
+$Scrum : 67%;
+$NET : 55%;
 
+@mixin mySkillBarKeyframes($value) {
+    0%   { width: 0%;  }
+    25% { width: 1%;  }
+    50% { width: 90%;  }
+    100% { width: $value;  }
+}
+
+// ***************************** BUTTONS
 @mixin myButton($var) {
     font-family: 'opensans-bold', sans-serif;
     display: inline-block;

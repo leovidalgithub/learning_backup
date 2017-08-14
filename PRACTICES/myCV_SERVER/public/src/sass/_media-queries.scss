@@ -116,6 +116,7 @@
         position: fixed;
         top: 50px;
         right: 7px;
+        transition: background-color 8s ease;
    }
 
     #nav-wrap > a:before, // nav-button with white lines over orange
@@ -139,24 +140,31 @@
    #nav-wrap ul#nav {
         height: auto;
         // display: none;
+        // opacity: 0;
+        visibility: hidden;
         clear: both;
         width: 30%;
         position: fixed;
         top: 55px;
         right: 35px;
-        opacity: 0;
-        transition: all .7s ease;
+        transition: all .4s ease;
    }
 
    /* display menu panels */
 	#nav-wrap:target > ul#nav	{
         // display: block;
-        opacity: 1;
+        // opacity: 1;
+        visibility: visible;
         padding: 20px 20px 20px 20px;
         background-color: #1f2024;
         margin: 0 30px;
         // clear: both;
    }
+
+   #nav-wrap:target > a {
+       background-color: teal;
+   }
+
 
    ul#nav li {
       display: block;

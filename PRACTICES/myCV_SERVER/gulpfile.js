@@ -3,7 +3,8 @@ const sass         = require( 'gulp-sass' );
 const minifyCSS    = require( 'gulp-csso' );
 const concat       = require( 'gulp-concat' );
 const uglify       = require( 'gulp-uglify' );
-const autoprefixer = require( 'gulp-autoprefixer' );
+const autoprefixer = require( 'autoprefixer' ); // autoprefixer
+const postcss      = require( 'gulp-postcss' ); // autoprefixer
 const nodemon      = require( 'gulp-nodemon' );
 const bs           = require( 'browser-sync' ).create();
 const ngAnnotate   = require( 'gulp-ng-annotate' ); //Add angularjs dependency injection annotations
@@ -54,10 +55,7 @@ gulp.task( 'sass', function () {
     return gulp.src( 'public/src/sass/**/*.scss' )
         .pipe( sass().on( 'error', sass.logError))
     	.pipe( concat( 'default.css' ))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
+        .pipe(postcss([ autoprefixer({ browsers: ["> 0%"] }) ]))
         .pipe( minifyCSS())
         .pipe( gulp.dest( 'public/build/css' ))
         .pipe(bs.reload({stream: true}));

@@ -92,19 +92,29 @@
       element: document.getElementById('mySkills'),
       handler: function() {
           let skills = [
-              'photoshop',
-              'illustrator',
-              'wordpress',
-              'css',
-              'html5',
-              'jquery'
+              'AngularJS',
+              'Angular4',
+              'NodeJS',
+              'ExpressJS',
+              'JavaScript',
+              'Sass',
+              'jQuery',
+              'MongoDB',
+              'HTML_CSS',
+              'Bootstrap',
+              'Git',
+              'Gulp',
+              'PHP',
+              'Scrum',
+              'NET'
           ];
            $('#resume ul.skills li span').each(function( index ) {
-               $(this).addClass(skills[index]);
+               $(this).delay(3000).addClass(skills[index]);
            });
           this.destroy(); // skillsWaypoint.destroy();
       },
-      offset: 'bottom-in-view'
+      offset: '23%'
+    //   offset: 'bottom-in-view'
     });
     /*----------------------------------------------------*/
     /* Waypoint - Adding spin class to GET IN TOUCH icon

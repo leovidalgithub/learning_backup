@@ -99,113 +99,151 @@
     background-color: rgba(black, .08);
   	height: 22px;
   	border-radius: 3px;
-    &:nth-child(1) { transform: rotate(-.6deg); }
-    &:nth-child(2) { transform: rotate(.8deg); }
-    &:nth-child(3) { transform: rotate(.3deg); }
-    &:nth-child(4) { transform: rotate(-1deg); }
-    &:nth-child(5) { transform: rotate(-.3deg); }
-    &:nth-child(6) { transform: rotate(1deg); }
+    &:nth-child(1) { transform: rotate(.6deg); } // AngularJS
+    &:nth-child(2) { transform: rotate(-.9deg); } // Angular 4
+    &:nth-child(3) { transform: rotate(1.1deg); }
+    &:nth-child(4) { transform: rotate(.5deg); }
+    &:nth-child(5) { transform: rotate(-1deg); }
+    &:nth-child(6) { transform: rotate(-.3deg); }
+    &:nth-child(7) { transform: rotate(.8deg); }
+    &:nth-child(8) { transform: rotate(2deg); }
+    &:nth-child(9) { transform: rotate(-.8deg); }
+    &:nth-child(10) { transform: rotate(-.1deg); }
+    &:nth-child(11) { transform: rotate(1.1deg); }
+    &:nth-child(12) { transform: rotate(.2deg); }
+    &:nth-child(13) { transform: rotate(-2.1deg); }
+    &:nth-child(14) { transform: rotate(1deg); }
+    &:nth-child(15) { transform: rotate(-1.4deg); }
 }
 .bars li em {
 	font: 15px 'opensans-bold', sans-serif;
     color: white;
-	text-transform: uppercase;
+	// text-transform: uppercase;
     letter-spacing: 2.5px;
 	font-weight: normal;
     position: relative;
 	top: -31px;
-
 }
+
 .bar-expand {
     position: absolute;
     left: 0;
     top: 0;
     margin: 0;
     padding-right: 24px;
-    background-color: rgba(#11ABB0, .65);
+    background-color: rgba(#11ABB0, .8);
     display: inline-block;
   	height: 22px;
     line-height: 22px;
     border-radius: 3px 0 0 3px;
 }
 
-.photoshop {
-  	width: 95%;
-  	-moz-animation: photoshop 6s ease;
-  	-webkit-animation: photoshop 6s ease;
+.AngularJS {
+    width: $AngularJS;
+    animation: AngularJS 4s ease;
 }
-.illustrator {
-  	width: 55%;
-  	-moz-animation: illustrator 6s ease;
-  	-webkit-animation: illustrator 6s ease;
+.Angular4 {
+    width: $Angular4;
+    animation: Angular4 6s ease;
 }
-.wordpress {
-  	width: 50%;
-  	-moz-animation: wordpress 6s ease;
-  	-webkit-animation: wordpress 6s ease;
+.NodeJS {
+    width: $NodeJS;
+    animation: NodeJS 7s ease;
 }
-.css {
-  	width: 90%;
-  	-moz-animation: css 6s ease;
-  	-webkit-animation: css 6s ease;
+.ExpressJS {
+    width: $ExpressJS;
+    animation: ExpressJS 2s ease;
 }
-.html5 {
-  	width: 80%;
-  	-moz-animation: html5 6s ease;
-  	-webkit-animation: html5 6s ease;
+.JavaScript {
+    width: $JavaScript;
+    animation: JavaScript 6s ease;
 }
-.jquery {
-  	width: 50%;
-  	-moz-animation: jquery 6s ease;
-  	-webkit-animation: jquery 6s ease;
+.Sass {
+    width: $Sass;
+    animation: Sass 5s ease;
+}
+.jQuery {
+  	width: $jQuery;
+    animation: jQuery 6s ease;
+}
+.MongoDB {
+  	width: $MongoDB;
+    animation: MongoDB 8s ease;
+}
+.HTML_CSS {
+  	width: $HTML_CSS;
+    animation: HTML_CSS 2s ease;
+}
+.Bootstrap {
+  	width: $Bootstrap;
+    animation: Bootstrap 6s ease;
+}
+.Git {
+  	width: $Git;
+    animation: Git 4s ease;
+}
+.Gulp {
+  	width: $Gulp;
+    animation: Gulp 9s ease;
+}
+.PHP {
+  	width: $PHP;
+    animation: PHP 7s ease;
+}
+.Scrum {
+  	width: $Scrum;
+    animation: Scrum 2s ease;
+}
+.NET {
+  	width: $NET;
+    animation: NET 6s ease;
 }
 
-@-moz-keyframes photoshop {
-  0%   { width: 0px;  }
-  100% { width: 95%;  }
+@keyframes AngularJS {
+    @include mySkillBarKeyframes($AngularJS);
 }
-@-moz-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
+@keyframes Angular4 {
+    @include mySkillBarKeyframes($Angular4);
 }
-@-moz-keyframes wordpress {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
+@keyframes NodeJS {
+    @include mySkillBarKeyframes($NodeJS);
 }
-@-moz-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 90%;  }
+@keyframes ExpressJS {
+    @include mySkillBarKeyframes($ExpressJS);
 }
-@-moz-keyframes html5 {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
+@keyframes JavaScript {
+    @include mySkillBarKeyframes($JavaScript);
 }
-@-moz-keyframes jquery {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
+@keyframes Sass {
+    @include mySkillBarKeyframes($Sass);
+}
+@keyframes jQuery {
+    @include mySkillBarKeyframes($jQuery);
+}
+@keyframes MongoDB {
+    @include mySkillBarKeyframes($MongoDB);
+}
+@keyframes HTML_CSS {
+    @include mySkillBarKeyframes($HTML_CSS);
+}
+@keyframes Bootstrap {
+    @include mySkillBarKeyframes($Bootstrap);
+}
+@keyframes Git {
+    @include mySkillBarKeyframes($Git);
+}
+@keyframes Gulp {
+    @include mySkillBarKeyframes($Gulp);
+}
+@keyframes PHP {
+    @include mySkillBarKeyframes($PHP);
+}
+@keyframes Scrum {
+    @include mySkillBarKeyframes($Scrum);
+}
+@keyframes NET {
+    @include mySkillBarKeyframes($NET);
 }
 
-@-webkit-keyframes photoshop {
-  0%   { width: 0px;  }
-  100% { width: 95%;  }
-}
-@-webkit-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
-}
-@-webkit-keyframes wordpress {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-webkit-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 90%;  }
-}
-@-webkit-keyframes html5 {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}
-@-webkit-keyframes jquery {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
+// ************************************************************
+// ************************************************************
