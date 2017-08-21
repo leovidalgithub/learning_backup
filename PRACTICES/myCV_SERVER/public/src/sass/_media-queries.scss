@@ -276,7 +276,6 @@
       margin-left: -30px;
    }
 
-
    /* contact Section
    ----------------------------------------------------------------------- */
    #contact form {
@@ -339,6 +338,11 @@
    //    line-height: 54px;
    // }
 
+   #portfolio {
+       .flexslider {
+           width: 65%;
+       }
+   }
 
 }
 
@@ -393,5 +397,17 @@
    /* alert messages
    ------------------------------------------------------------------------ */
    #alertMessage { width: 280px; }
+
+   /* portfolio
+   ------------------------------------------------------------------------ */
+   #portfolio {
+       .flexslider {
+           width: 88%;
+           .title p {
+               font-style: oblique;    nt-size: 19px;
+               padding: 0 10px;
+           }
+       }
+   }
 
 }

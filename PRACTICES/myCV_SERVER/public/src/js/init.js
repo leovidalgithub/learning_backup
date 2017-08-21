@@ -4,11 +4,12 @@
  jQuery(document).ready(function($) {
 
      /*----------------------------------------------------*/
-     /* FitText Settings for Header H1
+     /* FitText Settings for Header H1 and Portfolio H2
      /* Show Header (and Idioms) for the first time
      ------------------------------------------------------ */
      setTimeout(function() {
          $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '75px' });
+         $('#portfolio h2').fitText(1, { minFontSize: '30px', maxFontSize: '85px' });
          $(document.body).css('opacity', '1');
      }, 800);
 
@@ -106,7 +107,8 @@
               'Gulp',
               'PHP',
               'Scrum',
-              'NET'
+              'NET',
+              'Jasmine'
           ];
            $('#resume ul.skills li span').each(function( index ) {
                $(this).delay(3000).addClass(skills[index]);
@@ -204,20 +206,28 @@
    //    animationSpeed: 600,
    //    randomize: false,
    // });
-   $('.flexslider').flexslider({
-       initDelay: 0,
-       animation: "fade", // slide
-       slideshowSpeed: 6000,
-       animationSpeed: 700,
-       slideshow: true,
-       randomize: false,
-       pauseOnAction: true,
-       pauseOnHover: false,
-       smoothHeight: true
-    //    start: function(){console.log('start');},
-    //    before: function(){console.log('before');},
-    //    after: function(){console.log('after');},
-    //    end: function(){console.log('end');}
-   });
+   // $('.flexslider').flexslider({
+   //     initDelay: 0,
+   //     animation: "fade", // slide
+   //     slideshowSpeed: 6000,
+   //     animationSpeed: 700,
+   //     slideshow: true,
+   //     randomize: false,
+   //     pauseOnAction: true,
+   //     pauseOnHover: false
+   //  //    smoothHeight: true
+   //  //    start: function(){console.log('start');},
+   //  //    before: function(){console.log('before');},
+   //  //    after: function(){console.log('after');},
+   //  //    end: function(){console.log('end');}
+   // });
+   $('.bxslider').bxSlider({
+        mode: 'horizontal',
+        useCSS: false,
+        infiniteLoop: false,
+        hideControlOnEnd: true,
+        easing: 'easeOutElastic',
+        speed: 2000
+});
 
 });
