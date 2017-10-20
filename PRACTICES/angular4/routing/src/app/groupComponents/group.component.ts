@@ -23,6 +23,6 @@ export class GroupComponent implements OnInit {
     ngOnInit() {
         $('.thisBox').click(function(event) {
           $(this).css('background','#1b9ad0');
-        })
+        });
     }
 }

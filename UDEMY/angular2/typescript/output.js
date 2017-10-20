@@ -1,29 +1,29 @@
 //arrow functions
 var miFuncionF = function (a) { return a; };
-// console.log(miFuncionF('Pepe'));
+console.log(miFuncionF('Pepe'));
 var miFn2 = function (a, b) { return a + b; };
-// console.log(miFn2(4,5));
+console.log(miFn2(4, 5));
 var miFn3 = function (nombre) {
     nombre = nombre.toUpperCase();
     return nombre;
 };
-// console.log(miFn3('pedrito'));
+console.log(miFn3('pedrito'));
 var miFn4 = function (nombre) { return nombre.toUpperCase(); };
-// console.log(miFn4('juan'));
+console.log(miFn4('juan'));
 var hulk = {
     nombre: 'Hulk',
     smash: function () {
         var _this = this;
-        setTimeout(function () { return console.log(_this.nombre + ' smash!'); }, 1500);
+        setTimeout(function () { return console.log(_this.nombre + ' smash!'); }, 1900);
     }
 };
-// hulk.smash();
+hulk.smash();
 function fn1() { return 9; }
 ;
 var fn1F = function () { return 8; };
-// console.log(fn1());
-// console.log(fn1F());
-var Avenger = (function () {
+console.log(fn1());
+console.log(fn1F());
+var Avenger = /** @class */ (function () {
     function Avenger(nombre, equipo, nombreReal) {
         this.puedePelear = false;
         this.peleasGanadas = 0;

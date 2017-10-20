@@ -1,9 +1,15 @@
+
 interface Icar {
     brand:string;
     color:string;
-    price:number
+    price:number;
 }
+
 export class MyClass implements Icar {
+    // brand:string;
+    // color:string;
+    // price:number;
+
     static variable:string = 'statics variable';
     public brand:string;
     public color:string;

@@ -1,3 +1,5 @@
+"use strict";
+
 const gulp         = require( 'gulp' );
 const sass         = require( 'gulp-sass' );
 const minifyCSS    = require( 'gulp-csso' );
@@ -10,7 +12,7 @@ const bs           = require( 'browser-sync' ).create();
 const ngAnnotate   = require( 'gulp-ng-annotate' ); //Add angularjs dependency injection annotations
 const gutil        = require( 'gulp-util' ); // to catch errors
 const babel        = require( 'gulp-babel' );
-// ALL OF THESE (PACKAGE.JOSN) ARE NECESSARY FOR GULP-BABEL
+// ALL OF THESE (PACKAGE.JSON) ARE NECESSARY FOR GULP-BABEL
 // "babel-core": "^6.25.0",
 // "babel-loader": "^7.1.1",
 // "babel-preset-env": "^1.6.0",

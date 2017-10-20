@@ -2,7 +2,7 @@
 
 ### Packages
 
-- Sync Settings for Atom
+- sync-settings
 - angular-2-typeScript-snippets
 - angularjs
 - atom-bootstrap3
@@ -13,7 +13,18 @@
 - autocomplete-js-import
 - autocomplete-modules
 - color-picker
+- pigments
 - emmet
 - file-icons
 - goto-definition
 - language-pug
+- jquery-snippets
+- language-pug
+- linter
+- linter-ui-default
+- linter-jshint
+
+### Themes
+
+- atom-material-ui
+- atom-material-syntax (dark)

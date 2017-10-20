@@ -8,11 +8,10 @@ import { IData } from './../../shared/';
 })
 export class Child2Component implements OnInit {
     public myValue: number = 0;
-    public myMsg: number;
+    public myMsg: string = 'To be modified';
 
     constructor() { }
 
-    ngOnInit() {
-    }
+    ngOnInit() { }
 
 }

@@ -1,13 +1,10 @@
 body {
   padding-bottom: 50px;
-
   }
-
-
-
 
 /* ANIMATIONS */
 .animated {
+  animation-name: fadeIn;
   -webkit-animation-duration: 1.3s;
   animation-duration: 1.3s;
   -webkit-animation-fill-mode: both;
@@ -15,6 +12,7 @@ body {
 }
 
 .fast {
+  animation-name: fadeIn;
   -webkit-animation-duration: 0.4s;
   animation-duration: 0.4s;
   -webkit-animation-fill-mode: both;
@@ -22,15 +20,10 @@ body {
 }
 
 @keyframes fadeIn {
-  from {
+from {
     opacity: 0;
   }
-
-  to {
+to {
     opacity: 1;
   }
-}
-
-.fadeIn {
-  animation-name: fadeIn;
 }

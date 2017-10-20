@@ -1,0 +1,12 @@
+body {
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+#div1 {
+    font-family: monospace;
+    padding: 10px;
+    background-color: #378690;
+    display: inline-block;
+    color: white;
+    border-radius: 5px;
+}

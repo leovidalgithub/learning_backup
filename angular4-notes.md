@@ -6,6 +6,10 @@ https://angular.io/api
 ### new html tags attributes
 https://angular.io/guide/cheatsheet
 
+```bash
+this is a bash console based on unix/mac
+```
+
 ```html
 <div [class]="clase">
 <div [hidden]="visible">
@@ -27,6 +31,13 @@ https://angular.io/guide/cheatsheet
 ```html
 <h3 [ngStyle]="{backgroundColor: getColor()}">{{var1}}</h3>
 <div [style.color]="'white'" [style.width.px]="myValue"
+<div [ngStyle]="setStyles()">
+    setStyles() {
+        let styles = {
+            'font-style': this.someProperty ? 'italic' : 'normal;
+            'font-weight': this.anotherProperty ? 'bold' : 'normal;
+        }
+    }
 ```
 
 ```html
@@ -66,5 +77,36 @@ elvis operator
 <dd>{{user?.age}}</dd>
 ```
 
+### CSS Class
+
 ```html
+    <div [className]="'style1'"></div>
+    
+    <div [className]="myClassVar"></div>
+    
+    <div [class.active]="isActive"></div>
+
+    <div [ngClass]="myClasses"></div>    
+    myClasses = {
+      important: this.isImportant,
+      inactive: !this.isActive,
+      saved: this.isSaved,
+      long: this.name.length > 6
+    };
+    
+    <div [ngClass]="setMyClasses()"></div>
+    setMyClasses() {
+      let classes = {
+        important: this.isImportant,
+        inactive: !this.isActive,
+        saved: this.isSaved,
+        long: this.name.length > 6
+      };
+      return classes;
+    };
+    
+    <div [ngClass]="['style1', 'style2']">array of classes</div>
+    <div [ngClass]="'style1 style2'">string of classes</div>
+    <div [ngClass]="{'style1': true, 'style2': true}">object of classes</div>
+
 ```

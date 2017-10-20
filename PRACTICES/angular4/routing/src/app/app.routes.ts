@@ -11,7 +11,7 @@ export const ROUTES: Routes = [
             { path: '', component: AboutHomeComponent },
             { path: 'item/:id', component: AboutItemComponent },
             { path: 'group', component: GroupComponent }
-    ]
-},
+        ]
+    },
     { path: '**', redirectTo: '' }
 ]
