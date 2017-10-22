@@ -1,11 +1,8 @@
 /* ------------------------------------------------------------------ */
 /* d. Resume Section
 /* ------------------------------------------------------------------ */
-// #resume a, #resume a:visited  { color: #11ABB0; }
-// #resume a:hover, #resume a:focus { color: #313131; }
-
 #resume {
-   background-color: #F5F5F5;
+   background-color: $background-2;
    padding-bottom: 72px;
    padding-top: 76px;
    overflow: hidden;
@@ -25,7 +22,7 @@
        letter-spacing: 1px;
 
        span {
-           border-bottom: 3px solid #11ABB0;
+           border-bottom: 3px solid $approvedColor;
            padding-bottom: 6px;
        }
     }
@@ -44,8 +41,6 @@
         background: transparent;
     }
 
-    .skill {
-    }
     .header-col {
         text-align: center;
         padding-top: 9px;
@@ -88,33 +83,34 @@
     padding: 28px;
     border-radius: 20px 3px 3px 20px;
     margin: 50px auto;
-}
-.bars .skills {
-  	margin-top: 36px;
-    list-style: none;
-}
-.bars li {
-    position: relative;
-  	margin-bottom: 40px;
-    background-color: rgba(black, .08);
-  	height: 22px;
-  	border-radius: 3px;
-    &:nth-child(1) { transform: rotate(.6deg); } // AngularJS
-    &:nth-child(2) { transform: rotate(-.9deg); } // Angular 4
-    &:nth-child(3) { transform: rotate(1.1deg); }
-    &:nth-child(4) { transform: rotate(.5deg); }
-    &:nth-child(5) { transform: rotate(-1deg); }
-    &:nth-child(6) { transform: rotate(-.3deg); }
-    &:nth-child(7) { transform: rotate(.8deg); }
-    &:nth-child(8) { transform: rotate(2deg); }
-    &:nth-child(9) { transform: rotate(-.8deg); }
-    &:nth-child(10) { transform: rotate(-.1deg); }
-    &:nth-child(11) { transform: rotate(1.1deg); }
-    &:nth-child(12) { transform: rotate(.2deg); }
-    &:nth-child(13) { transform: rotate(-2.1deg); }
-    &:nth-child(14) { transform: rotate(1deg); }
-    &:nth-child(15) { transform: rotate(-1.4deg); }
-    &:nth-child(16) { transform: rotate(-.7deg); }
+    .skills {
+        margin-top: 36px;
+        list-style: none;
+    }
+    li {
+        position: relative;
+        margin-bottom: 40px;
+        background-color: rgba(black, .085);
+        height: 22px;
+        border-radius: 3px;
+        &:nth-child(1) { transform: rotate(.6deg); } // AngularJS
+        &:nth-child(2) { transform: rotate(-.9deg); } // Angular 4
+        &:nth-child(3) { transform: rotate(1.1deg); }
+        &:nth-child(4) { transform: rotate(.5deg); }
+        &:nth-child(5) { transform: rotate(-1deg); }
+        &:nth-child(6) { transform: rotate(-.3deg); }
+        &:nth-child(7) { transform: rotate(.8deg); }
+        &:nth-child(8) { transform: rotate(2deg); }
+        &:nth-child(9) { transform: rotate(-.8deg); }
+        &:nth-child(10) { transform: rotate(-.1deg); }
+        &:nth-child(11) { transform: rotate(1.1deg); }
+        &:nth-child(12) { transform: rotate(.2deg); }
+        &:nth-child(13) { transform: rotate(-2.1deg); }
+        &:nth-child(14) { transform: rotate(1deg); }
+        &:nth-child(15) { transform: rotate(-1.4deg); }
+        &:nth-child(16) { transform: rotate(-.7deg); }
+        &:nth-child(17) { transform: rotate(1.7deg); } // Webpack
+    }
 }
 .bars li em {
 	font: 15px 'opensans-bold', sans-serif;
@@ -132,16 +128,16 @@
     top: 0;
     margin: 0;
     padding-right: 24px;
-    background-color: rgba(#11ABB0, .8);
+    background-color: rgba($approvedColor, .8);
     display: inline-block;
   	height: 22px;
     line-height: 22px;
-    border-radius: 3px 0 0 3px;
+    border-radius: 8px 8px 8px 8px;
 }
 
 .AngularJS {
     width: $AngularJS;
-    animation: AngularJS 4s ease;
+    animation: AngularJS 7s ease;
 }
 .Angular4 {
     width: $Angular4;
@@ -200,8 +196,12 @@
     animation: NET 6s ease;
 }
 .Jasmine {
-  	width: $Jasmine;
+    width: $Jasmine;
     animation: Jasmine 6s ease;
+}
+.Webpack {
+    width: $Webpack;
+    animation: Webpack 4s ease;
 }
 
 @keyframes AngularJS {
@@ -252,6 +252,6 @@
 @keyframes Jasmine {
     @include mySkillBarKeyframes($Jasmine);
 }
-
-// ************************************************************
-// ************************************************************
+@keyframes Webpack {
+    @include mySkillBarKeyframes($Webpack);
+}

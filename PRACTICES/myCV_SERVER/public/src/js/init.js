@@ -5,7 +5,7 @@
 
      /*----------------------------------------------------*/
      /* FitText Settings for Header H1 and Portfolio H2
-     /* Show Header (and Idioms) for the first time
+     /* Show Header (and Idioms) for the first time when loaded
      ------------------------------------------------------ */
      setTimeout(function() {
          $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '75px' });
@@ -58,13 +58,13 @@
     /* Smooth Scrolling
     ------------------------------------------------------ */
    $('.smoothscroll').on('click',function (e) {
-	    e.preventDefault();
-	    let target = this.hash,
-	    $target = $(target);
+        e.preventDefault(); // this prevents from href="#about" to go
+	    let target = this.hash;
+        let $target = $(target);
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
-	    }, 1100, 'swing', function () {
-	        window.location.hash = target;
+	    }, 1100, 'swing', () => {
+	        window.location.hash = target; // ???
 	    });
 	});
 
@@ -108,7 +108,8 @@
               'PHP',
               'Scrum',
               'NET',
-              'Jasmine'
+              'Jasmine',
+              'Webpack'
           ];
            $('#resume ul.skills li span').each(function( index ) {
                $(this).delay(3000).addClass(skills[index]);
@@ -133,29 +134,25 @@
     });
 
     /*----------------------------------------------------*/
-    /*	Make sure that #header-background-image height is
-    /* equal to the browser height.
+    /*	Make sure all sections have WindowHeight as minimum.
     ------------------------------------------------------ */
-    let windowHeight =  $(window).height();
-    $('header').css({ 'height': windowHeight });
+    function checkHeights() {
+        setTimeout(() => {
+            let windowHeight =  $(window).height();
+            let myArray = ['header', 'about', 'resume', 'portfolio', 'contact'];
+            for (let index=0; index<myArray.length;index++) {
+                let currentHeight = document.getElementById(myArray[index]).offsetHeight;
+                if (currentHeight < windowHeight) {
+                    $(`#${myArray[index]}`).css({ 'height': windowHeight });
+                }
+            }
+        },200);
+    }
+    checkHeights();
 
-    if( parseInt($('#about').css('height'),10) < windowHeight ) {
-       $('#about').css({ 'height': windowHeight });
-    };
-    // if( parseInt($('#portfolio').css('height'),10) < windowHeight ) {
-    //     $('#portfolio').css({ 'height': windowHeight });
-    // };
-    if( parseInt($('#contact').css('height'),10) < windowHeight ) {
-        $('#contact').css({ 'height': windowHeight });
-    };
-
-   $(window).on('resize', function() {
-       if( parseInt($('header').css('height'),10) < windowHeight ) {
-           $('header').css({ 'height': windowHeight });
-       };
-        // $('header').css({ 'height': $(window).height() });
-        $('body').css({ 'width': $(window).width() })
-   });
+   $(window).on('resize', () => {
+       checkHeights();
+   })
 
     /*----------------------------------------------------*/
     /*	Fade In/Out Primary Navigation
@@ -221,13 +218,15 @@
    //  //    after: function(){console.log('after');},
    //  //    end: function(){console.log('end');}
    // });
-   $('.bxslider').bxSlider({
-        mode: 'horizontal',
-        useCSS: false,
-        infiniteLoop: false,
-        hideControlOnEnd: true,
-        easing: 'easeOutElastic',
-        speed: 2000
-});
+
+   // THIS IS THE LAST I DID
+//    $('.bxslider').bxSlider({
+//         mode: 'horizontal',
+//         useCSS: false,
+//         infiniteLoop: false,
+//         hideControlOnEnd: true,
+//         easing: 'easeOutElastic',
+//         speed: 2000
+//     });
 
 });

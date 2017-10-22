@@ -1,5 +1,3 @@
-"use strict";
-
 const gulp         = require( 'gulp' );
 const sass         = require( 'gulp-sass' );
 const minifyCSS    = require( 'gulp-csso' );
@@ -12,7 +10,7 @@ const bs           = require( 'browser-sync' ).create();
 const ngAnnotate   = require( 'gulp-ng-annotate' ); //Add angularjs dependency injection annotations
 const gutil        = require( 'gulp-util' ); // to catch errors
 const babel        = require( 'gulp-babel' );
-// ALL OF THESE (PACKAGE.JSON) ARE NECESSARY FOR GULP-BABEL
+// ALL OF THESE (PACKAGE.JOSN) ARE NECESSARY FOR GULP-BABEL
 // "babel-core": "^6.25.0",
 // "babel-loader": "^7.1.1",
 // "babel-preset-env": "^1.6.0",
@@ -84,9 +82,6 @@ gulp.task( 'watch', ['browser-sync'], function() {
 	gulp.watch( 'public/*.html' ).on('change', bs.reload);
 });
 
-// ********************************* DEFAULT TASK *********************************
-gulp.task( 'default', [ 'browser-sync', 'watch' ] );
-
  // ********************************* VENDOR:CSS *********************************
 gulp.task( 'vendor:css', function () {
 	return gulp.src( ['public/src/vendor/css/flexslider.css',
@@ -101,6 +96,7 @@ gulp.task( 'vendor:js', function () {
 	return gulp.src( [
                 'public/src/vendor/js/jquery-2.2.4.min.js',
                 'public/src/vendor/js/angular.min.js',
+                'public/src/vendor/js/angular-sanitize.min.js',
                 'public/src/vendor/js/angular-translate.min.js',
                 'public/src/vendor/js/angular-translate-loader-static-files.min.js',
                 'public/src/vendor/js/waypoint/jquery.waypoints.min.js',
@@ -112,3 +108,6 @@ gulp.task( 'vendor:js', function () {
 		// .pipe( uglify() )
 		.pipe( gulp.dest( 'public/build/vendor/js' ))
 });
+
+// ********************************* DEFAULT TASK *********************************
+gulp.task('default', ['browser-sync', 'watch']);

@@ -33,16 +33,21 @@ header {
 
 header .banner-text h3 {
    font: 18px/1.9em 'librebaskerville-regular', serif;
-   color: #797979;
-   // font-weight: bold;
+   color: $grayText;
    margin: 0 auto;
    width: 70%;
    // text-shadow: 0px 1px 1px rgba(0, 0, 0, .5);
+   &.navigate {
+       margin-top: 12px;
+   }
 }
-header .banner-text h3 span,
+header .banner-text h3 span {
+       color: lighten( $grayText, 25% );
+}
 header .banner-text h3 a {
-   color: #fff;
+    @extend .myBlueLinks;
 }
+
 header .banner-text hr {
    width: 60%;
    margin: 18px auto 24px auto;
@@ -65,7 +70,7 @@ header .social li a {
     color: #fff;
     transition: color .3s ease-in-out;
  }
-header .social li a:hover { color: #11ABB0; }
+header .social li a:hover { color: $approvedColor; }
 
 /* scrolldown link */
 header .scrolldown a {
@@ -84,7 +89,7 @@ header .scrolldown a {
    -o-transition: all .3s ease-in-out;
    transition: all .3s ease-in-out;
 }
-header .scrolldown a:hover { color: #11ABB0; }
+header .scrolldown a:hover { color: $approvedColor; }
 
 /* primary navigation
 --------------------------------------------------------------------- */
@@ -149,5 +154,5 @@ ul#nav li a {
 }
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li a:hover { color: #11ABB0; background-color: transparent !important;}
+ul#nav li a:hover { color: $approvedColor; background-color: transparent !important;}
 ul#nav li.current a { color: #F06000; } // orange

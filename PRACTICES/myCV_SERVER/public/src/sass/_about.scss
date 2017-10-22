@@ -2,60 +2,44 @@
 /* c. About Section
 /* ------------------------------------------------------------------ */
 #about {
-    min-height: 500px;
     width: 100%;
-    background-color: #2B2B2B;
+    background-color: $background-1;
     padding-top: 76px;
     padding-bottom: 66px;
     overflow: hidden;
+    .main-col {
+        width: 85%;
+        margin: auto;
+        .about-me {
+            p {
+                padding-right: 10%;
+                font: 1.1rem/1.8rem 'comfortaa', sans-serif;
+                color: $grayText;
+                margin: 0;
+                span {
+                    color: lighten( $grayText, 35% );
+                }
+            }
+            h2 {
+                font: 1.3rem/1.8rem 'opensans-bold', sans-serif;
+                color: #fff;
+                margin-bottom: 12px;
+            }
+        }
+    }
+    .profile-pic { // PHOTO
+       position: relative;
+       width: 160px;
+       height: 160px;
+       border-radius: 100%;
+    }
+    .contact-details {
+        margin: 20px 0 0 0;
+        .download a {
+            @include myButton();
+        }
+        .address a {
+            @extend .myBlueLinks;
+        }
+    }
 }
-#about .main-col {
-    width: 85%;
-    margin: auto;
-}
-#about .main-col .about-me p {
-    padding-right: 10%;
-}
-
-#about a {
-    @include myButton(10px);
-}
-
-#about h2 {
-   font: 22px/30px 'opensans-bold', sans-serif;
-   color: #fff;
-   margin-bottom: 12px;
-}
-#about p {
-    font: 18px/30px 'comfortaa', sans-serif;
-    line-height: 30px;
-    color: #7A7A7A;
-    margin: 0;
-}
-#about .profile-pic { // photo
-   position: relative;
-   width: 160px;
-   height: 160px;
-   border-radius: 100%;
-}
-#about .contact-details {
-    margin: 20px 0 0 0;
-}
-
-/*#about .download {
-   width: 58.33333%;
-   padding-top: 6px;
-}
-#about .main-col { padding-right: 5%; }
-#about .download .button {
-   margin-top: 6px;
-   background: #444;
-}
-#about .download .button:hover {
-   background: #fff;
-   color: #2B2B2B;
-}
-#about .download .button i {
-   margin-right: 15px;
-   font-size: 20px;
-}*/

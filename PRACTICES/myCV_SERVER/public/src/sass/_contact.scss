@@ -55,12 +55,12 @@
 }
 #contact input:hover,
 #contact textarea:hover {
-	background-color: rgba(#11ABB0, .2);
+	background-color: rgba($approvedColor, .2);
 }
 #contact input:focus,
 #contact textarea:focus {
 	color: #fff;
-	// background-color: #11ABB0;
+	// background-color: $approvedColor;
 	background-color: #019398;
 }
 
@@ -75,7 +75,7 @@
     border: none;
     outline:none;
     i {
-        color: #11ABB0;
+        color: $approvedColor;
     }
     &:hover, &:active {
         background-color: white;
@@ -86,7 +86,7 @@
 
 
 #contact span.required {
-	color: #11ABB0;
+	color: $approvedColor;
 	font-size: 17px;
 }
 

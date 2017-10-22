@@ -1,12 +1,27 @@
 {
     "header": {
-        "iam" : "Soy",
-        "home" : "Home",
-        "about" : "Sobre mí",
-        "resume" : "Resumen",
-        "portfolio" : "Portafolio",
-        "contact" : "Contacto"
-
+        "navbar" : {
+            "home" : "Home",
+            "about" : "Sobre mí",
+            "resume" : "Resumen",
+            "portfolio" : "Portafolio",
+            "contact" : "Contacto"
+        },
+        "title" : {
+            "iam" : "Soy"
+        },
+        "intro" : {
+            "intro" : "Establecido en <span>Montreal</span> como desarrollador Web <span>Fullstack MEAN</span>, disfrutando en este magnífico rincón del mundo y haciendo lo que más gusta: desarrollar <span>Aplicaciones<span> y Páginas Web, intentando siempre superarme a mí mismo y dar lo mejor.",
+            "start" : {
+                "start" : "Empieza",
+                "navigate" : "a navegar",
+                "knowme" : "y conoce mucho más acerca de mí."
+            }
+        }
+    },
+    "about" : {
+        "aboutme" : "Acerca de mí",
+        "content" : "Informático de carrera obtuve el título de Licenciado en Computación en el año 1998. Soy una persona polivalente que se ha desempeñado en diversas áreas siempre relacionado con la informática. Me considero un apasionado de la programación habiendo incursionado desde temprana edad con lenguajes como Basic, Fortran, PL/1, Cobol, entre otros. Posteriormente comencé a programar en Visual Basic (más adelante VB.NET).<br>Estoy especializado en el Desarrollo de Aplicaciones WEB como MEAN Full Stack Developer con una experiencia de seis años. Poseo sólidos conocimientos gracias a ser una persona autodidacta e incansable.<br>En el año 2016 realicé un <span>Bootcamp</span> (Skylab Coders Academy) como “Web Development Fullstack MEAN”, el cual me aportó sólidos conocimientos sobre las nuevas tecnologías y el reforzamiento de importantes conceptos. Actualmente estoy realizando un <span>DEC</span> (Diploma of College Studies) en <span>LaSalle College</span> como <span>“Computer Science - Administrative Data Processing“.</span><br>En mi último empleo --Zemsania Tech Services-- estuve como programador líder de un aplicativo basado en Angular 4 y NodeJS.<br>Poseo una gran capacidad de adaptación y suelo ser bastante perfeccionista con todo lo que hago en mi vida. Mi deseo como profesional es continuar preparándome y trabajar junto a los mejores."
     },
     "email": {
         "ok" : "Mensaje enviado. Gracias!",

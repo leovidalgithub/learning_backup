@@ -1,9 +1,9 @@
-var express    = require( 'express' ),
-    bodyParser = require( 'body-parser'),
-    app        = express();
-    nodemailer = require( 'nodemailer' );
+let express    = require( 'express' );
+let bodyParser = require( 'body-parser');
+let app        = express();
+let nodemailer = require( 'nodemailer' );
 
-app.use(function(req, res, next) {
+app.use( (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -12,15 +12,15 @@ app.use(express.static('public'));
 app.use( bodyParser.json());
 app.use( bodyParser.urlencoded({ extended: true }));
 
-app.post('/contact', function(req,res,next){
-    var contactData = req.body;
-    var randomMS = Math.floor(Math.random() * (1500 - 400 + 1)) + 400;
+app.post('/contact', (req,res,next) => {
+    let contactData = req.body;
+    let randomMS = Math.floor(Math.random() * (1500 - 400 + 1)) + 400;
 
-    sendThisMail(contactData, function( err, data ) {
+    sendThisMail(contactData, (err, data) => {
         if(err) {
             res.status(200).json({success:false,err:err});
         } else {
-            setTimeout(function(){
+            setTimeout(() => {
                 res.status(200).json({success:true,data:data,randomMS:randomMS});
             },randomMS);
         }
@@ -57,9 +57,8 @@ let transporter = nodemailer.createTransport({
     	}
 });
 
-
 // ********************* ********************* ********************* *********************
-let server = app.listen( 8080, function () {
+let server = app.listen(8080, () => {
     let port = server.address().port;
 	console.log('Listening at port %s', port);
 });
