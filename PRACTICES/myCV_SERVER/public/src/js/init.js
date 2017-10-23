@@ -143,7 +143,7 @@
             for (let index=0; index<myArray.length;index++) {
                 let currentHeight = document.getElementById(myArray[index]).offsetHeight;
                 if (currentHeight < windowHeight) {
-                    $(`#${myArray[index]}`).css({ 'height': windowHeight });
+                    $(`#${myArray[index]}`).css({ 'min-height': windowHeight });
                 }
             }
         },200);
