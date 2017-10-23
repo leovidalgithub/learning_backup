@@ -134,19 +134,14 @@
     });
 
     /*----------------------------------------------------*/
-    /*	Make sure all sections have WindowHeight as minimum.
+    /*	Setting min-height of all sections as window-height
     ------------------------------------------------------ */
-    function checkHeights() {
-        setTimeout(() => {
+     let checkHeights = () => {
             let windowHeight =  $(window).height();
             let myArray = ['header', 'about', 'resume', 'portfolio', 'contact'];
             for (let index=0; index<myArray.length;index++) {
-                let currentHeight = document.getElementById(myArray[index]).offsetHeight;
-                if (currentHeight < windowHeight) {
-                    $(`#${myArray[index]}`).css({ 'min-height': windowHeight });
-                }
+                $(`#${myArray[index]}`).css({ 'min-height': windowHeight });
             }
-        },200);
     }
     checkHeights();
 
