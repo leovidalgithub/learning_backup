@@ -20,8 +20,54 @@
         }
     },
     "about" : {
-        "aboutme" : "Acerca de mí",
-        "content" : "Informático de carrera obtuve el título de Licenciado en Computación en el año 1998. Soy una persona polivalente que se ha desempeñado en diversas áreas siempre relacionado con la informática. Me considero un apasionado de la programación habiendo incursionado desde temprana edad con lenguajes como Basic, Fortran, PL/1, Cobol, entre otros. Posteriormente comencé a programar en Visual Basic (más adelante VB.NET).<br>Estoy especializado en el Desarrollo de Aplicaciones WEB como MEAN Full Stack Developer con una experiencia de seis años. Poseo sólidos conocimientos gracias a ser una persona autodidacta e incansable.<br>En el año 2016 realicé un <span>Bootcamp</span> (Skylab Coders Academy) como “Web Development Fullstack MEAN”, el cual me aportó sólidos conocimientos sobre las nuevas tecnologías y el reforzamiento de importantes conceptos. Actualmente estoy realizando un <span>DEC</span> (Diploma of College Studies) en <span>LaSalle College</span> como <span>“Computer Science - Administrative Data Processing“.</span><br>En mi último empleo --Zemsania Tech Services-- estuve como programador líder de un aplicativo basado en Angular 4 y NodeJS.<br>Poseo una gran capacidad de adaptación y suelo ser bastante perfeccionista con todo lo que hago en mi vida. Mi deseo como profesional es continuar preparándome y trabajar junto a los mejores."
+        "about-me" : "Acerca de mí",
+        "content" : "Informático de carrera obtuve el título de Licenciado en Computación en el año 1998. Soy una persona polivalente que se ha desempeñado en diversas áreas siempre relacionado con la informática. Me considero un apasionado de la programación habiendo incursionado desde temprana edad con lenguajes como Basic, Fortran, PL/1, Cobol, entre otros. Posteriormente comencé a programar en Visual Basic (más adelante VB.NET).<br>Estoy especializado en el Desarrollo de Aplicaciones WEB como MEAN Full Stack Developer con una experiencia de seis años. Poseo sólidos conocimientos gracias a ser una persona autodidacta e incansable.<br>En el año 2016 realicé un <span>Bootcamp</span> (Skylab Coders Academy) como “Web Development Fullstack MEAN”, el cual me aportó sólidos conocimientos sobre las nuevas tecnologías y el reforzamiento de importantes conceptos. Actualmente estoy realizando un <span>DEC</span> (Diploma of College Studies) en <span>LaSalle College</span> como <span>“Computer Science - Administrative Data Processing“.</span><br>En mi último empleo --Zemsania Tech Services-- estuve como programador líder de un aplicativo basado en Angular 4 y NodeJS.<br>Poseo una gran capacidad de adaptación y suelo ser bastante perfeccionista con todo lo que hago en mi vida. Mi deseo como profesional es continuar preparándome y trabajar junto a los mejores.",
+        "contact-details" : "Dirección de Contacto",
+        "contact-me" : "Contáctame"
+    },
+    "resume" : {
+        "education" : {
+            "education" : "educación",
+            "lasalle" : {
+                "lasalle" : "LaSalle College Montreal",
+                "title" : "Computer Science - Administrative Data Processing",
+                "date" : "Enero 2018 - Junio 2020",
+                "content" : "Este programa capacita al técnico en computación para ubicar, recopilar y analizar datos sobre las necesidades de procesamiento de información de los usuarios. Modelado y procesamiento de datos. Desarrollar código para crear aplicaciones eficientes acorde a los datos recolectados. Y prever las necesidades en cuanto a la infraestrcutra de redes."
+            },
+            "une" : {
+                "une" : "Universidad Nueva Esparta",
+                "title" : "Licenciado en Computación",
+                "date" : "Septiembre 1998",
+                "content" : "El Licenciado en Computación maneja hardware y software de actualidad para dar asistencia a las necesidades de empresas nacionales e internacionales, asiste a profesionales de otras disciplinas, está preparado para trabajar en equipo en sistemas de la información y para adaptarse a las tendencias. También maneja tecnologías de punta en el análisis, desarrollo e implantación de sistemas."
+            },
+            "skylab" : {
+                "skylab" : "Skylab Coders Academy",
+                "title" : "Bootcamp Web Development Fullstack MEAN",
+                "date" : "Octubre 2016",
+                "content" : "Skylab Coders Academy ubicado en Barcelona, España, es un centro líder en la formación de desarrolladores Web donde se imparten cursos intensivos de desarrollo de aplicaciones Web con HTML5, CSS3, jQuery, Javascript, Angular, NodeJS, MongoDB, React, Scrum, Git, entre otros."
+            },
+            "abisa" : {
+                "abisa" : "ABISA Institute & Inforbooks",
+                "title" : "Desarrollador WEB",
+                "date" : "Septiembre 2013",
+                "content" : "Desarrollo WEB HTML5, CSS, jQuery, Javascript, Dreamweaver."
+            }
+        },
+        "work" : {
+            "work": "trabajo",
+            "zemsania" : {
+                "zemsania" : "Zemsania Tech Services & Solutions",
+                "position" : "Desarrollador Fullstack MEAN",
+                "date" : "Febrero 2017 - Octubre 2017",
+                "content" : "Encargado líder para la puesta operativa de un sistema basado sobre el framework AngularJS y NodeJS. Inicio y puesta en marcha de aplicativo basado en Angular 4, NodeJS, MongoDB, Webpack, Sonar para el Control de Imputación de Horas y Vacaciones para el departamento de RR.HH."
+            },
+            "roline" : {
+                "roline" : "Roline System",
+                "position" : "Desarrollador Aplicaciones Web",
+                "date" : "Febrero 2015 - Junio 2016",
+                "content" : "De forma colaborativa diseñé y desarrollé en su totalidad una aplicación Web (SiPEDI) destinada a resolver un problema puntual acerca de pedidos realizados por clientes a proveedores de manera periódica. Desarrollada completamente con tecnología Web MEAN (MongoDB, Express, AngularJS, Node.js)."
+            }
+        }
     },
     "email": {
         "ok" : "Mensaje enviado. Gracias!",

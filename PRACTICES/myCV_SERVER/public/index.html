@@ -110,24 +110,24 @@
             </div>
 
             <div class="col-md-9 about-me">
-                <h2>{{'about.aboutme' | translate}}</h2>
+                <h2>{{'about.about-me' | translate}}</h2>
                 <p ng-bind-html="'about.content' | translate"></p>
 
                 <div class="row contact-details">
                     <div class="col-md-7">
-                        <h2>Contact Details</h2>
+                        <h2>{{'about.contact-details' | translate}}</h2>
                         <div class="address">
                             <p>Leonardo Rdgz-Vidal</p>
                             <p>3 Rue Rodolphe Duguay</p>
                             <p>Blainville, QC J7C 4W7 Canadá</p>
-                            <p>+1 (514)xxx-xxxx</p>
+                            <p>+1 (450) 818-7822</p>
                             <a href="mailto:leo@leovidal.es">leo@leovidal.es</a>
                         </div>
                     </div>
                     <div class="col-md-5 download">
                         <p>
                             <a href="#contact" class="smoothscroll">
-                                <i class="fa fa-share"></i> Contáctame
+                                <i class="fa fa-share"></i>&nbsp;{{'about.contact-me' | translate}}
                             </a>
                         </p>
                     </div>
@@ -150,123 +150,114 @@
 
                 <div class="col-md-3 header-col">
                     <h1>
-                        <span>Educación</span>
+                        <span>{{'resume.education.education' | translate}}</span>
                     </h1>
                 </div>
 
                 <div class="col-md-9 main-col">
+
                     <div class="row item">
                         <div class="col-xs-12">
-                            <h3>Universidad Nueva Esparta</h3>
-                            <p class="info">Licenciado en Computación
+                            <h3>{{'resume.education.lasalle.lasalle' | translate}} -
+                                <a href="http://www.lasallecollege.com/business-and-technologies-school/dec-computer-science-courses-data-processing" target="blank">LaSalle</a>
+                            </h3>
+                            <p class="info">{{'resume.education.lasalle.title' | translate}}
                                 <span>&bull;</span>
-                                <em class="date">Sept. 1998</em>
+                                <em class="date">{{'resume.education.lasalle.date' | translate}}</em>
                             </p>
-                            <p>
-                                El Licenciado en Computación egresado de la UNE maneja hardware y software de actualidad para dar asistencia a las necesidades
-                                de empresas nacionales e internacionales, asiste a profesionales de otras disciplinas, crea
-                                paquetes especializados que contribuyen con el progreso y sistematización de distintas áreas,
-                                está preparado para actuar en equipos expertos y en sistemas de información, para adaptarse
-                                a las tendencias contemporáneas. Además, demuestra su ética profesional para respetar la
-                                propiedad intelectual y el derecho a la reserva de la información. También maneja tecnologías
-                                de punta en el análisis, desarrollo e implantación de sistemas en redes locales, nacionales
-                                y mundiales.
-                            </p>
+                            <p>{{'resume.education.lasalle.content' | translate}}</p>
                         </div>
                     </div>
                     <!-- item end -->
 
                     <div class="row item">
-
                         <div class="col-xs-12">
-                            <h3>SKYLAB CODERS ACADEMY</h3>
-                            <p class="info">Bootcamp Web Development Fullstack MEAN
+                            <h3>{{'resume.education.une.une' | translate}} -
+                                <a href="http://www.une.edu.ve" target="blank">UNE</a>
+                            </h3>
+                            <p class="info">{{'resume.education.une.title' | translate}}
                                 <span>&bull;</span>
-                                <em class="date">Octubre 2016</em>
+                                <em class="date">{{'resume.education.une.date' | translate}}</em>
                             </p>
-                            <p>
-                                SKYLAB CODERS ACADEMY es un centro líder en la formación de desarrolladores web donde se imparten cursos intensivos de desarrollo
-                                web con HTML, CSS, jQuery, Javascript, AngularJS, NodeJS, MongoDB, React, entre otros.
-                            </p>
+                            <p>{{'resume.education.une.content' | translate}}</p>
                         </div>
                     </div>
                     <!-- item end -->
 
-
                     <div class="row item">
                         <div class="col-xs-12">
-                            <h3>Instituto ABISA, Barcelona</h3>
-                            <p class="info">Desarrollo WEB
+                            <h3>{{'resume.education.skylab.skylab' | translate}} -
+                                <a href="http://www.skylabcoders.com/en" target="blank">Skylab</a>
+                            </h3>
+                            <p class="info">{{'resume.education.skylab.title' | translate}}
                                 <span>&bull;</span>
-                                <em class="date">Sept. 2013</em>
+                                <em class="date">{{'resume.education.skylab.date' | translate}}</em>
                             </p>
-                            <p>
-                                Desarrollo WEB: HTML, CSS3, JavaScript, Dreamweaver
+                            <p>{{'resume.education.skylab.content' | translate}}</p>
+                        </div>
+                    </div>
+                    <!-- item end -->                    
+                    
+                    <div class="row item">
+                        <div class="col-xs-12">
+                            <h3>{{'resume.education.abisa.abisa' | translate}} -
+                                <a href="http://www.inforbooks.com" target="blank">Inforbooks</a>
+                            </h3>
+                            <p class="info">{{'resume.education.abisa.title' | translate}}
+                                <span>&bull;</span>
+                                <em class="date">{{'resume.education.abisa.date' | translate}}</em>
                             </p>
+                            <p>{{'resume.education.abisa.content' | translate}}</p>
                         </div>
                     </div>
                     <!-- item end -->
 
                 </div>
                 <!-- main-col end -->
-
+                
             </div>
             <!-- End Education -->
 
-
+            
             <!-- Work
-           ================================================ -->
+                ================================================ -->
             <div class="row work">
 
                 <div class="col-md-3 header-col">
                     <h1>
-                        <span>Work</span>
+                        <span>{{'resume.work.work' | translate}}</span>
                     </h1>
                 </div>
 
                 <div class="col-md-9 main-col">
-
                     <div class="row item">
-
                         <div class="col-xs-12">
 
-                            <h3>Awesome Design Studio</h3>
-                            <p class="info">Senior UX Designer
+                            <h3>{{'resume.work.zemsania.zemsania' | translate}} -
+                                <a href="http://www.zemsania.com" target="blank">Zemsania</a>                             
+                            </h3>
+                            <p class="info">{{'resume.work.zemsania.position' | translate}}
                                 <span>&bull;</span>
-                                <em class="date">March 2010 - Present</em>
+                                <em class="date">{{'resume.work.zemsania.date' | translate}}</em>
                             </p>
-
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-                                nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
-                                fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-                            </p>
-
+                            <p>{{'resume.work.zemsania.content' | translate}}</p>
                         </div>
-
                     </div>
                     <!-- item end -->
 
                     <div class="row item">
-
                         <div class="col-xs-12">
-
-                            <h3>Super Cool Studio</h3>
-                            <p class="info">UX Designer
+                            <h3>{{'resume.work.roline.roline' | translate}} -
+                                <a href="http://www.rolinesystem.com" target="blank">Roline</a>
+                            </h3>
+                            <p class="info">{{'resume.work.roline.position' | translate}}
                                 <span>&bull;</span>
-                                <em class="date">March 2007 - February 2010</em>
+                                <em class="date">{{'resume.work.roline.date' | translate}}</em>
                             </p>
-
-                            <p>
-                                This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-                                bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio
-                                sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus
-                                a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat
+                            <p>{{'resume.work.roline.content' | translate}}
+                                <a href="http://sipedi.net" target="blank">SiPEDI</a>
                             </p>
-
                         </div>
-
                     </div>
                     <!-- item end -->
 
@@ -285,6 +276,8 @@
                 </h1>
             </div>
             <!-- <br><br><br> -->
+
+<!-- TODO: VER POR QUÉ EL PARALLAX SE MONTA ENCIMA DEL SKILLS -->
 
             <!-- <div data-zIndex="10" class="parallax-window" data-speed=".4" data-parallax="scroll" data-image-src="./images/header-background.jpg"> -->
             <div class="parallax-window jsInit" data-parallax="scroll">

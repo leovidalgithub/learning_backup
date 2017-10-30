@@ -6,21 +6,21 @@
    padding-bottom: 72px;
    padding-top: 76px;
    overflow: hidden;
-
    .content {
        width: 85%;
        margin: auto;
+        a {
+            @extend .myBlueLinks;
+            font-size: 1rem;
+        }
    }
-
     h3 {
        font: 25px/30px 'opensans-bold', sans-serif;
    }
-
     h1 {
        font: 18px/24px 'opensans-bold', sans-serif;
        text-transform: uppercase;
        letter-spacing: 1px;
-
        span {
            border-bottom: 3px solid $approvedColor;
            padding-bottom: 6px;
@@ -45,31 +45,26 @@
         text-align: center;
         padding-top: 9px;
         margin-bottom: 51px;
+        border: solid 1px red;
         &.mySkills {
-            position: relative;
-            top: -80px;
+            // position: relative;
+            // top: -80px;
         }
     }
-}
-
-.education, .work {
-   margin-bottom: 20px;
-   padding-bottom: 24px;
-   border-bottom: 1px solid #E8E8E8;
-}
-#resume .info {
-   font: 16px/24px 'librebaskerville-italic', serif;
-   color: #6E7881;
-   margin-bottom: 18px;
-   margin-top: 9px;
-}
-#resume .info span {
-   margin-right: 5px;
-   margin-left: 5px;
-}
-#resume .date {
-   font: 15px/24px 'opensans-regular', sans-serif;
-   margin-top: 6px;
+    .info {
+        font: 16px/24px 'librebaskerville-italic', serif;
+        color: #6E7881;
+        margin-bottom: 18px;
+        margin-top: 9px;
+        span {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
+    .date {
+        font: 15px/24px 'opensans-regular', sans-serif;
+        margin-top: 6px;
+    }
 }
 
 /*----------------------------------------------*/
