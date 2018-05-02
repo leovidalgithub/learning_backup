@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <a [href]="link">Introduction to Angular Routing!!!</a>
+    <hr>
+
+    <div routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <a [routerLink]="['/']">Home</a>
+    </div>
+    <a [routerLink]="['/about']" routerLinkActive="active-link">About</a>
+
+    <hr>
+    <hr>
+    <div [style.border]="'1px solid orange'" [style.padding]="'15px'">
+        <router-outlet></router-outlet>
+    </div>
+</div>

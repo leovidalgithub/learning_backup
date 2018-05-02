@@ -1,0 +1,23 @@
+{
+  "name": "helmet-fastify-testing",
+  "version": "1.0.0",
+  "description": "testing some helmet features",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "helmet",
+    "fastify",
+    "nodejs",
+    "cors"
+  ],
+  "author": "Leo Rdgz-Vidal",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^1.1.1",
+    "fastify-helmet": "^1.0.3",
+    "fastify-static": "^0.8.0",
+    "helmet": "^3.12.0"
+  }
+}

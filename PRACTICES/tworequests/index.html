@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Two Requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>Two Requests</h2>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script>
+        let myTime = 0;
+        const myInterval = setInterval(() => {
+            console.log(myTime++);
+            
+        }, 1000);
+        $.get({ url: 'http://localhost:5000/route1/', timeout: 2000 })
+            .done( (data) => {console.log('Ok1', data)})
+            .fail((err) => {console.log('err1', err.statusText)})
+            // .always(() => { clearInterval(myInterval)});
+            
+        $.get('http://localhost:5000/route2/')
+        .then((data) => {console.log('Ok2', data)})
+        .fail((err) => {console.log('err2', err.statusText)})
+        .always(() => { clearInterval(myInterval)});
+
+        $.ajax({
+                url: 'http://localhost:5000/route2/',
+                method: 'GET',
+                xhrFields: {
+                    responseType: 'blob'
+                },
+                success: function (data) {
+                    var a = document.createElement('a');
+                    var url = window.URL.createObjectURL(data);
+                    a.href = url;
+                    a.download = 'myfile.jpg';
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                }
+            });
+    
+    </script>
+</body>
+</html>
