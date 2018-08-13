@@ -26,11 +26,14 @@ export class AppComponent {
   }
 
   valorDePromesa = new Promise( (resolve, reject) => {
-    setTimeout( () => resolve('Llegó la data!'), 3500);
+    setTimeout( () => resolve('Llegó la data!'), 4500);
   })
 
   fecha = new Date();
-  urlVideo: String = 'RtU_mdL2vBM';
+  urlVideo: String = 'SGP6Y0Pnhe4';
+  // urlVideo: String = 'RtU_mdL2vBM';
+  // https://www.youtube.com/watch?v=SGP6Y0Pnhe4
+  // https://www.youtube.com/watch?v=RtU_mdL2vBM
 
   nombre: String = 'Fernando';
   activar: Boolean = true;

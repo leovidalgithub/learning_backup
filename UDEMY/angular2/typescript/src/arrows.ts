@@ -16,7 +16,7 @@ let miFn4 = (nombre:string) => nombre.toUpperCase();
  console.log(miFn4('juan'));
 
 let hulk = {
-    nombre: 'Hulk',
+    nombre: 'Using local context from Hulk object',
     smash() { // arrow-fn because of 'this context'
         setTimeout( () => console.log(this.nombre + ' smash!'),1900);
     }

@@ -9,8 +9,12 @@ class Avenger {
         this.equipo = equipo;
         this.nombreReal = nombreReal;
     }
+    imprimir() {
+        console.log('Método Imprimir : ', this.nombreReal);
+    }
 }
 
 let antman:Avenger = new Avenger('Antman','Cap','Scott Lang');
 
-// console.log(antman);
+console.log(antman);
+console.log('CLASSES');

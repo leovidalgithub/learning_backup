@@ -116,7 +116,7 @@
         <td>{{nombre}}</td>
         <td>
             contraseña: {{activar}}
-            <br>
+            <br><br>
             <button type="button"
                 (click)="activar = !activar"
                 class="btn btn-outline-primary">Activar/desactivar</button>
@@ -129,17 +129,17 @@
   </table>
 <hr>
 
-<h3>Slice [1,2,3,4,5,6,7,8,10] - | slice:5:20</h3>
+<h3>Slice [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] - | slice:5:8</h3>
 <ul>
-  <li *ngFor="let item of arreglo | slice:5:7">{{item}}</li>
+  <li *ngFor="let item of arreglo | slice:5:8">{{item}}</li>
 </ul>
 <hr>
 
 <h4>JSON Pipe</h4>
   <pre>{{heroe | json}}</pre><hr>
 <hr>
+
 <h4>Youtube Video <small>Escobar</small></h4>
 <iframe width="560" height="315" [src]="urlVideo | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
 
 </div>
-<br><br><br><br><br>

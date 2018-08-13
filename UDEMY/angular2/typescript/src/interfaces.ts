@@ -7,8 +7,8 @@ interface Xmen {
 function enviarMision(xmen:Xmen) {
     console.log(`Enviando a ${xmen.nombre}`);
 }
-function enviarCuartel(xmen:Xmen) {
-    console.log(`Enviando al cuartel a ${xmen.nombre}`);
+let enviarCuartel = (xmen:Xmen) => {
+    console.log(`Enviando al cuartel a ${xmen.nombre} con el poder ${xmen.poder}`);
 }
 
 let wolverine:Xmen = {
@@ -16,5 +16,6 @@ let wolverine:Xmen = {
     poder: 'Regeneración'
 }
 
-// enviarMision(wolverine);
-// enviarCuartel(wolverine);
+console.log('INTERFACES');
+enviarMision(wolverine);
+enviarCuartel(wolverine);
