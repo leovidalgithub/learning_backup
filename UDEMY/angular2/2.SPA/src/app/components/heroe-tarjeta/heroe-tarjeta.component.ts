@@ -9,7 +9,7 @@ import { iHeroe } from './../../services/heroes.service';
 })
 export class HeroeTarjetaComponent implements OnInit {
 
-  @Input() public heroe: iHeroe;
+  @Input() public heroe_tarjeta: iHeroe;
   @Input() public idx: number;
   @Output() mySonEvent: EventEmitter<string> = new EventEmitter<string>();
   private counter: number = 0;
@@ -18,13 +18,11 @@ export class HeroeTarjetaComponent implements OnInit {
 
   ngOnInit() {
     setInterval(() => {
-      this.mySonEvent.emit(`Hola # ${this.counter++}`);
-      }, 3220);
+      this.mySonEvent.emit(`every 5 seconds # ${this.counter++}`);
+      }, 5000);
     }
 
   public verHeroe() {
     this.router.navigate(['/heroe', this.idx]);
   }
-
-
 }

@@ -1,10 +1,9 @@
 <div class="myBody row">
 
-  <div class="col-md-6">
-    <h1>*ngIf</h1>
+  <div class="col-md-7">
+    <h1>*ngIf ... every 800 ms ---> {{myValue}}</h1>
     <hr>
-
-    <button class="btn btn-outline-primary btn-block" (click)="mostrar = !mostrar">Mostrar/Ocultar</button>
+    <button class="btn btn-outline-primary btn-block" (click)="mostrar = !mostrar">Click to {{mostrar ? 'Hide' : 'Show'}}</button>
     <br>
     <div *ngIf="mostrar" class="card text-white bg-primary mb-3" style="max-width: 18rem;">
       <div class="card-header">Header</div>
@@ -15,7 +14,7 @@
     </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-5">
     <h1>*ngFor</h1>
     <hr>
     <ul class="list-group">
