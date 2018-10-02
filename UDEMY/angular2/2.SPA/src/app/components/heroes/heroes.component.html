@@ -3,7 +3,10 @@
 
 <div class="card-columns"> 
     <!-- (heroeSeleccionado)="verHeroe($event)" -->
-    <app-heroe-tarjeta [heroe]="heroe" [idx]="idx" (mySonEvent)="myEvent($event)"
-     *ngFor="let heroe of heroes; let idx = index">
+    <app-heroe-tarjeta *ngFor="let this_heroe of heroes; let this_idx = index"
+                        [heroe_tarjeta]="this_heroe" [idx]="this_idx" (mySonEvent)="myEvent($event)">
     </app-heroe-tarjeta> 
 </div>
+
+<!-- [son_variable]="local_variable" -->
+<!-- (son_variable)="myLocalFunction($event)" -->

@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
   }
 
   myEvent(event) {
-    console.log('event', event);
+    console.log('From my son', event);
   }
 
 }

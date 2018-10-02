@@ -57,7 +57,7 @@ export class HeroesService {
 
   constructor() { }
 
-  getHeroes(): iHeroe[] {
+  public getHeroes(): iHeroe[] {
     return this.heroes;
   }
 
@@ -65,11 +65,10 @@ export class HeroesService {
     return this.heroes[idx];
   }
 
-  buscarHeroes( termino: string ): iHeroe[] {
+  buscarHeroes(termino: string): iHeroe[] {
       const heroesArr: iHeroe[] = [];
       termino = termino.toLowerCase();
 
-      // for (const heroe of this.heroes) {
       for (let i = 0; i < this.heroes.length; i++) {
         const nombre = this.heroes[i].nombre.toLowerCase();
         if (nombre.indexOf( termino ) >= 0) {

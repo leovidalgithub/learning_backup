@@ -5,7 +5,10 @@ npm install tether --save (librería que trabaja en conjunto con bootstrap 4)
 //*******************************************************************//
 
 <.angular-cli.json>
-
+"assets": [
+      "src/favicon.ico",
+      "src/assets"
+],
 "styles": [
 	"../node_modules/bootstrap/dist/css/bootstrap.min.css",
 	"styles.css"
@@ -16,3 +19,6 @@ npm install tether --save (librería que trabaja en conjunto con bootstrap 4)
 		"../node_modules/tether/dist/js/tether.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
+
+AngularJS vs Angular Reference
+https://angular.io/guide/ajs-quick-reference
