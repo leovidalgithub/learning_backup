@@ -22,7 +22,7 @@ export class CapitalizadoPipe implements PipeTransform {
           nombres[0] = nombres[0][0].toUpperCase() + nombres[0].substr(1);
       }
 
-    return nombres.join(' ');
+      return nombres.join(' ');
   }
 
 }

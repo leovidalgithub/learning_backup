@@ -1,0 +1,10 @@
+@import '../sass/styles.scss';
+
+#thisid {
+    background-color: $mycolor;
+    border: 1px solid #f59c48;
+    margin: 10px;
+    height: 100%;
+    height: 500px;
+    font-size: 3rem;
+}

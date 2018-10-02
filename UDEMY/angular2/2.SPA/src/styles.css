@@ -4,14 +4,14 @@ body {
 
 /* ANIMATIONS */
 .animated {
-  animation-name: fadeIn;
-  -webkit-animation-duration: .9s;
+  animation-name: myOwnAnimation;
   animation-duration: .9s;
-  -webkit-animation-fill-mode: both;
+  /* -webkit-animation-duration: .9s; */
   animation-fill-mode: both;
+  /* -webkit-animation-fill-mode: both; */
 }
-@keyframes fadeIn {
-  from { opacity: 0; background-color: gray; }
+
+@keyframes myOwnAnimation {
+  from { opacity: .5; }
   to { opacity: 1; }
 }
-/***********************************************/

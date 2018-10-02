@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  pi: number = 213.141592;
+  e: number = 2.718281828459045;
+  myname = new FormControl('');
+
+// *********************************************
   name: String = 'Fernando';
   name2: String = 'fernAndo alBErto heRRera jiméneZ';
 

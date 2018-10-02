@@ -1,6 +1,18 @@
 <div class="container">
   <br><h1>Pipes</h1>
   <hr>
+<div>
+  <p>e (no formatting): {{e}}</p>
+  <p>e (3.1-5): {{e | number:'3.1-5'}}</p>
+  <p>pi (no formatting): {{pi}}</p>
+  <p>pi (1.1-2): {{pi | number:'1.1-2'}}</p>
+</div>
+  <hr>
+
+<label>
+  Name:
+  <input type="text" [formControl]="myname">
+</label>
 
   <table class="table">
     <thead class="thead-inverse">
@@ -108,8 +120,8 @@
       </tr>
       <tr>
         <td>{{name2}}</td>
-        <td>capitalizado:false:'Arg1':'Arg2'</td>
-        <td>{{name2 | capitalizado:false:'Arg1':'Arg2'}}</td>
+        <td>capitalizado:false:'Arg11':'Arg22'</td>
+        <td>{{name2 | capitalizado:false:'Arg11':'Arg22'}}</td>
       </tr>
 
       <tr>
@@ -119,7 +131,7 @@
             <br><br>
             <button type="button"
                 (click)="activar = !activar"
-                class="btn btn-outline-primary">Activar/desactivar</button>
+                class="btn btn-outline-primary">{{activar?'Desactivar':'Activar'}}</button>
         </td>
         <td>{{nombre | contrasena:activar}}</td>
       </tr>
