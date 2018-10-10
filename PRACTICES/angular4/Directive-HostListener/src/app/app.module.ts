@@ -4,10 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './highlight.directive';
 
+import { CountingDirective, LeoComponent, SonComponent } from './counting.directive';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    HighlightDirective
+    HighlightDirective,
+    CountingDirective,
+    LeoComponent,
+    SonComponent
   ],
   imports: [
     BrowserModule

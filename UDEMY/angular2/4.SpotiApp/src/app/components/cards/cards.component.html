@@ -1,0 +1,16 @@
+<div *ngIf="!thisCards.length" class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Oops!!!</h4>
+  <p>There is no info to show!</p>
+</div>
+
+<div class="card-columns m-5">
+  <div *ngFor="let thisCard of thisCards" class="card">
+    <img class="card-img-top" [src]="thisCard.images | noimage" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{thisCard.name}}</h5>
+      <p *ngIf="thisCard.artists" class="card-text">
+        <span *ngFor="let artist of thisCard.artists" class="badge badge-pill badge-primary">{{artist.name}}</span>
+      </p>
+    </div>
+  </div>
+</div>

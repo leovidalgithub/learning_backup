@@ -17,7 +17,7 @@ import { CapitalizadoPipe, ContrasenaPipe,DomseguroPipe } from './pipes';
     ReactiveFormsModule
   ],
   providers: [
-      { provide: LOCALE_ID, useValue: "es"}
+    { provide: LOCALE_ID, useValue: 'en-US'}
     ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,23 @@
+#main {
+    font-size: 14px;
+    text-align: center;
+    > div {
+        margin: 15px auto;
+    }
+    #div1 {
+        border:1px solid green;
+    }
+    #div2 {
+        border:1px solid blue;
+    }
+    button {
+        background-color: cornflowerblue;
+        color: white;
+        display: block;
+        width: 130px;
+        margin: 5px auto;
+    }
+    .myClass { // this class is added by Directive1 
+        color: red;
+    }
+}

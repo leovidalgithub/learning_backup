@@ -1,0 +1,16 @@
+{
+  "name": "hapi_server",
+  "version": "1.0.0",
+  "description": "Hapi First Contact",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leo Rdgz Vidal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "hapi": "^17.6.0",
+    "inert": "^5.1.0"
+  }
+}

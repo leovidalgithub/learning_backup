@@ -1,9 +1,9 @@
-
 <p class="myComponentClass" (click)="setPerson()">
-  This is my new Angular 2 Component!
-  {{cont}}
+  This is my new Angular 2 Component! {{cont}}
 </p>
-<div [class]="clase">
+
+<div [class]="className"
+    [style.font-size.px]="mySize">
     <p [hidden]="visible">
       Visible = {{visible}}
     </p>
@@ -16,8 +16,8 @@
 <a href="http://google.es">Go to</a>
 <a [href]="enlace">Dólar</a>
 <p>
-  ¿Cómo te llamas?  <input type="text" [(ngModel)]="quien" (input)="inputChanged($event)" />
-  {{quien}}
+  ¿Cómo te llamas?  <input type="text" [(ngModel)]="thisName" (input)="inputChanged($event)" />
+  {{thisName}}
 </p>
 <h3 [ngStyle]="{backgroundColor: getColor()}">Server is {{serverStatus}}</h3>
 <ng-template #noServer>

@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, ViewChild, ElementRef, Renderer2, OnInit} from '@angular/core';
 import { MyServiceService } from './my-service.service';
 
 @Component({
@@ -7,18 +7,27 @@ import { MyServiceService } from './my-service.service';
   styleUrls: ['./app.component.scss'],
   providers: [MyServiceService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  @ViewChild('myButton') myButton: ElementRef;
+
   title = 'app';
   private persons = [];
-  constructor(private ss: MyServiceService) {
+  constructor(private ss: MyServiceService, private render: Renderer2) {
     this.persons = ss.getData();
     console.log(this.persons);
   }
 
-  @HostListener('click', ['$event'])
-    bark(e) {
-     console.log(e.target);
+  ngOnInit() {
+    setTimeout(() => {
+      this.render.addClass(this.myButton.nativeElement, 'my-class');
+    }, 4100);
   }
+
+  // @HostListener('click', ['$event'])
+  //   bark(e) {
+  //    console.log(e.target);
+  // }
 
   // @HostListener("window:scroll", [])
   // onWindowScro() {
@@ -29,7 +38,7 @@ export class AppComponent {
   //     console.log('resize');
   //   }
   // @HostListener('document:click', ['$event'])
-  //   handleClick(event:Event) {
+  //   handleClick(event: Event) {
   //     console.log(event.target);
   //   }
 

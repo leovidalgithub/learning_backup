@@ -7,13 +7,13 @@ import { MyService } from './my-service.service';
   styleUrls: ['./app.component.css'],
   providers: []
 })
-export class AppComponent {
-  // title = 'app';
-  title:string;
-  constructor(private _MyService: MyService ) {}
+export class AppComponent implements OnInit {
+  private title: string = 'App Title';
+  constructor(private ms: MyService ) {}
 
-  ngOnInit() {
-      this.title = this._MyService.sayHello();
-      console.log(this._MyService.sayHello());
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.title = this.ms.sayHello();
+    }, 3500);
   }
 }

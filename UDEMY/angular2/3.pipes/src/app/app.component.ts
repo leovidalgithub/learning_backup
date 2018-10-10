@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+import { of, Observable } from 'rxjs';
+import { filter, map, delay } from 'rxjs/operators';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +11,15 @@ import { FormControl } from '@angular/forms';
 })
 export class AppComponent {
 
-  pi: number = 213.141592;
-  e: number = 2.718281828459045;
+  squareOddVals: Observable<number> = of(1, 2, 3, 4, 5, 6).pipe(
+          filter((n: number) => n % 2 !== 0),
+          map(n => n * n),
+          delay(2400)
+  );
+  pi: Number = 213.141592;
+  e: Number = 2.718281828459045;
   myname = new FormControl('');
 
-// *********************************************
   name: String = 'Fernando';
   name2: String = 'fernAndo alBErto heRRera jiméneZ';
 
@@ -43,5 +50,9 @@ export class AppComponent {
 
   nombre: String = 'Fernando';
   activar: Boolean = true;
+
+  constructor() {
+    this.squareOddVals.subscribe(x => console.log('Async RxJS of = ', x));
+  }
 
 }

@@ -1,0 +1,16 @@
+<div id="main">
+
+  <div id="div1" appDirective1 (evenEmitter)="fn($event)">Hover me! numberOfHovers = {{numberOfHovers}}<br>Using Directive1, HostBinding & HostListener</div>
+
+  <div id="div2">
+    <code>Using ViewChild & ViewChildren</code>
+    <app-view-child-son #son1></app-view-child-son>
+    <app-view-child-son #son2></app-view-child-son>    
+    <code>These buttons have access to ViewChildSon method</code>
+    
+    <button (click)="myFunction2()">First child found</button>
+    <button (click)="myFunction1()">Child   number  2</button>
+    <button (click)="myFunction3()">All childs  found</button>
+  </div>
+
+</div>

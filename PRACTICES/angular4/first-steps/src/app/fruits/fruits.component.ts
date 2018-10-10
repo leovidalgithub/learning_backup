@@ -6,15 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fruits.component.css']
 })
 export class FruitsComponent implements OnInit {
-    cont:number = 0;
+    public cont: number = 0;
+    public visible: Boolean = false;
+
+    private thisName: String = 'Ian Mosley';
+
+    public className: String = 'newClass';
+    public    mySize: String = '26';
+
+    public showMe = false;
+    public serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    public enlace = 'http://dolartoday.leovidal.es';
+
     setPerson = () => {
         console.log('clicked');
     }
-    visible = false;
-    clase = 'newClass';
-    showMe = false;
-    serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
-    enlace = 'http://dolartoday.leovidal.es';
     pressMe() {
         this.visible = !this.visible;
         this.showMe = !this.showMe;
@@ -31,11 +37,8 @@ export class FruitsComponent implements OnInit {
     constructor() {
       setInterval( () => {
           this.cont++;
-      },1000);
+      }, 1000);
     }
 
-  ngOnInit() {
-      console.log('Component loaded!');
-  }
-
+  ngOnInit() {}
 }

@@ -1,0 +1,9 @@
+<div id="main" class="container">
+  <h3>Observable1</h3>
+  <code>Service1 uses a Subject ane returns an Observable using a Pipe first.</code>
+  <code>Observable2 sends a message to Observable1 through this Service.</code>
+  <code>Also, it shows a Subscription using the formEvent to get mouse coordenates.</code>
+  <p>Mouse X = {{coords.x}} / Y = {{coords.y}}</p>
+  <app-observable2></app-observable2>
+  <div *ngIf="message" class="alert alert-success">{{message.text}}</div>
+</div>

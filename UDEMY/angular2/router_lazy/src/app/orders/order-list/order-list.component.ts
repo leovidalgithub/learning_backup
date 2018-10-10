@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InitialServiceService } from '../initial-service.service';
 
 @Component({
   selector: 'app-order-list',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit {
-
-  constructor() { }
+  myVar: string;
+  constructor(private ss: InitialServiceService) { }
 
   ngOnInit() {
+    this.myVar = this.ss.getVar();
   }
 
 }

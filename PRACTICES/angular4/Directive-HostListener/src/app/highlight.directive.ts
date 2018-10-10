@@ -11,7 +11,7 @@ export class HighlightDirective implements OnInit  {
     setInterval( () => {
       this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', this.getColor());
       // element.nativeElement.style.backgroundColor = this.getColor(); // BAD PRACTICE
-    }, 1301);
+    }, 2900);
   }
   ngOnInit() { }
 

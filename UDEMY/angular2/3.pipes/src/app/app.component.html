@@ -78,15 +78,26 @@
         <td>currency:'EUR'</td>
         <td>{{salario | currency:'EUR'}}</td>
       </tr>
+<!--  -->
       <tr>
         <td>{{salario}}</td>
-        <td>currency:'EUR':true</td>
-        <td>{{salario | currency:'EUR':true}}</td>
+        <td>currency:'EUR':CODE</td>
+        <td>{{salario | currency:'EUR':'code'}}</td>
+      </tr>
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency:'EUR':symbol (default)</td>
+        <td>{{salario | currency:'EUR':'symbol'}}</td>
+      </tr>
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency:'EUR':symbol-narrow</td>
+        <td>{{salario | currency:'EUR':'symbol-narrow'}}</td>
       </tr>
       <tr>
         <td>{{salario}}</td>
         <td>currency:'EUR':true:'3.0-0'</td>
-        <td>{{salario | currency:'EUR':true:'3.0-0'}}</td>
+        <td>{{salario | currency:'EUR':'symbol':'3.0-0'}}</td>
       </tr>
       <tr>
         <td>{{salario}}</td>
@@ -98,6 +109,12 @@
         <td>async</td>
         <td>{{valorDePromesa | async}}</td>
       </tr>
+      <tr>
+        <td>RXJS of</td>
+        <td>async</td>
+        <td>{{squareOddVals | async}}</td>
+      </tr>
+<!--  -->
       <tr>
         <td>{{fecha}}</td>
         <td>date</td>
@@ -141,17 +158,17 @@
   </table>
 <hr>
 
-<h3>Slice [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] - | slice:5:8</h3>
-<ul>
-  <li *ngFor="let item of arreglo | slice:5:8">{{item}}</li>
-</ul>
-<hr>
+  <h3>Slice [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] - | slice:5:8</h3>
+  <ul>
+    <li *ngFor="let item of arreglo | slice:5:8">{{item}}</li>
+  </ul>
+  <hr>
 
-<h4>JSON Pipe</h4>
-  <pre>{{heroe | json}}</pre><hr>
-<hr>
+  <h4>JSON Pipe</h4>
+    <pre>{{heroe | json}}</pre><hr>
+  <hr>
 
-<h4>Youtube Video <small>Escobar</small></h4>
-<iframe width="560" height="315" [src]="urlVideo | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
+  <h4>Youtube Video <small>Escobar</small></h4>
+  <iframe width="560" height="315" [src]="urlVideo | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
 
 </div>
