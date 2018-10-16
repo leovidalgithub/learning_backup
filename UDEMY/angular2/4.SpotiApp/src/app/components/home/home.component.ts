@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs/operators';
-
 import { SpotifyService } from '../../services/spotify.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
