@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
-
-import { interval, of } from 'rxjs';
-import { switchMap, delay, map } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -13,7 +11,7 @@ export class SearchComponent implements OnInit {
   public artists: any[] = [];
   public loading: Boolean = false;
 
-  constructor(private spotifyService: SpotifyService) {}
+  constructor(private spotifyService: SpotifyService, private route: ActivatedRoute) {}
 
   buscar(term: String) {
     if (term.trim() === '') {
@@ -33,6 +31,10 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    // receiving the resolve data from token.service and app.routes
+    console.log(this.route.snapshot.data);
+
+
     // //emit immediately, then every 5s
     // const source = timer(0, 5000);
     // //switch to new inner observable when source emits, emit items that are emitted

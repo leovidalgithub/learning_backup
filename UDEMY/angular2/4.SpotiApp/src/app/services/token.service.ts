@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Resolve } from '@angular/router';
 import { of, Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TokenService {
+export class TokenService implements Resolve<Observable<String>> {
   private access_token: String;
 
   constructor(private http: HttpClient) {}
@@ -21,5 +22,10 @@ export class TokenService {
     } else {
       return of(this.access_token);
     }
+  }
+
+  // using this resolve in app.routes for search component path
+  resolve() {
+    return of('This is a resolve for Search Component').pipe(delay(1500));
   }
 }
