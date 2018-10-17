@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { ActivatedRoute } from '@angular/router';
 import { fromEvent } from 'rxjs';
-import { debounceTime, map, switchMap } from 'rxjs/operators';
+import { debounceTime, map, switchMap, filter, finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -33,23 +33,31 @@ export class SearchComponent implements OnInit {
     //     () => { this.loading = false });
     }
 
+    // **********************************************
+    // finalize(() => console.log('finalize'))
+    // **********************************************
+
     private startHearing() {
       const input = document.getElementById('searchInput');
       fromEvent(input, 'keyup')
         .pipe(
           map((element: any) => element.currentTarget.value),
           debounceTime(700),
+          filter((val: String) => val.trim().length !== 0),
           switchMap(val =>
             this.spotifyService.getArtist(val)
           )
         )
         .subscribe(data =>
-          this.artists = data,
+        //   this.artists = data,
+          console.log('data', data),
           (err) => {
-            console.log('err', err);
-            this.artists = [];
-          },
-          () => this.loading = false);
+              this.artists = [];
+            },
+            () => {
+                console.log('complete');
+            //   this.loading = false;
+          })
   }
 
   ngOnInit() {
