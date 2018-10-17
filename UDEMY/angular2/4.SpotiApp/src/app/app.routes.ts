@@ -1,10 +1,12 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
 import { TokenService } from './services/token.service';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'rxjs', component: RxjsComponent },
   { path: 'search', component: SearchComponent, resolve: { msg: TokenService } },
 // { path: 'search', component: SearchComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },

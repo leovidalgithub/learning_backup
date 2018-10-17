@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TokenService } from './token.service';
 
 import { map, switchMap, delay } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,12 +27,12 @@ export class SpotifyService {
 
   public getNewReleases() {
     return this.getQuery('browse/new-releases')
-          .pipe(map((data: any) => data.albums.items ));
+          .pipe(map((data: any) => data.albums.items));
   }
 
   public getArtist(termino: String) {
     return this.getQuery(`search?q=${termino}&type=track%2Cartist`)
-      .pipe(map(data => data['artists'].items ));
+      .pipe(map(data => data['artists'].items));
   }
 
 }

@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
@@ -22,7 +23,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistaComponent,
     NoimagePipe,
     CardsComponent,
-    LoadingComponent
+    LoadingComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

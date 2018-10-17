@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { ActivatedRoute } from '@angular/router';
+import { fromEvent } from 'rxjs';
+import { debounceTime, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -14,21 +16,40 @@ export class SearchComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService, private route: ActivatedRoute) {}
 
-  buscar(term: String) {
-    if (term.trim() === '') {
-      this.artists = [];
-      return;
+  public buscar(term: String) {
+    // if (term.trim() === '') {
+    //   this.artists = [];
+    //   return;
+    // }
+    // this.loading = true;
+    // this.spotifyService.getArtist(term)
+    //   .subscribe(data => {
+    //     this.artists = data;
+    //   },
+    //     (err) => {
+    //       console.log('err', err);
+    //       this.artists = [];
+    //     },
+    //     () => { this.loading = false });
     }
-    this.loading = true;
-    this.spotifyService.getArtist(term)
-      .subscribe(data => {
-        this.artists = data;
-        },
-        (err) => {
-          console.log('err', err);
-          this.artists = [];
-        },
-        () => { this.loading = false });
+
+    private startHearing() {
+      const input = document.getElementById('searchInput');
+      fromEvent(input, 'keyup')
+        .pipe(
+          map((element: any) => element.currentTarget.value),
+          debounceTime(700),
+          switchMap(val =>
+            this.spotifyService.getArtist(val)
+          )
+        )
+        .subscribe(data =>
+          this.artists = data,
+          (err) => {
+            console.log('err', err);
+            this.artists = [];
+          },
+          () => this.loading = false);
   }
 
   ngOnInit() {
@@ -37,6 +58,8 @@ export class SearchComponent implements OnInit {
 
     // receiving the resolve data from token.service and app.routes
     console.log(this.route.snapshot.data);
+
+    this.startHearing();
   }
 
 }
