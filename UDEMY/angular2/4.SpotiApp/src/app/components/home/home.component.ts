@@ -9,20 +9,21 @@ import { delay } from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
 
   public newReleases: any[] = [];
-  public loading: Boolean = false;
+  public loading: Boolean = true;
 
   constructor(private spotifyService: SpotifyService) {}
 
-  ngOnInit() {
-      this.loading = true;
-      this.spotifyService.getNewReleases()
-      .pipe(
-        delay(50)
-        ).subscribe((data: any) => {
-          this.newReleases = data;
-          this.loading = false;
-          })
-  }
+    ngOnInit() {
+        const random = Math.floor(Math.random() * (1200 - 300 + 1)) + 300;
+        this.spotifyService.getNewReleases()
+            .pipe(
+                delay(random)
+            )
+            .subscribe((data: any) => {
+                this.newReleases = data;
+                this.loading = false;
+            })
+    }
 
   ngOnDestroy(): void {
     console.log('HomeComponent ngOnDestroy');

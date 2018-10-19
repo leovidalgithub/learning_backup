@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
           debounceTime(700),
           filter((val: String) => val.trim().length !== 0),
           switchMap(val =>
-            this.spotifyService.getArtist(val)
+            this.spotifyService.getArtists(val)
           )
         )
         .subscribe(data =>

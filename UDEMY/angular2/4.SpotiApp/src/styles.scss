@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
 body {
     background-color: black;
     color: white !important;
@@ -36,7 +34,6 @@ hr {
     height: 50px;
 }
 
-
 /* Animaciones */
 .animated {
     animation-name: fadeIn;
@@ -46,8 +43,9 @@ hr {
     animation-fill-mode: both;
 }
 .fast {
-    -webkit-animation-duration: 0.4s;
-    animation-duration: 0.4s;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
