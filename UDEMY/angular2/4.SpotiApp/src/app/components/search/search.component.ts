@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { ActivatedRoute } from '@angular/router';
 import { fromEvent } from 'rxjs';
-import { debounceTime, map, switchMap, filter } from 'rxjs/operators';
+import { debounceTime, map, switchMap, filter, tap, timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -23,9 +23,11 @@ export class SearchComponent implements OnInit {
           map((element: any) => element.currentTarget.value),
           debounceTime(700),
           filter((val: String) => val.trim().length !== 0),
+          tap(() => this.loading = true),
           switchMap(val =>
             this.spotifyService.getArtists(val)
-          )
+          ),
+          tap(() => this.loading = false)
         )
         .subscribe(data =>
           this.artists = data,

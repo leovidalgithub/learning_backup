@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TokenService } from './token.service';
 
-import { map, switchMap, delay } from 'rxjs/operators';
+import { map, switchMap, timeout } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable({
@@ -16,6 +16,7 @@ export class SpotifyService {
     const url = `https://api.spotify.com/v1/${query}`;
     return this.tokenService.getToken()
       .pipe(
+        // timeout(1000),
         switchMap(token => {
           const headers: HttpHeaders = new HttpHeaders({
             'Authorization': `Bearer ${token}`
