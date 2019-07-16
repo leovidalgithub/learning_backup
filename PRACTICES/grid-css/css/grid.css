@@ -1,0 +1,7 @@
+/* grid file # 1 */
+.contenedor {
+    display: grid;
+    grid-template-columns: 20% 1fr 30%;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-gap: 20px;
+}
