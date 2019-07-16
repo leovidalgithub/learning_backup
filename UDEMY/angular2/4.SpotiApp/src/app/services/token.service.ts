@@ -26,6 +26,7 @@ export class TokenService implements Resolve<Observable<String>> {
 
   // using this resolve in app.routes for search component path
   resolve() {
-    return of('500ms wait on resolve for Search Component').pipe(delay(500));
+    return of('500ms wait on resolve for Search Component')
+            .pipe(delay(500));
   }
 }

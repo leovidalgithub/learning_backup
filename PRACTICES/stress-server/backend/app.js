@@ -20,24 +20,24 @@ server.listen(8085, function() {
 
 // GENERATE TOKEN
 function generateToken() {
-	var charLength = 15,
-	numLength      = 9,
-	charSet        = 'abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ',
-	numSet         = '0123456789',
-	charRetVal     = '',
-	numRetVal      = '';
-	for ( var i = 0, n = charSet.length; i < charLength; ++i ) {
+	let charLength = 15;
+	let numLength  = 9;
+	let charSet    = 'abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ';
+	let numSet     = '0123456789';
+	let charRetVal = '';
+	let numRetVal  = '';
+	for (let i = 0, n = charSet.length; i < charLength; ++i) {
 		charRetVal += charSet.charAt( Math.floor( Math.random() * n ) );
 	};
-	for ( var i = 0, n = numSet.length; i < numLength; ++i ) {
+	for (let i = 0, n = numSet.length; i < numLength; ++i) {
 		numRetVal += numSet.charAt( Math.floor( Math.random() * n ) );
 	};
 	return charRetVal + numRetVal;
 };
 
-io.on('connection', function ( socket ) {
-  socket.on( 'giveMyTokenBack', function ( data ) {
+io.on('connection', function (socket) {
+  socket.on('giveMyTokenBack', function (data) {
       let token = generateToken();
-      io.to( socket.id ).emit( 'token', { success : true , token: token } );
+      io.to(socket.id).emit( 'socket_response', { success : true , token: token } );
   });
 });

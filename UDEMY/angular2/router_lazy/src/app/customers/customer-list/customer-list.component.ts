@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
+    private counter: number = 0;
+
   constructor() { }
 
   ngOnInit() {
+      setInterval(() => {
+          console.log(`Counter ${++this.counter}`);
+      }, 3200);
   }
 
 }

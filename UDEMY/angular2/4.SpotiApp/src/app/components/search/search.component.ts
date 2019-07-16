@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
         .pipe(
           map((element: any) => element.currentTarget.value),
           debounceTime(700),
-          filter((val: String) => val.trim().length !== 0),
+          filter((val: String) => val.trim().length !== 0), // let pass just when length > 0
           tap(() => this.loading = true),
           switchMap(val =>
             this.spotifyService.getArtists(val)

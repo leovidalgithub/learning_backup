@@ -13,6 +13,7 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NoimagePipe,
     CardsComponent,
     LoadingComponent,
-    RxjsComponent
+    RxjsComponent,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,

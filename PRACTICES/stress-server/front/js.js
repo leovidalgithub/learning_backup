@@ -1,7 +1,8 @@
 let socket;
 $( document ).ready( function() {
     $( '#requestsInput input' ).focus();
-    socket = io.connect( 'http://stress-server.leovidal.es/' );
+    // socket = io.connect('http://stress-server.leovidal.es/');
+    socket = io.connect( 'http://localhost:8085/' );
 });
 
 $( "#myForm" ).submit( function( event ) {
@@ -24,13 +25,13 @@ $( "#myForm" ).submit( function( event ) {
 
         function runSocket() {
             let beginTime;
-            socket.on( 'token', function ( data ) {
+            socket.on( 'socket_response', function ( data ) {
                 if( data.success ) {
                     printLine( data, beginTime );
                 }
                 if( cont >= num ) {
                     printFinish();
-                    // socket.disconnect();
+                    //socket.disconnect();
                 } else {
                     emit();
                 }
@@ -38,7 +39,7 @@ $( "#myForm" ).submit( function( event ) {
             emit();
             function emit() {
                 beginTime = Date.now();
-                socket.emit( 'giveMyTokenBack', { msg : 'give me my token' } );
+                socket.emit( 'giveMyTokenBack', { msg : 'Give me my token, pajuo' } );
             }
         }
 

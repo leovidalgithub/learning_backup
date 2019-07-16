@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MyClass, thisFunction } from './../classes';
 import { MyService } from './../services/my-service.service';
 import { Logged } from './../definitions';
@@ -9,7 +9,7 @@ import { Logged } from './../definitions';
   template: `<h2>Home</h2>`,
   providers: [MyService]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit  {
     constructor(private ms: MyService) {}
     ngOnInit() {
         console.log(`HomeComponent OnInit : ${this.ms.fn()}`);
@@ -37,19 +37,20 @@ export class AboutHomeComponent {
   <button type="button" (click)="fn()">Go!!!</button>
   `
 })
-export class AboutItemComponent {
-    id:any;
-    paramSub:any;
+export class AboutItemComponent implements OnInit, OnDestroy {
+    id: any;
+    paramSub: any;
 
-    private _MyClass:MyClass;
+    private _MyClass: MyClass;
     constructor(private activatedRoute: ActivatedRoute) { // ActivatedRoute injecting
         this._MyClass = new MyClass();
         this._MyClass.brand = 'Ford';
     }
-    ngOnInit(){
-        this.paramSub = this.activatedRoute.params.subscribe(params => this.id = parseInt(params['id'],10));
+    ngOnInit() {
+        this.paramSub = this.activatedRoute.params.subscribe(params => this.id = parseInt(params['id'], 10));
+        console.log(this.paramSub);
     }
-    ngOnDestroy(){
+    ngOnDestroy() {
         this.paramSub.unsubscribe();
         console.log('unsubscribe');
     }

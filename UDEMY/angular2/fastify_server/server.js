@@ -13,6 +13,7 @@ server.get('/spotifyToken', (req, res, next) => {
                 }
     }, (err, httpResponse, body) => {
         res.send(200, JSON.parse(body));
+        // res.json(body);
     })
 });
 

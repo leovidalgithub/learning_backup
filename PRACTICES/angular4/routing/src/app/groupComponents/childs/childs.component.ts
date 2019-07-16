@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { giveMeRandom } from './../../classes';
 import { MyService } from './../../services/my-service.service';
 import { Logged } from './../../definitions';
 
-let lapse:number = 700;
+const lapse = 700;
 
-//****************************CHILD*1*****************************************
+// ****************************CHILD*1*****************************************
 @Component({
   selector: 'app-child-1',
   template: `<div class="main">
@@ -14,26 +14,25 @@ let lapse:number = 700;
             </div>`,
   styleUrls: ['./childs.component.scss'],
 })
-export class ChildComponent1  {
-    msgFromParent:string;
+export class ChildComponent1 {
+    msgFromParent: string;
 
     @Input()
-        set child1_var(value:string) {
+        set child1_var(value: string) {
             this.msgFromParent = (value && value.trim()) || 'No msg come along';
         }
         get child1_var() {
             return this.msgFromParent;
         }
 
-    value:number = 0;
+    value = 0;
     constructor() {
         setInterval( () => {
             if( giveMeRandom( .55 )) this.value++;
         }, lapse);
     }
-    ngOnInit() { }
 }
-//****************************CHILD*2*****************************************
+// ****************************CHILD*2*****************************************
 @Component({
     selector: 'app-child-2',
     template: `<div class="main">
@@ -57,7 +56,7 @@ export class ChildComponent2  {
         })
     }
 }
-//****************************CHILD*3*****************************************
+// ****************************CHILD*3*****************************************
 @Component({
     selector: 'app-child-3',
     template: `<div class="main">
@@ -65,8 +64,8 @@ export class ChildComponent2  {
     </div>`,
     styleUrls: ['./childs.component.scss'],
 })
-export class ChildComponent3  {
-    value:number = 0;
+export class ChildComponent3 implements OnInit  {
+    value = 0;
     constructor(private ms: MyService) {
         setInterval( () => {
             if( giveMeRandom( .65 )) this.value++;
@@ -74,7 +73,7 @@ export class ChildComponent3  {
     }
     ngOnInit() {
         this.ms.getLogged().subscribe((logged:Logged) => {
-            this.value+=10;
+            this.value += 10;
             console.log(`CHILD-3 - Observable says: ${logged.email}`)
         })
     }

@@ -18,3 +18,31 @@
     </div>
 </div>
 <hr>
+<div class="row animated" *ngIf="!loading">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Álbum</th>
+                    <th>Canción</th>
+                    <th>Vista previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of topTracks; let idx=index">
+                    <td>
+                        <img [src]="track.album.images | noimage" class="img-thumb">
+                    </td>
+                    <td>{{track.album.name}}</td>
+                    <td>{{track.name}}</td>
+                    <td>
+                        <iframe [src]="track.id | domseguro:'https://open.spotify.com/embed/track/'" width="300" height="80" frameborder="0"
+                            allowtransparency="true" allow="encrypted-media"></iframe>
+                            <!-- "spotify:track:0mUMfBLicWZAHsA1bmzBeb" -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

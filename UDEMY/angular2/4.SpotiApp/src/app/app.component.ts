@@ -10,7 +10,7 @@ import { TokenService } from './services/token.service';
 })
 export class AppComponent {
 
-  constructor(private http: HttpClient, private ss: TokenService) {}
+//   constructor(private http: HttpClient, private ss: TokenService) {}
 }
 // https://alligator.io/angular/route-resolvers/
 // ng serve--live - reload

@@ -1,8 +1,7 @@
-
 interface Icar {
-    brand:string;
-    color:string;
-    price:number;
+    brand: string;
+    color: string;
+    price: number;
 }
 
 export class MyClass implements Icar {
@@ -10,18 +9,18 @@ export class MyClass implements Icar {
     // color:string;
     // price:number;
 
-    static variable:string = 'statics variable';
-    public brand:string;
-    public color:string;
-    public price:number;
-    constructor(){}
+    static variable = 'statics variable';
+    public brand: string;
+    public color: string;
+    public price: number;
+    constructor() {}
     getBrand() {
         return this.brand;
     }
 }
 
 export function thisFunction( ) {
-    let system:string = 'AP3';
+    const system: String = 'AP3';
     return system;
 }
 
