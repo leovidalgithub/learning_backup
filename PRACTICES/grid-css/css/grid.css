@@ -1,7 +1,10 @@
 /* grid file # 1 */
 .contenedor {
     display: grid;
-    grid-template-columns: 20% 1fr 30%;
-    grid-template-rows: 2fr 1fr 1fr;
-    grid-gap: 20px;
+    /* grid-template-columns: 20% 1fr 30%; */
+    /* grid-template-columns: 100px 1fr 1fr 1fr; */
+    grid-template-columns: 130px auto 225px 10%;
+    /* grid-template-rows: 2fr 3fr 150px; */
+    /* grid-template-rows: repeat(5,115px); */
+    /* grid-gap: 10px; */
 }

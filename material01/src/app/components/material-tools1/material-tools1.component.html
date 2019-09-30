@@ -1,0 +1,16 @@
+<h3>
+  Material Tools 1
+</h3>
+<div class="material1">
+    <mat-slider min="1" max="250" step="2" value="11"></mat-slider>
+    <hr>
+    <div class="checks">
+        <mat-checkbox [(ngModel)]="checked">Check #1</mat-checkbox>
+        <mat-checkbox [(ngModel)]="myChildBoolean">Check #2</mat-checkbox>
+    </div>
+    <h3>
+        {{checked}}  /  {{myChildBoolean}}
+    </h3>
+    <h3>myChildString  = {{myChildString}}</h3>
+    <h3>myChildInteger = {{myChildInteger}}</h3>
+</div>
