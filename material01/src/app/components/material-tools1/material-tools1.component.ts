@@ -12,8 +12,12 @@ export class MaterialTools1Component implements OnInit {
     @Input() myChildBoolean: boolean = false;
     @Input() myChildInteger: number;
 
-  constructor() {}
+    constructor() { }
   ngOnInit() {
-  }
+      setInterval(() => {
+          this.myChildBoolean = !this.myChildBoolean;
+          this.checked = !this.checked;
+      }, 800);
+  } 
 
 }

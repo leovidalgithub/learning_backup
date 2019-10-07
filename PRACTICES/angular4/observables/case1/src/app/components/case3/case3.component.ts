@@ -25,12 +25,12 @@ export class Case3Component {
 
       getAsyncData() {
         return Observable.of({
-          firstName: 'Luke',
-          lastName: 'Skywalker',
-          age: 65,
-          height: 172,
-          mass: 77,
-          homeworld: 'Tatooine'
+          firstName: 'Brendon',
+          lastName: 'Oneil',
+          age: 45,
+          height: 2432,
+          mass: 44,
+          homeworld: 'Nomelose'
       }).delay( 5000 );
       }
 }

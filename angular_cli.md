@@ -25,6 +25,7 @@ ng version, for example, doesn't work while inside a project.
 
 When upgrading to v6, 'angular-cli.json' file must be update to 'angular.json'
 Please, look forward on previous installed  Angular_cli local version (--from=1.7.4)
+
 > ng update @angular/cli --migrate-only --from=1.7.4
 > normally, I would run ncu -a and get back typescript version to 2.7.2 in package.json and then run npm install
 
