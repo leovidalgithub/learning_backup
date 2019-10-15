@@ -1,6 +1,6 @@
 # Atom settings and Packages
 
-### Packages
+## Packages
 
 - sync-settings
 - angular-2-typeScript-snippets

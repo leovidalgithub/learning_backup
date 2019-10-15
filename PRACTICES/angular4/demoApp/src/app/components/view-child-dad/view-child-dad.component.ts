@@ -7,9 +7,9 @@ import { ViewChildSonComponent } from '../view-child-son/view-child-son.componen
   styleUrls: ['./view-child-dad.component.scss']
 })
 export class ViewChildDadComponent implements OnInit {
-  @ViewChild(ViewChildSonComponent) firstSonFound: ViewChildSonComponent; // since there are more than one app-son, it will get the first found
-  @ViewChild('son2') mySon2: ViewChildSonComponent;
-  @ViewChildren(ViewChildSonComponent) allMySons: QueryList<ViewChildSonComponent>; // object with all ViewChildSonComponent found
+  @ViewChild(ViewChildSonComponent, {static: false}) firstSonFound: ViewChildSonComponent; // since there are more than one app-son, it will get the first found
+    @ViewChild('son2', { static: false }) mySon2: ViewChildSonComponent;
+    @ViewChildren(ViewChildSonComponent) allMySons: QueryList<ViewChildSonComponent>; // object with all ViewChildSonComponent found
 
   public numberOfHovers: Number = 0;
   public fn(v: any): void {

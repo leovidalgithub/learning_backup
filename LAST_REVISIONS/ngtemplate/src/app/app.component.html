@@ -1,0 +1,53 @@
+    <div style="text-align:center">
+      <img width="85" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+    </div>
+
+    <hr>
+    <h3>
+        <ng-container *ngIf="condition; else elseBlock">*Content rendered because condition TRUE</ng-container>
+        <ng-template #elseBlock>Content NOT rendered becasue condition FALSE</ng-template>
+    <h3>
+        <ng-container *ngIf="condition; then thenBlock else elseBlock2"></ng-container>
+        <ng-template #thenBlock>Content to render when condition is true.</ng-template>
+        <ng-template #elseBlock2>Content to render when condition is false.</ng-template>
+    </h3><hr>
+    <!-- ------------------------------------------------------ ------------------------------------------------------ -->
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+    <ng-template #template>
+        <h3>ngTemplateOutlet = template</h3>
+    </ng-template><hr>
+
+    <!-- ------------------------------------------------------ ------------------------------------------------------ -->
+    <ng-container *ngTemplateOutlet="greet"></ng-container>
+    <ng-container *ngTemplateOutlet="template_1; context: contextObj"></ng-container>
+    <ng-container *ngTemplateOutlet="template_2; context: contextObj"></ng-container>
+    <ng-container *ngTemplateOutlet="template_3; context: contextObj"></ng-container>
+    
+    <ng-template #greet><h3>Just Greet</h3></ng-template>
+    <ng-template #template_1 let-thisVarialbe>
+        <h3>let-thisVarialbe <span>{{thisVarialbe}}</span></h3>
+    </ng-template>
+    <ng-template #template_2 let-food="donut">
+        <h3>let-food="donut" <span>{{food}}</span></h3>
+    </ng-template>
+    <ng-template #template_3 let-coffee="cafe">
+        <h3>let-coffee="cafe" <span>{{coffee}}</span></h3>
+    </ng-template><hr>
+    <!--
+            public contextObj = {
+                $implicit: '$implicit value',
+                donut: "Old fashioned glazed",
+                cafe: "El cafecito bien bueno"
+            };      -->
+    <!-- ------------------------------------------------------ ------------------------------------------------------ -->
+
+    <app-projected-content id="projectedContent" [$prop]="myProp">
+        <p>This Projected Content (1) has no Select Class</p>
+        <app-show-date></app-show-date>
+        <p class="myProjectedClass">This other <strong>Projected Content</strong> is shown after</p>
+        <p>This Projected Content (2) has no Select Class</p>
+        <app-show-date></app-show-date>
+        <h3 class="anotherProjectedClass">This <strong>Projected Content</strong> is shown first</h3>
+        <h2 #contentchild>This is a Content Child</h2>
+    </app-projected-content><hr>
+    <!-- ------------------------------------------------------ ------------------------------------------------------ -->
