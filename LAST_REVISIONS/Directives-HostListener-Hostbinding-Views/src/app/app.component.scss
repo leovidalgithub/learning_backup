@@ -19,6 +19,16 @@
   background-color: goldenrod;
 }
 
+.app-leo-Class {
+    padding: 12px;
+    margin: 8px;
+    border: 2px solid cyan;
+    h4 {
+        color: cyan;
+        text-align: center;
+    }
+}
+
 .myBlurClass {
     filter: blur(2px);
 }

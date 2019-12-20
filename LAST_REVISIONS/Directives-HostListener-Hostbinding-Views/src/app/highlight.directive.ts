@@ -26,9 +26,10 @@ export class HighlightDirective implements OnInit {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
   }
 
-  @HostListener('mouseover', ['"marico"', '$event'])
+  @HostListener('mouseover', ['"A message"', '$event'])
     handleClick(greeting: string, event: any) {
         this.renderer.setStyle(this.element.nativeElement, 'color', this.getColor());
+        console.log(greeting);
     //   let part = this.el.nativeElement.querySelector('.card-text');
     //   this.renderer.setElementStyle(part, 'display', 'block');
     }

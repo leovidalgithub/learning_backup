@@ -1,18 +1,36 @@
 <div class="container-fluid">
-
     <a [href]="link">Introduction to Angular Routing!!!</a>
-    <hr>
+</div>
+<hr>
 
-    <div class="myLinks">
-        <a [routerLink]="['/']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a [routerLink]="['/about']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a>
-        <a routerLink="/about" routerLinkActive="active-link" routerLinkActive #rla="routerLinkActive">
-            ActiveAbout is {{ rla.isActive ? '(ON)' : '(OFF)'}}
-        </a>
-    </div>
-    <hr>
+<nav>
+    <ul>
+        <li routerLinkActive="activeLink" [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="['/home']">Home</a>
+        </li>
+        <li routerLinkActive="activeLink">
+            <a [routerLink]="[{outlets: { sidebar: ['about']}}]">About</a>
+        </li>
+        <li routerLinkActive="activeLink" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/about" routerLinkActive #rla="routerLinkActive">
+                ActiveAbout is {{ rla.isActive ? '(ON)' : '(OFF)'}}
+            </a>
+        </li>
+    </ul>
+</nav>
+<hr>
 
-    <div [style.border]="borderGreen ? '4px solid green' : '4px solid crimson'" [style.padding]="'15px'">
+<div [style.border]="borderGreen ? '4px solid green' : '4px solid orange'" 
+     [style.padding]="'15px'"
+     [style.border-radius]="myBorderRadius"
+     [style.margin]="'20px'"
+     >
         <router-outlet></router-outlet>
-    </div>
+</div>
+<div [style.border]="borderGreen ? '4px solid green' : '4px solid orange'" 
+     [style.padding]="'15px'"
+     [style.border-radius]="myBorderRadius"
+     [style.margin]="'20px'"
+     >
+        <router-outlet name="sidebar"></router-outlet>
 </div>

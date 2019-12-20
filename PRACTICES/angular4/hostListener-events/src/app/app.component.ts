@@ -11,7 +11,7 @@ export enum KEY_CODE {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    private value: number = 0;
+    public value: number = 0;
     constructor() {}
 
     @HostListener('window:keyup', ['$event'])

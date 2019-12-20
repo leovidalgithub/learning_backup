@@ -40,7 +40,15 @@ Please, look forward on previous installed  Angular_cli local version (--from=1.
 > error : Cannot find module 'node-sass'
 > remove package-lock.json and npm install
 
-~~~~
+> error : ERROR in node_modules/rxjs/internal/types.d.ts(81,44): error TS1005: ';' expected. (Angular 6)
+> npm install rxjs@6.0.0 --save
+
+> Schema validation failed with the following errors:
+  Data path ".builders['app-shell']" should have required property 'class'.
+    > In your package.json change the devkit builder.
+    "@angular-devkit/build-angular": "^0.800.1",
+    "@angular-devkit/build-angular": "^0.10.0",
+
 npm outdated
 ~~~~
 

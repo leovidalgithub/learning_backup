@@ -1,0 +1,23 @@
+h1 {
+    color: dodgerblue;
+}
+h1 span {
+    font-weight: bold;
+}
+.myClass {
+    height: auto;
+    width: 85%;
+    padding: 20px;
+    margin: auto;
+    background-color: #afafaf;
+    text-align: center;
+    border: cornflowerblue 3px dotted;
+}
+
+.myColumns div {
+    background-color: #0d4a3b;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    padding: 15px 0;
+}

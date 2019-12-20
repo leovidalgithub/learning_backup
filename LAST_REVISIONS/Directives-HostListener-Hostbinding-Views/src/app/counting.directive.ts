@@ -54,7 +54,7 @@ export class SonComponent {
         <button (click)="myFunction3()">Send to all my sons</button>
     </div>`,
     styles: [`button {
-                    background-color: red;
+                    background-color: red;ng 
                     color: beige;
                 }`]
 })

@@ -9,7 +9,7 @@ angular.module('angularApp', [])
         .provider('provider2', function() {
             this.$get = function() {
                 return {
-                    myFn : function(){return 'Cojo Culo'}
+                    myFn : function(){return 'console.log message'}
                 };
             }
         })

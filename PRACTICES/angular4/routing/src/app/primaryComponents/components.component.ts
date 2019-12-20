@@ -7,13 +7,12 @@ import { Logged } from './../definitions';
 @Component({
   selector: 'app-home',
   template: `<h2>Home</h2>`,
+  styles: ['h2{color: orange;}'],
   providers: [MyService]
 })
 export class HomeComponent implements OnInit  {
     constructor(private ms: MyService) {}
-    ngOnInit() {
-        console.log(`HomeComponent OnInit : ${this.ms.fn()}`);
-    }
+    ngOnInit() { console.log(`HomeComponent OnInit : ${this.ms.fn()}`); }
  }
 
 @Component({
