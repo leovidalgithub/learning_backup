@@ -43,6 +43,13 @@ Please, look forward on previous installed  Angular_cli local version (--from=1.
 > error : ERROR in node_modules/rxjs/internal/types.d.ts(81,44): error TS1005: ';' expected. (Angular 6)
 > npm install rxjs@6.0.0 --save
 
+> ERROR in ./src/polyfills.ts
+> Module not found: Error: Can't resolve 'core-js/es6/reflect' in 'c:\Users\leone\WEB Developer\learning\LAST_REVISIONS\component-communications\case3\src'
+    Inside polyfills.ts I updated this line:
+    import 'core-js/es6/reflect';
+    To this one:
+    import 'core-js/es/reflect';
+
 > Schema validation failed with the following errors:
   Data path ".builders['app-shell']" should have required property 'class'.
     > In your package.json change the devkit builder.

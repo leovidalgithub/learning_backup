@@ -12,7 +12,7 @@ const routes: Routes = [
         loadChildren: 'src/app/modules/orders/orders.module#OrdersModule'
     },
     {
-        path: 'ngtemplate-list',
+        path: 'ngtemplate',
         loadChildren: './modules/ngtemplate/ngtemplate.module#NgtemplateModule'
     },
     {
@@ -23,7 +23,7 @@ const routes: Routes = [
     { path: 'heroes', pathMatch: 'full', component: HeroesComponent, data: { title: 'This title' } },
     { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ];
-// { path: 'ngtemplate-list', loadChildren: () => import('./modules/ngtemplate/ngtemplate.module').then(m => m.NgtemplateModule) }
+// { path: 'ngtemplate', loadChildren: () => import('./modules/ngtemplate/ngtemplate.module').then(m => m.NgtemplateModule) }
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

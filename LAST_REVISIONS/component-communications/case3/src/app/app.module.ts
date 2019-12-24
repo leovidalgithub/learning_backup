@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { Child1Component, Child2Component } from './components/';
-import { MyRendererDirectiveDirective } from './directives/my-renderer-directive.directive';
+import { MyRendererDirective } from './directives/my-renderer-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     Child1Component,
     Child2Component,
-    MyRendererDirectiveDirective
+    MyRendererDirective
   ],
   imports: [
     BrowserModule

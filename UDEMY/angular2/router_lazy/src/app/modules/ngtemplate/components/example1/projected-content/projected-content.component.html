@@ -1,4 +1,5 @@
 <div class="myContent">
+<h1>myInputVariable = {{myVariacita}}</h1>
     <ol>
         <li>
             <h2>normal content @Input with set & get called {{$prop}}</h2>
@@ -19,7 +20,9 @@
             <p>normal content inputVariable = {{inputVariable}}</p>
         </li>
         <li>
-            <ng-content #mycontentchild></ng-content>
+          <div #myViewChild2>
+            <ng-content></ng-content>
+          </div>
         </li>
     </ol>
 </div>

@@ -1,0 +1,36 @@
+      <ng-container *ngIf="condition; else elseBlock">ng-container *ngIf="condition; else elseBlock"</ng-container>
+      <ng-template #elseBlock>ng-template #elseBlock</ng-template>
+      <p>ng-container *ngIf="condition; then thenBlock else elseBlock2"</p>
+      <ng-container *ngIf="condition; then thenBlock else elseBlock2"></ng-container>
+      <ng-template #thenBlock>ng-template #thenBlock . . .</ng-template>
+      <ng-template #elseBlock2>ng-template #elseBlock2 . . .</ng-template>
+    <hr>
+      <ng-container *ngTemplateOutlet="greet"></ng-container>
+    <hr>
+      <h4>ng-container *ngTemplateOutlet using an object contextObj = "{{ '{}' }}"</h4>
+      <ng-container *ngTemplateOutlet="template_1; context: contextObj"></ng-container>
+      <ng-container *ngTemplateOutlet="template_2; context: contextObj"></ng-container>
+      <ng-container *ngTemplateOutlet="template_3; context: contextObj"></ng-container>
+
+        <ng-template #greet>ng-template #greet</ng-template>
+        <ng-template #template_1 let-thisVarialbe>
+            <p>let-thisVarialbe = <span>{{thisVarialbe}}</span></p>
+        </ng-template>
+        <ng-template #template_2 let-food="donut">
+            <p>let-food="donut" = <span>{{food}}</span></p>
+        </ng-template>
+        <ng-template #template_3 let-coffee="cafe">
+            <p>let-coffee="cafe" = <span>{{coffee}}</span></p>
+        </ng-template>
+      <hr>
+        <app-projected-content id="projectedContent" [$prop]="myProp" [myVariacita]="myVariacitaLocal">
+          <p>This Projected Content (1) has no Select Class</p>
+          <app-show-date></app-show-date>
+          <p class="myProjectedClass">This other <strong>Projected Content</strong> is shown after</p>
+          <p>This Projected Content (2) has no Select Class</p>
+          <app-show-date>Project Content through ng-content</app-show-date>
+          <h3 class="anotherProjectedClass">This <strong>Projected Content</strong> is shown first</h3>
+          <h2 #contentchild>This is a Content Child</h2>
+          <h2 #viewChild1>This is ViewChild1 change to color gray and a Class added</h2>
+      </app-projected-content>
+    <hr>

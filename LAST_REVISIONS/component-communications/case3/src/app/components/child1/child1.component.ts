@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./child1.component.scss']
 })
 export class Child1Component {
+
     public myValue = 11314849;
 
     constructor() { }

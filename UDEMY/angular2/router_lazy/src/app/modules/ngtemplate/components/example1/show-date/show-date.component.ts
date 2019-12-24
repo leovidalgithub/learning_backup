@@ -10,11 +10,10 @@ export class ShowDateComponent implements OnInit {
 
     public todayDate;
 
-  constructor() { 
+  constructor() {
       this.todayDate = moment();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

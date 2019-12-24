@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, ContentChild,
-         ContentChildren, QueryList, ElementRef, Renderer2, AfterContentInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, ContentChild,
+         ContentChildren, QueryList, ElementRef, Renderer2, AfterViewInit, AfterContentInit } from '@angular/core';
 import { ShowDateComponent  } from '../show-date/show-date.component';
 import * as moment from 'moment';
 
@@ -8,12 +8,15 @@ import * as moment from 'moment';
   templateUrl: './projected-content.component.html',
   styleUrls: ['./projected-content.component.scss']
 })
-export class ProjectedContentComponent implements OnInit, OnChanges, AfterContentInit {
+export class ProjectedContentComponent implements OnInit, OnChanges, AfterViewInit, AfterContentInit {
 
     public inputVariable = 100;
 
-    @ContentChild('contentchild',{static : false}) contentchild : ElementRef;
+    @ViewChild('myViewChild2', { static: false }) myViewChild2: ElementRef;
+    @ContentChild('contentchild', {static : false}) contentchild: ElementRef;
     @ContentChildren(ShowDateComponent) showDateComponent: QueryList<ShowDateComponent>;
+
+    @Input() myVariacita = 0;
 
     @Input()
     set $prop(value: number) {
@@ -37,19 +40,26 @@ export class ProjectedContentComponent implements OnInit, OnChanges, AfterConten
     }
 
     ngOnChanges(changes: SimpleChanges) {
+        // tslint:disable-next-line: forin
         for (const propName in changes) {
             const change = changes[propName];
             const curVal = JSON.stringify(change.currentValue);
             const prevVal = JSON.stringify(change.previousValue);
             const first = JSON.stringify(change.firstChange);
-            console.log('*first change? = ', first);
-            console.log('********preVal = ', prevVal);
-            console.log('********curVal = ', curVal);
+            console.log('-----propName = ', propName);
+            console.log('first change? = ', first);
+            console.log('-------preVal = ', prevVal);
+            console.log('-------curVal = ', curVal);
+            console.log('--------------------------');
         }
     }
 
+    ngAfterViewInit() {
+      this.render.setStyle(this.myViewChild2.nativeElement, 'background', 'green');
+    }
+
     ngAfterContentInit() {
-        this.render.setStyle(this.contentchild.nativeElement, 'background', 'white');
+        this.render.setStyle(this.contentchild.nativeElement, 'background', 'gray');
         this.showDateComponent.toArray().forEach(ele => {
             ele.todayDate.subtract(27, 'days');
         });
