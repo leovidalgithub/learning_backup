@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+section.section1 {
+    background-color: orange;
+}
+section.section2 {
+    background-color: green;
+}
+section.section3 {
+    background-color: blueviolet;
+}
+section h2 {
+    /* font-size: 5vw; */
+    font-size: 5vmax;
+}
