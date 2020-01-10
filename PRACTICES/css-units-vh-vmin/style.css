@@ -1,6 +1,37 @@
 * {
+    box-sizing: border-box;
+}
+:root {
+    --nav-width: 15vw;
+}
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+body {
     margin: 0;
-    padding: 0;
+    padding-left: var(--nav-width);
+}
+nav {
+    position: fixed;
+    left: 0;
+    width: var(--nav-width);
+    min-width: 128px;
+    padding: 2em;
+    height: 100vh;
+    background-color: darkolivegreen;
+    color: white;
+}
+nav a {
+    color: inherit;
+    /* font-size: 1.5rem; */
+    font-size: 2vmax;
+    text-decoration: none;
+    display: block;
+    margin: 3em 0;
+}
+nav a:hover {
+    color: orangered;
 }
 section {
     display: flex;
@@ -8,16 +39,19 @@ section {
     align-items: center;
     height: 100vh;
 }
-section.section1 {
+section#one {
     background-color: orange;
 }
-section.section2 {
+section#two {
     background-color: green;
 }
-section.section3 {
+section#three {
     background-color: blueviolet;
 }
-section h2 {
+section#four {
+    background-color: crimson;
+}
+section {
     /* font-size: 5vw; */
     font-size: 5vmax;
 }
