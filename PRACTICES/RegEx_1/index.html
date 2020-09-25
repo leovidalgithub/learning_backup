@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RegEx Practices</title>
+</head>
+<style>
+	body{
+		background-color:rgb(207, 207, 207);
+		padding: 15px;
+		font-family: monospace;
+		box-sizing: border-box;
+		}
+	#boxes {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #333;
+	}
+	.exersiseBox {
+		min-width: 300px;
+		max-width: 450px;
+		width: 100%;
+		margin: 10px;
+	}
+	form > * {
+		background-color: #333;
+		color: beige;
+		font-size: 1.1rem;
+	}
+	input {
+		width: 100%;
+		height: 35px;
+		margin-bottom: 12px;
+	}
+	textarea {
+		width: 100%;
+		height: 125px;
+	}
+	p span {
+		background-color: crimson;
+	}
+</style>
+<body>
+
+<main>
+	<div id="boxes">
+
+		<div class="exersiseBox">
+			<form name="form1">
+				<input type="text" class="textInput" id="regex1" name="regex1" placeholder="Introduce RegEx here..." /><br>
+				<input type="text" class="textInput" id="text1" name="text1" placeholder="Introduce Text here..." /><br><hr>
+				<textarea id="textarea1" name="result" rows="10"></textarea><br>
+			</form>
+		</div>
+		<div class="exersiseBox">
+			<form name="form2">
+				<input type="text" class="textInput" id="regex2" name="regex1" placeholder="Introduce RegEx here..." /><br>
+				<input type="text" class="textInput" id="text2" name="text1" placeholder="Introduce Text here..." /><br><hr>
+				<textarea id="textarea2" name="result" rows="10"></textarea><br>
+			</form>
+		</div>
+		<div class="exersiseBox">
+			<form name="form3">
+				<input type="text" class="textInput" id="regex3" name="regex1" placeholder="Introduce RegEx here..." /><br>
+				<input type="text" class="textInput" id="text3" name="text1" placeholder="Introduce Text here..." /><br><hr>
+				<textarea id="textarea3" name="result" rows="10"></textarea><br>
+				<!-- <textarea id="textarea2" name="result" cols="90" rows="10"></textarea><br> -->
+				<!-- <p id="p1"></p> -->
+				<!-- <p id="p2"></p> -->
+			</form>
+		</div>
+
+	</div>
+</main>
+
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

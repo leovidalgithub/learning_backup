@@ -1,0 +1,30 @@
+- const name = 'jim'
+- const myArray = ['Angela', 'Jim', 'Nilson', 'Simone']
+doctype html
+html
+  head
+    title Staff Directory
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css')
+    style.
+      table.ui.celled img { display: inline-block; }
+      footer { margin: 35px 0 15px 0; text-align: center }
+
+  body
+    main#main
+      ul
+        each item in myArray
+          li= item
+    h1.ui.center.aligned.header Staff Directory
+    h4.ui.center.aligned.header Using a local variable on layout.pug = #{name}
+    .ui.container
+
+      block content
+
+    block footer
+      footer
+        button(type='button' class='ui primary button') Seguir
+        <div class="ui labeled button" tabindex="0">
+          <div class="ui red button"><i class="heart icon"></i> Gustan </div>
+          <a class="ui basic red left pointing label">1,048</a>
+</div>
+        p © #{new Date().getFullYear()} My Company

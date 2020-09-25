@@ -2,6 +2,6 @@
 .contenedor {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 200px repeat(6,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: 200px repeat(5,1fr) 200px;
+    grid-template-rows: 1fr repeat(2,2fr) 1fr;
 }

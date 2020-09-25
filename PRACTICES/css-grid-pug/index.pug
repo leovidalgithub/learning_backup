@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Staff Directory
+    link(rel='stylesheet' href='style.css')
+  body
+.banner This is a banner is for CSS calc() testing
+// You can use either var or const
+.wrapper
+  - var g = 20
+    while g--
+      .grid-item
+.controls
+  a(href="javascript:add();") Add
+  a(href="javascript:del();") Delete
+  a(href="javascript:changeCol('add');") +1 per Row
+  a(href="javascript:changeCol('minus');") -1 per Row
+script(src='script.js')
