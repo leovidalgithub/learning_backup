@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicas con Vue</title>
+    <style>
+        body {
+            background-color: #333;
+            color: bisque;
+        }
+        .color_rojo {
+            color: red;
+        }
+        .color_verde {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app2">
+        <h2>Propiedades en Vue.js</h2>
+        <input type="number" v-model="num1">
+        <input type="number" v-model="num2">
+        <!-- <button @click="sumarNumeros()">Sumar</button> -->
+        <p>{{sumarNumeros2()}}</p>
+        <p>Computed = {{sumarNumeros}}</p> <!-- propiedad computada -->
+        <p>Resultado = {{resultado}}</p>
+    </div>
+    <hr>
+    <h1>Aprendiendo Vue</h1>
+    <div id="app">
+        <p>{{saludar}}</p>
+
+        <h2>====== Directivas Vue ======</h2>
+        <h3>v-show</h3>
+        <p v-show="numero > 10">Texto solo si activo = true</p>
+        <h3>v-if - condicional</h3>
+        <p v-if="activo === true">Si es activo</p>
+        <p v-else>No es activo</p>
+        <h3>V-FOR directiva para sentencias repetitivas</h3>
+        <ul>
+            <li v-for="(item, index) in listas">Numero: {{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="n in 3">Numero: {{n}}</li>
+        </ul>
+        <h3>v-html directiva para pintar html</h3>
+        <p v-html='blog'></p>
+        <h3>Binding</h3>
+        <p>
+            <input type="text" v-model="texto">
+            <span>{{texto}}</span>
+        </p>
+        <h3>Eventos y funciones</h3>
+        <button @click="saludo()">Saludar</button>
+        <hr>
+        <input type="text" placeholder="nombres" v-model="full_name">
+        <a href="#" @click="verificarFullName()">Verificar nombre</a>
+        <p style="color: crimson;">{{validation_error}}</p>
+        <hr>
+        <h3>Binding de clases</h3>
+        <label for="nombre" :class="{color_verde:text_sucess, color_rojo:text_error}">
+            Nombres:
+        </label>
+        <input type="text" v-model="nombre">
+        <button @click="verificarNombre()">Comprobar</button>
+        <hr>
+        <h3>Binding de Styles</h3>
+        <input type="text" v-model="sizetxt">
+        <button @click="cambiarTexto()">Cambiar Tamano</button>
+        <p :style="{fontSize: font_texto + 'px'}">Curso Vue</p>
+    </div>
+
+    <script type="text/javascript" src="./vue.js"></script>
+    <script type="text/javascript" src="./practica.js"></script>
+</body>
+</html>

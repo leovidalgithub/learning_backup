@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Ideas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+
+	<div id="app" style="padding: 2em;">
+		<section class="section">
+			<div class="container">
+				<h1 class="title">
+					Mis Ideas
+				</h1>
+				<p class="subtitle">
+					Proyecto Vue  <strong>Super</strong> basico
+				</p>
+			</div>
+		</section>
+		<div class="columns">
+			<div class="column">
+				<section class="section">
+					<div class="container">
+						<h2 class="subtitle">
+							Registrar Idea
+						</h2>
+						<div class="field">
+							<label class="label">Idea</label>
+							<div class="control">
+								<input class="input" type="text"
+									placeholder="Ingrese la Idea"
+									v-model="idea_txt">
+							</div>
+						</div>
+						<div class="field">
+							<label class="label">Prioridad</label>
+							<div class="control">
+								<div class="select">
+									<select v-model="prioridad">
+										<option value="N">Nomral</option>
+										<option value="I">Importante</option>
+										<option value="M">Muy Importante</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<button @click="agregarIdea()" class="button is-success">Agregar</button>
+					</div>
+				</section>
+				Aqui formulario de idea
+			</div>
+			<div class="column">
+				<section class="section">
+					<div class="container">
+						<h2 class="subtitle">
+							Lista de Ideas
+						</h2>
+					</div>
+					<div class="field">
+						<div class="control">
+							<input class="input" type="text"
+								v-model="search_txt"
+								placeholder="Buscar Idea">
+						</div>
+					</div>
+					<table class="table">
+						<thead>
+							<th>Idea</th>
+							<th>Prioridad</th>
+							<th>Acciones</th>
+						</thead>
+						<tbody>
+							<tr v-for="idea in lista_ideas">
+								<td>{{idea.idea}}</td>
+								<td>
+									<span v-if="idea.prioridad === 'N'" class="tag is-info">Normal</span>
+									<span v-else-if="idea.prioridad === 'I'" class="tag is-warning">Importante</span>
+									<span v-else="idea.prioridad === 'M'" class="tag is-danger">Muy Impotante</span>
+								</td>
+								<td>
+									<button @click="eliminarIdea(idea.id)" class="button is-danger is-light">Eliminar</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				Aqui la lista de idea
+			</div>
+		</div>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- <script type="text/javascript" src="./vue.js"></script> -->
+    <script type="text/javascript" src="./ideas.js"></script>
+</body>
+</html>
