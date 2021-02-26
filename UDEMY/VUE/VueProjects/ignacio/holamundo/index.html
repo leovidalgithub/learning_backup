@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Vue</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .color_verde {
+            color: #00af00;
+        }
+        .color_rojo {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="app">
+            <h1>{{ masyusculaTexto }}</h1>
+            <hr>
+            <h1>Mi saldo disponible es:
+                <span
+                    v-bind:class="{color_verde: (cantidad => 0), color_rojo: (cantidad < 0)}"
+                    :style="{fontSize: (cantidad + 50) + 'px'}"
+                    >{{ cantidad }}
+                </span>
+            </h1>
+            <button class="btn btn-primary" @click="cuentaAtras()">Dale</button>
+            <hr>
+            <a v-bind:href="enlace" target="_blank">Youtube link</a><br>
+            <hr>
+            <h2 v-if="estado">Cuenta Activa</h2>
+            <h2 v-else="estado">Cuenta Desactivada</h2>
+            <h2 v-show="estado">Me muestro, otherwise display: none</h2>
+            <hr>
+            <h2 v-if="cantidad > 50">Cantidad mayor que 50</h2>
+            <h2 class="bg-warning" v-else-if="cantidad <= 50 && cantidad > 0">
+                Cantidad entre 50 y 0
+            </h2>
+            <h2 class="bg-dark text-white" v-else>Sin Cantidad</h2>
+            <span style="font-size: 2rem;" :class="colorCantidad">{{ cantidad }}</span>
+            <!-- <span style="font-size: 2rem;" :class="[cantidad >= 0 ? 'text-success' : 'text-danger']">{{ cantidad }}</span> -->
+            <hr>
+            <h2>Mis servicios disponibles</h2>
+            <ul>
+                <li v-for="(item, index) in servicios" :key="index">index {{ index }} - {{ item }}</li>
+            </ul>
+            <hr>
+            <button class="btn btn-primary" v-on:click="agregarSaldo()">Agregar Saldo</button>
+            <hr>
+            <button class="btn btn-primary" @click="disminuirSaldo(15)" :disabled="cantidad <= 0" >Disminuir Saldo</button>
+            <hr>
+            <h2>FullName = {{ fullName }}</h2>
+            <button @click="fullName = 'Pepito Gonzales'">Cambiar</button>
+            <hr>
+            <footer-banco
+                :valor="cantidad"
+                fecha="septiembre 2020">
+            </footer-banco>
+        </div>
+        <hr>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js" integrity="sha512-3oappXMVVac3Ge3OndW0WqpGTWx9jjRJA8SXin8RxmPfc8rg87b31FGy14WHG/ZMRISo9pBjezW9y00RYAEONA==" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+    <script src="./components/Footer.js"></script>
+    <script>
+        app.mount('#app')
+    </script>
+</body>
+</html>

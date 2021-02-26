@@ -34,6 +34,16 @@ var vm = new Vue ({
         eliminarIdea: function(idea_id) {
             let index = this.lista_ideas.findIndex(e => e.id === idea_id);
             this.lista_ideas.splice(index, 1);
+        },
+        cargarDatosServidor: function() {
+            var self = this;
+            axios.get('https://servicios.neunapp.com/api/tienda/categorias/lista/')
+            .then (
+                function(response) {
+                    console.log(response.data);
+                    // self.lista_ideas = response.data;
+                }
+            )
         }
     }
 })
@@ -44,3 +54,5 @@ vm.lista_ideas = [
     {'id': 1, 'idea': 'mi segunda idea', 'prioridad': 'N'},
     {'id': 2, 'idea': 'mi tercera idea', 'prioridad': 'M'}
 ]
+
+vm.cargarDatosServidor();

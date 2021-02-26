@@ -62,7 +62,7 @@
         <p style="color: crimson;">{{validation_error}}</p>
         <hr>
         <h3>Binding de clases</h3>
-        <label for="nombre" :class="{color_verde:text_sucess, color_rojo:text_error}">
+        <label for="nombre" v-bind:class="{color_verde:text_sucess, color_rojo:text_error}">
             Nombres:
         </label>
         <input type="text" v-model="nombre">
