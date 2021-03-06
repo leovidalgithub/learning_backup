@@ -24,7 +24,7 @@ export default {
         accion() {
             this.$emit('accion')
         }
-    },
+    }
 }
 </script>
 
