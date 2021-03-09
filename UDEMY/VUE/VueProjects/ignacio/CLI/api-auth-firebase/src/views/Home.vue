@@ -27,7 +27,7 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions(['addTarea', 'cleanTareaObj']),
+		...mapActions(['addTarea', 'cleanTareaObj', 'getFirebase']),
 		procesarFormulario() {
 			// generar id
 			this.tarea.id = nanoid();
@@ -38,6 +38,7 @@ export default {
 	},
 	created () {
 		this.cleanTareaObj();
+		this.getFirebase();
 	}
 }
 </script>

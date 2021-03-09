@@ -14,11 +14,8 @@
 			Navbar
 		},
 		methods: {
-			...mapActions(['cargarLocalStorage'])
-		},
-		created () {
-			this.cargarLocalStorage();
-		},
+			...mapActions(['getFirebase'])
+		}
 	}
 </script>
 

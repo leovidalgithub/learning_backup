@@ -14,7 +14,7 @@
 			<tr v-for="item in tareas" :key="item.id">
 				<th scope="row">{{ item.id.substr(item.id.length -5) }}</th>
 				<td>{{ item.nombre }}</td>
-				<td>{{ item.categorias.join(', ') }}</td>
+				<td>{{ typeof item.categorias !== 'undefined' ? item.categorias.join(', ') : '' }}</td>
 				<td>{{ item.estado }}</td>
 				<td>{{ item.numero }}</td>
 				<td>
