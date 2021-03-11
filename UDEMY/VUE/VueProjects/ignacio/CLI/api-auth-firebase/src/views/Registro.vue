@@ -36,9 +36,9 @@ export default {
 	name: 'Registro',
 	data() {
 		return {
-			email: 'leo@leo.com',
-			pass1: '123123',
-			pass2: '123123'
+			email: '',
+			pass1: '',
+			pass2: ''
 		}
 	},
 	computed: {
@@ -62,7 +62,3 @@ export default {
 	},
 }
 </script>
-
-<style>
-
-</style>

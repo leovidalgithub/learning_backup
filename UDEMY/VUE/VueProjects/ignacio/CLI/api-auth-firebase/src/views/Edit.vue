@@ -17,7 +17,7 @@
 			...mapState(['tarea'])
 		},
 		methods: {
-			...mapActions(['getTarea', 'updateTarea'])
+			...mapActions(['getTarea', 'updateTarea']),
 		},
 		created () {
 			this.getTarea(this.$route.params.id)

@@ -14,7 +14,7 @@
 			<tr v-for="item in tareas" :key="item.id">
 				<th scope="row">{{ item.id.substr(item.id.length -5) }}</th>
 				<td>{{ item.nombre }}</td>
-				<td>{{ typeof item.categorias !== 'undefined' ? item.categorias.join(', ') : '' }}</td>
+				<td>{{ catsFilter(item.categorias) }}</td>
 				<td>{{ item.estado }}</td>
 				<td>{{ item.numero }}</td>
 				<td>
@@ -57,7 +57,25 @@
 			}
 		},
 		methods: {
-			...mapActions(['deleteTarea'])
+			...mapActions(['deleteTarea']),
+			catsFilter(catsArray) {
+				let category = '';
+				if (typeof catsArray !== 'undefined') {
+					catsArray.forEach(catId => {
+						switch (catId) {
+							case '0':
+								category += 'Javascript '
+								break;
+							case '1':
+								category += 'Node JS '
+								break;
+							default:
+								break;
+						}
+					})
+				}
+				return category
+			}
 		}
 	}
 </script>

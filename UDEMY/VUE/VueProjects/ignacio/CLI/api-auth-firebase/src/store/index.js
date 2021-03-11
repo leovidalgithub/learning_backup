@@ -12,20 +12,32 @@ export default createStore({
 			numero: 0
 		},
 		user: null
-		// usuario: 'leito'
 	},
 	mutations: {
-		setUser(state, payload) {
-			state.user = payload;
+		setUser(state, user) {
+			state.user = user;
 		},
-		getFirebase(state, payload) {
-			state.tareas = payload;
+		setTareas(state, tareas) {
+			state.tareas = tareas;
 		},
-		addTarea(state, payload) {
-			state.tareas.push(payload);
-			// localStorage.setItem('tareas', JSON.stringify(state.tareas));
+		getTarea(state, id) {
+			if (!state.tareas.find(tarea => tarea.id === id)) {
+				router.push('/');
+				return;
+			}
+			state.tarea = state.tareas.find(tarea => tarea.id === id)
 		},
-		cleanTareaObj(state) {
+		addTarea(state, tarea) {
+			state.tareas.push(tarea);
+		},
+		updateTarea(state, updatedTarea) {
+			state.tareas = state.tareas.map(tarea => tarea.id === updatedTarea.id ? updatedTarea : tarea);
+			router.push('/');
+		},
+		deleteTarea(state, id) {
+			state.tareas = state.tareas.filter(tarea => tarea.id !== id)
+		},
+		cleanTarea(state) {
 			state.tarea = {
 				id: '',
 				nombre: '',
@@ -33,28 +45,20 @@ export default createStore({
 				estado: '',
 				numero: 0
 			}
-		},
-		deleteTarea(state, payload) {
-			state.tareas = state.tareas.filter(tarea => tarea.id !== payload)
-			// localStorage.setItem('tareas', JSON.stringify(state.tareas));
-		},
-		getTarea(state, payload) {
-			if (!state.tareas.find(tarea => tarea.id === payload)) {
-				router.push('/');
-				return;
-			}
-			state.tarea = state.tareas.find(tarea => tarea.id === payload)
-		},
-		updateTarea(state, payload) {
-			state.tareas = state.tareas.map(tarea => tarea.id === payload.id ? payload : tarea);
-			// localStorage.setItem('tareas', JSON.stringify(state.tareas));
-			router.push('/');
 		}
 	},
 	actions: {
+		verificarUsuario({commit, state}) {
+			if(!state.user) {
+				if(localStorage.getItem('usuario')) {
+					commit('setUser', JSON.parse(localStorage.getItem('usuario')));
+				}
+			}
+		},
 		cerrarSesion({commit}) {
 			commit('setUser', null);
 			router.push('/ingreso');
+			localStorage.removeItem('usuario');
 		},
 		async ingresoUsuario({commit}, usuario) {
 			try {
@@ -71,9 +75,9 @@ export default createStore({
 					console.log('userDB error', userDB.error);
 					return;
 				}
-				console.log('user', userDB);
 				commit('setUser', userDB);
 				router.push('/');
+				localStorage.setItem('usuario', JSON.stringify(userDB));
 			} catch (error) {
 				console.log('error', error);
 			}
@@ -93,29 +97,25 @@ export default createStore({
 					console.log('userDB error', userDB.error);
 					return;
 				}
-				console.log('user', userDB);
 				commit('setUser', userDB);
 				router.push('/');
+				localStorage.setItem('usuario', JSON.stringify(userDB));
 			} catch (error) {
 				console.log(error)
 			}
-			console.log(usuario);
 		},
-		async getFirebase({commit, state}) { // cargarLocalStorage
+		async setTareas({commit, state}) { // cargarLocalStorage
 			try {
 				const res = await fetch(`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${state.user.localId}.json?auth=${state.user.idToken}`);
 				const dataDB = await res.json();
 				if (dataDB.error) {
 					return;
 				}
-
 				const arrayTareas = [];
-
 				for (let id in dataDB) {
 					arrayTareas.push(dataDB[id])
 				}
-				console.log(arrayTareas);
-				commit('getFirebase', arrayTareas);
+				commit('setTareas', arrayTareas);
 			} catch (error) {
 				console.log(error);
 			}
@@ -130,15 +130,13 @@ export default createStore({
 					body: JSON.stringify(tarea)
 				})
 				const dataDB = await res.json();
-				console.log(dataDB);
-
 				commit('addTarea', tarea)
 			} catch (error) {
 				console.log(error);
 			}
 		},
-		cleanTareaObj({commit}) {
-			commit('cleanTareaObj')
+		cleanTarea({commit}) {
+			commit('cleanTarea')
 		},
 		async deleteTarea({commit, state}, id) {
 			try {
@@ -146,12 +144,10 @@ export default createStore({
 					method: 'DELETE'
 				})
 				const dataDB = await res.json();
-				console.log(dataDB);
 				commit('deleteTarea', id);
 			} catch (error) {
 				console.log(error);
 			}
-
 		},
 		getTarea({commit}, id) {
 			commit('getTarea', id)
@@ -173,7 +169,7 @@ export default createStore({
 	},
 	getters: {
 		usuarioAutenticado(state) {
-			return !!state.user;
+			return !!state.user
 		}
 	}
 })

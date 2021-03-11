@@ -10,11 +10,15 @@
 	import { mapActions } from 'vuex'
 
 	export default {
+		name: 'App',
 		components: {
 			Navbar
 		},
 		methods: {
-			...mapActions(['getFirebase'])
+		...mapActions(['verificarUsuario'])
+		},
+		created () {
+			this.verificarUsuario();
 		}
 	}
 </script>
@@ -27,7 +31,7 @@
 		color: #ebebeb;
 	}
 	body {
-		background-color: darkcyan;
+		background-color: #202529;
 		height: 100vh;
 	}
 </style>

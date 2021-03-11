@@ -30,8 +30,8 @@ export default {
 	name: 'Ingreso',
 	data() {
 		return {
-			email: 'leo@leo.com',
-			pass1: '123123'
+			email: '',
+			pass1: ''
 		}
 	},
 	computed: {

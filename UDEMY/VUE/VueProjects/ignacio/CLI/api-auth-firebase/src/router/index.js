@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import store from '../store'
 import Home from '../views/Home'
+import Edit from '../views/Edit'
 import About from '../views/About'
 import Bar from '../views/Bar'
 
@@ -27,7 +28,7 @@ const routes = [
 	{
 		path: '/edit/:id',
 		name: 'Edit',
-		component: () => import(/* webpackChunkName: "edit" */ '../views/Edit.vue'),
+		component: Edit,
 		meta: { requiresAuth: true }
 	},
 	{
@@ -38,7 +39,14 @@ const routes = [
 	{
 		path: '/ingreso',
 		name: 'Ingreso',
-		component: () => import(/* webpackChunkName: "ingreso" */ '../views/Ingreso.vue')
+		component: () => import(/* webpackChunkName: "ingreso" */ '../views/Ingreso.vue'),
+		// beforeEnter: (to,from,next) => {
+		// 	if (store.getters.usuarioAutenticado){
+		// 		next('/')
+		// 	}else{
+		// 	next()
+		// 	}
+		// }
 	}
 ]
 
