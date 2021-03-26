@@ -1,11 +1,15 @@
 <template>
 	<h1 class="my-5">Registro de Usuarios</h1>
+	<div class="alert alert-danger" v-if="getErrorState.tipo !== null">
+		{{ getErrorState.mensaje }}
+	</div>
 	<form @submit.prevent="procesarFormulario">
 		<input
 			type="email"
 			placeholder="email"
 			class="form-control my-2"
 			v-model.trim="email"
+			:class="[getErrorState.tipo === 'email' ? 'is-invalid' : '']"
 		>
 		<input
 			type="password"
@@ -30,7 +34,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
 	name: 'Registro',
@@ -42,6 +46,7 @@ export default {
 		}
 	},
 	computed: {
+		...mapGetters(['getErrorState']),
 		bloquear() {
 			if(!this.email.includes('@'))
 				return true;
@@ -53,8 +58,11 @@ export default {
 	},
 	methods: {
 		...mapActions(['registrarUsuario']),
-		procesarFormulario() {
-			this.registrarUsuario({email: this.email, password: this.pass1})
+		async procesarFormulario() {
+			await this.registrarUsuario({email: this.email, password: this.pass1})
+			if (this.getErrorState.tipo !== null) {
+				return
+			}
 			this.email = '';
 			this.pass1 = '';
 			this.pass2 = '';

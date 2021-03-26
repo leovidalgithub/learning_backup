@@ -8,22 +8,20 @@
 	<div class="form-check form-check-inline">
 		<input
 			id="check-1"
-			v-model="tarea.categorias"
+			v-model="tarea.categorias.js"
 			type="checkbox"
 			class="form-check-input"
 			name="check-1"
-			value="0"
 		>
 		<label for="check-1" class="form-check-label" >Javascript</label>
 	</div>
 	<div class="form-check form-check-inline">
 		<input
 			id="check-2"
-			v-model="tarea.categorias"
+			v-model="tarea.categorias.node"
 			type="checkbox"
 			class="form-check-input"
 			name="check-2"
-			value="1"
 		>
 		<label for="check-2" class="form-check-label" >Node.js</label>
 	</div>
@@ -65,6 +63,8 @@
 	>
 		Procesar
 	</button>
+	<hr>
+	<h2>{{ typeof tarea.categorias }}</h2>
 </template>
 
 <script>
@@ -72,9 +72,14 @@
 		name: 'Inputdata',
 		props: {
 			tarea: {
-				type: Object,
-				default: {},
-				required: true
+				id: String,
+				nombre: String,
+				categorias: {
+					type: Object,
+					default: {}
+				},
+				estado: String,
+				numero: Number
 			}
 		},
 		methods: {
@@ -83,6 +88,18 @@
 			bloquear() {
 				return this.tarea.nombre.trim() === '';
 			}
+		},
+		created () {
+			if(typeof this.tarea.categorias === 'undefined') {
+				this.tarea.categorias = {}
+			}
 		}
+		// watch: { //watch deeper
+		// 	tarea: {
+		// 		handler(newValue, oldValue) {
+		// 		},
+		// 		deep: true
+		// 	}
+		// }
 	}
 </script>

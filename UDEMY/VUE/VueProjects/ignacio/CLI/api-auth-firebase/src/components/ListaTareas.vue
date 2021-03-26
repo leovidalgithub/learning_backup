@@ -14,7 +14,7 @@
 			<tr v-for="item in tareas" :key="item.id">
 				<th scope="row">{{ item.id.substr(item.id.length -5) }}</th>
 				<td>{{ item.nombre }}</td>
-				<td>{{ catsFilter(item.categorias) }}</td>
+				<td>{{ categories_label(item.categorias) }}</td>
 				<td>{{ item.estado }}</td>
 				<td>{{ item.numero }}</td>
 				<td>
@@ -41,6 +41,11 @@
 
 	export default {
 		name: 'ListaTareas',
+		data() {
+			return {
+				counter: 0
+			}
+		},
 		props: {
 			tareas: {
 				type: Array,
@@ -58,21 +63,11 @@
 		},
 		methods: {
 			...mapActions(['deleteTarea']),
-			catsFilter(catsArray) {
+			categories_label(catsObj) {
 				let category = '';
-				if (typeof catsArray !== 'undefined') {
-					catsArray.forEach(catId => {
-						switch (catId) {
-							case '0':
-								category += 'Javascript '
-								break;
-							case '1':
-								category += 'Node JS '
-								break;
-							default:
-								break;
-						}
-					})
+				if (typeof catsObj !=='undefined') {
+					if (typeof catsObj.js ==='boolean' && catsObj.js)  category += 'Javascript ';
+					if (typeof catsObj.node ==='boolean' && catsObj.node)  category += 'Node JS ';
 				}
 				return category
 			}

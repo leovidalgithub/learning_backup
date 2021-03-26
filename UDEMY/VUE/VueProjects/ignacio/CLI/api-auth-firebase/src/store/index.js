@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import router from '../router'
+import register from '../handlers/register'
 
 export default createStore({
 	state: {
@@ -7,13 +8,38 @@ export default createStore({
 		tarea: {
 			id: '',
 			nombre: '',
-			categorias: [],
+			categorias: {},
 			estado: '',
 			numero: 0
 		},
-		user: null
+		user: null,
+		error: {
+			tipo: null,
+			mensaje: null
+		}
 	},
 	mutations: {
+		setError(state, errMsg) {
+			switch (errMsg) {
+				case null:
+					state.error = {tipo: null, mensaje: null}
+					break;
+				case 'EMAIL_NOT_FOUND':
+					state.error = {tipo: 'email', mensaje: 'email no registrado'}
+					break;
+				case 'INVALID_PASSWORD':
+					state.error = {tipo: 'password', mensaje: 'password incorrecto'}
+					break;
+				case 'INVALID_EMAIL':
+					state.error = {tipo: 'email', mensaje: 'email invalid'}
+					break;
+				case 'EMAIL_EXISTS':
+					state.error = {tipo: 'email', mensaje: 'email already exists'}
+					break;
+					default:
+					state.error = {tipo: 'error', mensaje: 'error desconocido'}
+			}
+		},
 		setUser(state, user) {
 			state.user = user;
 		},
@@ -41,7 +67,7 @@ export default createStore({
 			state.tarea = {
 				id: '',
 				nombre: '',
-				categorias: [],
+				categorias: {},
 				estado: '',
 				numero: 0
 			}
@@ -50,74 +76,37 @@ export default createStore({
 	actions: {
 		verificarUsuario({commit, state}) {
 			if(!state.user) {
-				if(localStorage.getItem('usuario')) {
-					commit('setUser', JSON.parse(localStorage.getItem('usuario')));
+				if(sessionStorage.getItem('usuario')) {
+					commit('setUser', JSON.parse(sessionStorage.getItem('usuario')));
 				}
 			}
 		},
 		cerrarSesion({commit}) {
 			commit('setUser', null);
+			commit('setTareas', []);
 			router.push('/ingreso');
-			localStorage.removeItem('usuario');
+			sessionStorage.removeItem('usuario');
 		},
-		async ingresoUsuario({commit}, usuario) {
-			try {
-				const res = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBiURFQhj9jmJK1T8-zhzjiC-33AbtCljo', {
-					method: 'POST',
-					body: JSON.stringify({
-						email: usuario.email,
-						password: usuario.password,
-						returnSecureToken: true
-					})
-				})
-				const userDB = await res.json();
-				if(userDB.error) {
-					console.log('userDB error', userDB.error);
-					return;
-				}
-				commit('setUser', userDB);
-				router.push('/');
-				localStorage.setItem('usuario', JSON.stringify(userDB));
-			} catch (error) {
-				console.log('error', error);
-			}
-		},
-		async registrarUsuario({commit}, usuario) {
-			try {
-				const res = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBiURFQhj9jmJK1T8-zhzjiC-33AbtCljo', {
-					method: 'POST',
-					body: JSON.stringify({
-						email: usuario.email,
-						password: usuario.password,
-						returnSecureToken: true
-					})
-				})
-				const userDB = await res.json();
-				if (userDB.error) {
-					console.log('userDB error', userDB.error);
-					return;
-				}
-				commit('setUser', userDB);
-				router.push('/');
-				localStorage.setItem('usuario', JSON.stringify(userDB));
-			} catch (error) {
-				console.log(error)
-			}
-		},
+
+		ingresoUsuario: async ({commit}, usuario) => register({commit}, usuario, false),
+
+		registrarUsuario: async({commit}, usuario) => register({commit}, usuario, true),
+
 		async setTareas({commit, state}) { // cargarLocalStorage
 			try {
 				const res = await fetch(`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${state.user.localId}.json?auth=${state.user.idToken}`);
 				const dataDB = await res.json();
-				if (dataDB.error) {
-					return;
+				if (dataDB === null) {
+					commit('setTareas', []);
+					return
 				}
 				const arrayTareas = [];
 				for (let id in dataDB) {
 					arrayTareas.push(dataDB[id])
 				}
 				commit('setTareas', arrayTareas);
-			} catch (error) {
-				console.log(error);
+			} catch (e) {
+				console.log('setTareas error', e);
 			}
 		},
 		async addTarea({commit, state}, tarea) {
@@ -131,8 +120,8 @@ export default createStore({
 				})
 				const dataDB = await res.json();
 				commit('addTarea', tarea)
-			} catch (error) {
-				console.log(error);
+			} catch (e) {
+				console.log('add tarea error', e);
 			}
 		},
 		cleanTarea({commit}) {
@@ -145,8 +134,8 @@ export default createStore({
 				})
 				const dataDB = await res.json();
 				commit('deleteTarea', id);
-			} catch (error) {
-				console.log(error);
+			} catch (e) {
+				console.log('delete tarea error', e);
 			}
 		},
 		getTarea({commit}, id) {
@@ -160,8 +149,8 @@ export default createStore({
 				})
 				const dataDB = await res.json();
 				commit('updateTarea', tarea);
-			} catch (error) {
-				console.log(error);
+			} catch (e) {
+				console.log('update tarea error', e);
 			}
 		}
 	},
@@ -170,6 +159,9 @@ export default createStore({
 	getters: {
 		usuarioAutenticado(state) {
 			return !!state.user
+		},
+		getErrorState(state) {
+			return state.error
 		}
 	}
 })

@@ -19,12 +19,12 @@
 			Inputdata,
 			ListaTareas
 		},
-		computed: {
-			...mapState(['tarea', 'tareas'])
-		},
 		data() {
 			return {
-			}
+				}
+		},
+		computed: {
+			...mapState(['tarea', 'tareas'])
 		},
 		methods: {
 			...mapActions(['addTarea', 'cleanTarea', 'setTareas']),
