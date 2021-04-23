@@ -26,14 +26,13 @@ var vm = new Vue ({
 			let pepe = this.lista_ideas.filter(element => {
 				return element.idea.includes(val)
 			})
-			console.log(pepe);
-			// this.lista_ideas = this.lista_ideas.filter(
-			// 	value => {
-			// 		return value.idea.toLowerCase().indexof(
-			// 			val.toLowerCase()
-			// 		) >= 0
-			// 	}
-			// )
+			this.lista_ideas = this.lista_ideas.filter(
+				value => {
+					return value.idea.toLowerCase().indexof(
+						val.toLowerCase()
+					) >= 0
+				}
+			)
 		},
 		eliminarIdea: function(idea_id) {
 			let index = this.lista_ideas.findIndex(e => e.id === idea_id);
