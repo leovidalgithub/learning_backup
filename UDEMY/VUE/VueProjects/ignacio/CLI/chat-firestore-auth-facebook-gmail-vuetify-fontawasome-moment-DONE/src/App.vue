@@ -11,7 +11,7 @@
 
 <script>
 	import Navbar from '@/components/Navbar'
-import { mapState } from 'vuex'
+	import { mapState } from 'vuex'
 
 	export default {
 		name: 'App',

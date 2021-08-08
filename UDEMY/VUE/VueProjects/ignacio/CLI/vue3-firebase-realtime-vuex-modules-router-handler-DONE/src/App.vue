@@ -31,7 +31,7 @@
 		color: #ebebeb;
 	}
 	body {
-		background-color: #202529;
+		background-color: #c54861;
 		height: 100vh;
 	}
 </style>

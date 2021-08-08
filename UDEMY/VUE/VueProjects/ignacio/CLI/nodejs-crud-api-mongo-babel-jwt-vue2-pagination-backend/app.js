@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', require('./routes/nota'));
-app.use('/api', require('./routes/user'));
+app.use('/api', require('./routes/route.user'));
 app.use('/api/login', require('./routes/login'));
 
 // Middleware para Vue.js router modo history

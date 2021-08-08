@@ -1,7 +1,10 @@
 <template>
-	<v-layout>
-		<h3 v-if="usuario">Bienvenido {{usuario.nombre}}</h3>
-	</v-layout>
+	<div>
+		<h1>Hola</h1>
+		<v-layout>
+			<h3 v-if="usuario">Bienvenido {{usuario.nombre}}</h3>
+		</v-layout>
+	</div>
 </template>
 
 <script>
@@ -14,3 +17,9 @@
 		}
 	}
 </script>
+
+<style>
+	div {
+		background-color: #333;
+	}
+</style>

@@ -13,7 +13,7 @@ const userSchema = new Schema({
 		type: String,
 		required: [true, 'El email es obligatorio'],
 		unique: true
-	},
+		},
 	pass: {type: String, required: [true, 'Pass es obligatoria']},
 	date: {type: Date, default: Date.now},
 	role: {type: String, default: 'USER', enum: roles},

@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import User from '../models/user';
+import User from '../models/model.user';
 const {verificarAuth, verificarAdministrador} = require('../middlewares/autenticacion')
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
