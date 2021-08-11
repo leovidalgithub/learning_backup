@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const notaSchema = new Schema({
@@ -15,4 +15,4 @@ mongoose.set('useFindAndModify', false);
 // Convertir a un modelo
 const Nota = mongoose.model('Nota', notaSchema);
 
-export default Nota;
+module.exports = Nota;

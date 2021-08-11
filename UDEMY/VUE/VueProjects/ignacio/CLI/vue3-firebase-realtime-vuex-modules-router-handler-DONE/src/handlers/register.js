@@ -1,4 +1,3 @@
-
 import router from '../router'
 
 const register = async ({commit}, usuario, isSignUp) => {

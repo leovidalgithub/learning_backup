@@ -4,18 +4,6 @@
 // const resultado = numero(69,96);
 // console.log(resultado);
 
-const mascota = {
-	nombre: "Tom",
-	edad: 10,
-	vivo: true,
-	razas: ["peludo", "negro", "maricon"]
-};
-
-// const {edad, nombre} = mascota
-// console.log(edad, nombre)
-// fetch('')
-//   .then(res => res.js)
-
 const postData = async function (url = "", data = {}) {
 	const response = await fetch(url, {
 	method: "GET", // *GET, POST, PUT, DELETE, etc.
@@ -36,9 +24,11 @@ const postData = async function (url = "", data = {}) {
 postData("https://pokeapi.co/api/v2/pokemon/", { answer: 42 })
 	.then(res => res.json())
 	.then(data => {
+		console.log('postData function starts here . . .');
 		data.results.forEach((element) => {
-			// console.log(element.name, '***')
+			console.log(element.name)
 		});
+		console.log('postData function ends here / / /');
 	})
 	.catch(error => console.log(error));
 
@@ -51,7 +41,8 @@ postData("https://pokeapi.co/api/v2/pokemon/", { answer: 42 })
 			const arrayPokemons2 = data.results.filter(
 				(element) => element.name !== "bulbasaur"
 			);
-			// console.log(arrayPokemons);
+			console.log('auto invoke function');
+			console.log(arrayPokemons);
 			// console.log(arrayPokemons2);
 		} catch (error) {
 			console.log(error);

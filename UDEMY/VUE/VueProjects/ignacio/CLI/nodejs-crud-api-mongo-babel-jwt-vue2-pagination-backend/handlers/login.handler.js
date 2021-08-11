@@ -1,11 +1,9 @@
-import express from 'express';
-const router = express.Router();
 const jwt = require('jsonwebtoken');
-import User from '../models/model.user';
+const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
+// const saltRounds = 10;
 
-router.post('/', async(req, res) => {
+exports.login = async(req, res) => {
 	const body = req.body;
 
 	try {
@@ -39,6 +37,4 @@ router.post('/', async(req, res) => {
 		error
 		})
 	}
-});
-
-module.exports = router;
+}

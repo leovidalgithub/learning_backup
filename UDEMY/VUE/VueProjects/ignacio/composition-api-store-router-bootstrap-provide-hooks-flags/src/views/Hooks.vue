@@ -9,7 +9,7 @@
 <script>
 	import { provide } from 'vue'
 	import HelloWorld from '../components/Hooks/HelloWorld.vue'
-	import global from '@/hooks/global'
+	import global from '@/hooks/global.hook'
 	import UseCoordenates from '../components/Hooks/UseCoordenates.vue'
 
 	export default {

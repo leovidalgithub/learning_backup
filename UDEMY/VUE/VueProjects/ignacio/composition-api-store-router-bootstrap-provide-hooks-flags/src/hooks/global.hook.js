@@ -7,7 +7,7 @@ const state = reactive({
 })
 
 const increment = function() {
-	state.count++;
+	state.count += 3;
 }
 
 const myrefvar = ref('This message comes from a hook called global.js using ref')

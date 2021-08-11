@@ -4,9 +4,9 @@
 		<h1>Count: {{ global.state.count }}</h1>
 
 		<div class="d-grid gap-2 px-5 mx-5 my-3">
-		<button class="btn btn-outline-secondary" @click="global.increment">Increment</button>
-		<button class="btn btn-outline-danger" @click="incrementar">Decrement</button>
-</div>
+			<button class="btn btn-outline-secondary" @click="global.increment">Increment</button>
+			<button class="btn btn-outline-danger" @click="incrementar">Decrement</button>
+		</div>
 		<h3>{{ global.myrefvar.value }}</h3>
 		<p class="my-3">{{ global.state.content }} --> length =  {{ global.state.wordCount }}
 			<input type="text" v-model="global.state.content">

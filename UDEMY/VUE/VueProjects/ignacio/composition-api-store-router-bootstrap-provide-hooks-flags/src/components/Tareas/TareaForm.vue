@@ -6,7 +6,7 @@
 			class="form-control my-2"
 			v-model.trim="texto"
 		>
-		<button class="btn btn-primary w-100">Agregar</button>
+		<button class="btn btn-primary w-100" type="submit">Agregar</button>
 	</form>
 </template>
 

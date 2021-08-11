@@ -1,9 +1,11 @@
-import express from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
-import path from 'path';
-
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const path = require('path');
+const history = require('connect-history-api-fallback');
 const app = express();
+
+app.set('port', process.env.PORT || 3000);
 
 // Conexion a DB
 const mongoose = require('mongoose');
@@ -19,26 +21,29 @@ mongoose.connect(uri, options).then(
 	err => { err }
 );
 
-// Middleware
-app.use(morgan('tiny'));
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Middlewares
+	var fs = require('fs')
+	var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+	app.use(morgan('combined', { stream: accessLogStream }))
 
-app.use('/api', require('./routes/nota'));
-app.use('/api', require('./routes/route.user'));
-app.use('/api/login', require('./routes/login'));
+	// app.use(morgan('tiny'));
+	// app.use(morgan('short'));
+	// app.use(morgan('dev'));
+	// app.use(morgan('combined'));
+	app.use(cors());
+	app.use(express.json());
+	app.use(express.urlencoded({ extended: true }));
+
+// Routes
+	app.use('/api', require('./router'));
 
 // Middleware para Vue.js router modo history
-const history = require('connect-history-api-fallback');
 app.use(history({
 	logger: console.log.bind(console)
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.set('port', process.env.PORT || 3000);
-
 app.listen(app.get('port'), () => {
-	console.log('Example app listening on port'+ app.get('port'));
+	console.log('Example app listening on port '+ app.get('port'));
 });

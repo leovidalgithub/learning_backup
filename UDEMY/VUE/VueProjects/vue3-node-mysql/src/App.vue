@@ -19,7 +19,6 @@
 
 	#nav {
 		padding: 30px;
-
 		a {
 		font-weight: bold;
 		color: #2c3e50;
@@ -30,6 +29,9 @@
 		}
 	}
 	.router-container {
-		border: #42b983 2px solid;
+		border: green 2px solid;
+	}
+	body {
+		background-color: #333;
 	}
 </style>

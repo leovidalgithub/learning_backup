@@ -46,7 +46,8 @@ export default {
 	actions: {
 		async setTareas({commit, state, rootState}) { // cargarLocalStorage
 			try {
-				const res = await fetch(`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}.json?auth=${rootState.UserModule.user.idToken}`);
+				const res = await fetch(
+						`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}.json?auth=${rootState.UserModule.user.idToken}`);
 				const dataDB = await res.json();
 				if (dataDB === null) {
 					commit('setTareas', []);
@@ -63,7 +64,8 @@ export default {
 		},
 		async addTarea({commit, state, rootState}, tarea) {
 			try {
-				const res = await fetch(`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}/${tarea.id}.json?auth=${rootState.UserModule.user.idToken}`, {
+				const res = await fetch(
+						`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}/${tarea.id}.json?auth=${rootState.UserModule.user.idToken}`, {
 					method: 'PUT',
 					headers: {
 						'Content-Type': 'application/json'
@@ -81,7 +83,8 @@ export default {
 		},
 		async deleteTarea({commit, state, rootState}, id) {
 			try {
-				const res = await fetch(`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}/${id}.json?auth=${rootState.UserModule.user.idToken}`, {
+				const res = await fetch(
+						`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}/${id}.json?auth=${rootState.UserModule.user.idToken}`, {
 					method: 'DELETE'
 				})
 				const dataDB = await res.json();
@@ -95,7 +98,8 @@ export default {
 		},
 		async updateTarea({commit, state, rootState}, tarea) {
 			try {
-				const res = await fetch(`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}/${tarea.id}.json?auth=${rootState.UserModule.user.idToken}`, {
+				const res = await fetch(
+						`https://udemy-api-cc1b4-default-rtdb.firebaseio.com/tareas/${rootState.UserModule.user.localId}/${tarea.id}.json?auth=${rootState.UserModule.user.idToken}`, {
 					method: 'PATCH',
 					body: JSON.stringify(tarea)
 				})

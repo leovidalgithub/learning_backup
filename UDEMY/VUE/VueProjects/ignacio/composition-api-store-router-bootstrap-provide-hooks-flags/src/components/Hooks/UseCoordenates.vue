@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	import mouseCoordinates from "../../hooks/mouseCoordinates";
+	import mouseCoordinates from "../../hooks/mouseCoordinates.hook";
 
 	export default {
 		name: 'useCoordenates',

@@ -1,10 +1,8 @@
-import express from 'express';
-const router = express.Router();
-import Nota from '../models/nota';
+const Nota = require('../models/nota.model');
 const {verificarAuth} = require('../middlewares/autenticacion')
 
 // adding new Nota
-router.post('/nueva-nota', verificarAuth, async(req, res) => {
+const addNewNota = async(req, res) => {
 	const body = req.body;
 
 	// this usuarioId comes from verificarAuth --> req.usuario = decoded.data;
@@ -19,10 +17,10 @@ router.post('/nueva-nota', verificarAuth, async(req, res) => {
 			error
 		})
 	}
-});
+};
 
 // get Nota by Id
-router.get('/nota/:id', async(req, res) => {
+const getNotaById =  async(req, res) => {
 	const _id = req.params.id;
 	try {
 		const notaDB = await Nota.findOne({_id});
@@ -33,13 +31,13 @@ router.get('/nota/:id', async(req, res) => {
 			error
 		})
 	}
-});
+};
 
 // get all Notas by user Id using pagination
-router.get('/nota', verificarAuth, async(req, res) => {
+const getNotasByUserId = async(req, res) => {
 	const usuarioId = req.usuario._id;
 	const queryLimit = Number(req.query.limit) || 5;
-	const querySkip = Number(req.query.skip) || 0;
+	let querySkip = Number(req.query.skip) || 0;
 
 	try {
 		const notaDb = await Nota.find({usuarioId}).skip(querySkip).limit(queryLimit);
@@ -51,10 +49,10 @@ router.get('/nota', verificarAuth, async(req, res) => {
 			error
 		})
 	}
-});
+};
 
 // delete Nota by Id
-router.delete('/nota/:id', async(req, res) => {
+const removeNotaById = async(req, res) => {
 	const _id = req.params.id;
 	try {
 		const notaDb = await Nota.findByIdAndDelete({_id});
@@ -71,10 +69,10 @@ router.delete('/nota/:id', async(req, res) => {
 			error
 		})
 	}
-});
+};
 
 // update Nota by Id
-router.put('/nota/:id', async(req, res) => {
+const updateNotaById = async(req, res) => {
 	const _id = req.params.id;
 	const body = req.body;
 	try {
@@ -89,6 +87,9 @@ router.put('/nota/:id', async(req, res) => {
 			error
 		})
 	}
-});
+};
 
-module.exports = router;
+module.exports = { addNewNota, getNotaById, getNotasByUserId, removeNotaById, updateNotaById }
+
+
+

@@ -1,17 +1,17 @@
 const jwt = require('jsonwebtoken');
 
-const verificarAuth = (req, res, next) => {
-	const token = req.get('token');
+const verificarAuthToken = (req, res, next) => {
+	const token = req.get('token'); //  req.headers.token;
 
 	jwt.verify(token, 'secret', (err, decoded) => {
 		if(err) {
 			return res.status(401).json({
-				mensaje: 'Token is not valid!'
+				mensaje: 'Invalid Token'
 			})
+		} else {
+			req.usuario = decoded.data;
+			next();
 		}
-
-		req.usuario = decoded.data;
-		next();
 	})
 };
 
@@ -22,10 +22,10 @@ const verificarAdministrador = (req, res, next) => {
 	if(rol === 'ADMIN') {
 		next();
 	} else {
-		return res.status(401).json({
+		return res.status(400).json({
 			mensaje: 'User must be ADMIN'
 		})
 	}
 };
 
-module.exports = {verificarAuth, verificarAdministrador};
+module.exports = {verificarAuth: verificarAuthToken, verificarAdministrador};
