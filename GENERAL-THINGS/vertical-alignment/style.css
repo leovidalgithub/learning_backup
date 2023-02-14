@@ -4,28 +4,27 @@
 	--accent: #F6AE2D;
 	--dark: #2F4858;
 	--light: #EBF5EE;
-
-	--border: 5px solid var(--accent);
+	--border: 3px solid var(--accent);
+	--container-height: 160px;
 }
 
 body {
 	font-family: 'Londrina Solid', sans-serif;
-	font-size: 2rem;
 	background: var(--dark);
 	color: var(--light);
 	letter-spacing: 2px;
+	text-align: center;
 }
 
 .container {
-	height: 350px;
-	border: 4px solid orange;
 	width: 45%;
-	margin: auto;
-	text-align: center;
-	margin-bottom: 35px;
+	margin:  0 auto;
+	font-size: 1.7rem;
+	height: var(--container-height);
+	border: var(--border);
 }
 
-/* ----------------------- */
+/* box #1 */
 .box-1 {
 	display: table;
 }
@@ -33,7 +32,8 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 }
-/* ----------------------- */
+
+/* box #2 */
 .box-2 {
 	position: relative;
 }
@@ -44,23 +44,32 @@ body {
 	transform: translateY(-50%);
 	margin: auto;
 }
-/* ----------------------- */
+
+/* box #3 */
 .box-3 {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
 }
-/* ----------------------- */
+
+/* box #4 */
 .box-4 {
 	display: grid;
-	/* align-items: center; */
-	place-items: center;
+	align-items: center;
+	/* place-items: center; */
 }
-/* ----------------------- */
+
+/* box #5 */
 .box-5 {
 	display: grid;
 }
 .box-5 p {
-	margin: auto;
+	margin: auto; /* auto 0  */
+}
+
+/* box #6  - line-height*/
+.box-6 p {
+	margin: 0 auto;
+	line-height: var(--container-height);
 }

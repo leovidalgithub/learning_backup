@@ -1,0 +1,34 @@
+.flex-container {
+	border: 1px solid crimson;
+	background-color: #ccc;
+	padding: 20px;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex-container .box {
+	border: 1px solid #a59292;
+	width: 200px;
+	height: 170px;
+	line-height: 170px;
+	text-align: center;
+}
+.flex-container .box.b1 {
+	background-color: lightblue;
+	order: 2;
+	flex-grow: 1.5;
+	/* flex-basis: 20%; --> similar to width */
+}
+.flex-container .box.b2 {
+	background-color: lightcoral;
+	order: 3;
+	flex-grow: 3;
+}
+.flex-container .box.b3 {
+	background-color: lightgreen;
+	order: 1;
+	flex-grow: 1;
+}

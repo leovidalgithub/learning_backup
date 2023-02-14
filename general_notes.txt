@@ -1,0 +1,26 @@
+
+-- TERMINAL
+
+Look for all directories with node_modules and print the locations
+	find . -name "node_modules" -type d -prune -print | xargs du -chs
+
+DELETE all node_modules folders found in any subfolder
+	find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;
+
+npm tricks part 1: Get list of globally installed packages
+	npm list -g --depth 0
+
+
+
+-- --------------------- --------------------- --------------------- ---------------------
+-- PLESK SERVER ISSUES --
+* When I was unable to login to Rundcube webmail.leovidal.es because **"Error connecting to IMAP server"**, I could fix it by:
+```
+in /usr/share/psa-roundcube/config/defaults.inc.php
+
+change
+'verify_peer' => true,
+to
+'verify_peer' => false,
+```
+

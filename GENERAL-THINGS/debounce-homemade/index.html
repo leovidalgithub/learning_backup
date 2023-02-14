@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Homemade Debounce</title>
+		<style>
+			body {
+				background-color: lightslategray;
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			}
+			.box {
+				border: solid 1px black;
+				width: 350px;
+				padding: 20px;
+			}
+			input {
+				width: 100%;
+				background-color: teal;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="text-1" class="box">
+			<h2>Debounce 1</h2>
+			<input type="text">
+			<h3>
+				output =  <span class="output"></span>
+			</h3>
+		</div>
+		<div id="text-2" class="box">
+			<h2>Debounce 2</h2>
+			<input type="text">
+			<h3>
+				output =  <span class="output"></span>
+			</h3>
+		</div>
+
+		<script>
+			window.onload = function() {
+				// Debounce 1 starts here
+				function debounce1(callback, time) {
+					let setTimeoutId;
+
+					return function() {
+						if (setTimeoutId) {
+							clearTimeout(setTimeoutId)
+						}
+
+						setTimeoutId = setTimeout(() => {
+							// callback.call(null, arguments[0]);
+							// callback.apply(null, arguments);
+							// callback(arguments[0]);
+							callback(...arguments);
+						}, time);
+					}
+				}
+
+/* #Note
+window.removeEventListener();
+getEventListeners(window);
+*/
+				const input1 = document.querySelector('#text-1 input');
+				const inputDebounced1 = debounce1(displayResult1, 1000);
+				input1.addEventListener('keyup', e => {
+					inputDebounced1(e.target.value)
+				})
+				function displayResult1(result) {
+					document.querySelector('#text-1 .output').innerHTML = result;
+				}
+
+				// Debounce 2 starts here
+				function debounce2(callback, time) {
+					let setTimeoutId;
+
+					return function () {
+						setTimeoutId = setTimeout(() => {
+							callback(...arguments)
+						}, time);
+					}
+				}
+
+				const input2 = document.querySelector('#text-2 input');
+				const inputDebounced2 = debounce2(displayResult2, 500);
+				input2.addEventListener('keyup', e => {
+					inputDebounced2(e.target.value)
+				})
+				function displayResult2(result) {
+					document.querySelector('#text-2 .output').innerHTML = result;
+				}
+
+				input1.focus();
+			}
+		</script>
+	</body>
+</html>

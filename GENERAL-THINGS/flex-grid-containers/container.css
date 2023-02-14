@@ -1,0 +1,26 @@
+.other-container {
+	border: 1px solid rgb(248, 99, 99);
+	width: 80%;
+	margin: 0 auto;
+	/* height: 500px; */
+	text-align: center;
+	line-height: 250px;
+}
+
+.other-container .left {
+	background-color: lightseagreen;
+	border: 1px solid #333;
+	display: inline-block;
+	margin: 15px;
+	width: calc(80% - 32px);
+	height: 100%;
+}
+
+.other-container .right {
+	background-color: lightsalmon;
+	border: 1px solid #333;
+	display: inline-block;
+	margin: 15px;
+	width: calc(20% - 32px);
+	height: 100%;
+}

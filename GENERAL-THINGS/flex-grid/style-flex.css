@@ -1,0 +1,37 @@
+.grid-title {
+	display: none;
+}
+
+.contenedor {
+	/* Flexbox */
+	display: flex;
+	gap: 20px;
+}
+
+.contenedor-conciertos {
+	/* Flexbox */
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.card {
+	/* Flexbox */
+	width: calc(33.33% - 20px);
+}
+
+.card .textos {
+	/* Flebox */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.banner {
+	/* Flexbox */
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

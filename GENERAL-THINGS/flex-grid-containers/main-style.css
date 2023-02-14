@@ -1,0 +1,13 @@
+body {
+	background-color: #8d8d8d;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 18px;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+section {
+	margin: 24px auto;
+	text-align: center;
+}

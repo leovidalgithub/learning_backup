@@ -1,0 +1,31 @@
+.flex-title {
+	display: none;
+}
+
+.contenedor {
+	/* Grid */
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 20px;
+}
+
+.contenedor-conciertos {
+	/* Grid */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 15px;
+	column-gap: 25px;
+}
+
+.card .textos {
+	/* Grid */
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.banner {
+	/* Grid */
+	display: grid;
+	grid-template-rows: auto auto auto;
+	align-items: center;
+}

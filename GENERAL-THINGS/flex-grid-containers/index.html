@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="main-style.css">
+		<link rel="stylesheet" href="container.css">
+		<link rel="stylesheet" href="flex-style.css">
+		<link rel="stylesheet" href="grid-style.css">
+		<link rel="stylesheet" href="grid-areas-style.css">
+		<title>Flex Grid & Container</title>
+	</head>
+	<body>
+		<section>
+			<div class="flex-container">
+				<div class="box b1">
+					FlexBox 1
+				</div>
+				<div class="box b2">
+					FlexBox 2
+				</div>
+				<div class="box b3">
+					FlexBox 3
+				</div>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<div class="other-container">
+				<!-- when converting an element into inline element, HTML add a whitespace like it does with text
+					in order to avoid (remove) the whitespace from the markup
+					https://stackoverflow.com/questions/19038799/why-is-there-an-unexplainable-gap-between-these-inline-block-div-elements
+				-->
+				<div class="left">80% + 1px border + 15px margin</div><!--
+				--><div class="right">20%</div>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<div class="grid-container">
+				<div class="box b1">
+					Header
+				</div>
+				<div class="box b2">
+					Menu
+				</div>
+				<div class="box b3">
+					Content
+				</div>
+				<div class="box b4">
+					Aside
+				</div>
+				<div class="box b5">
+					Footer
+				</div>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<h3>Grid areas</h3>
+			<div class="grid-container-2">
+				<div class="box b1">
+					Header
+				</div>
+				<div class="box b2">
+					Menu
+				</div>
+				<div class="box b3">
+					Content
+				</div>
+				<div class="box b4">
+					Aside
+				</div>
+				<div class="box b5">
+					Footer
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Following Mouse</title>
+		<style>
+			:root {
+				--backgroundColor: #1e90ff;
+				--titleColor: #1eff4f;
+				--posX: 0px;
+				--posY: 0px;
+			}
+			body {
+				background-color: var(--backgroundColor);
+				transition: background-color .7s ease-in;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+			}
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: #333;
+				position: absolute;
+				top: var(--posY);
+				left: var(--posX);
+				transition: all 2.7s;
+				z-index: -1;
+			}
+			.title {
+				height: 100vh;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: center;
+				align-items: center;
+			}
+			h1 {
+				color: var(--titleColor);
+				opacity: .6;
+				transition: color 4.3s;
+			}
+		</style>
+</head>
+<body>
+		<div class="title">
+			<h1>Following Mouse</h1>
+		</div>
+		<div class="box"></div>
+		<script>
+	/* #Note
+	window.removeEventListener();
+	getEventListeners(window);
+	*/
+			window.onload = function () {
+				window.addEventListener('mousemove', onMouseMove);
+
+				function onMouseMove(event) {
+					let root = document.documentElement;
+
+					let varx = event.clientX;
+					let vary = event.clientY;
+					console.log('mouse cordinates --> ', { vary }, { varx });
+
+					root.style.setProperty('--posY', event.clientY + 'px');
+					root.style.setProperty('--posX', event.clientX + 'px');
+
+					if (event.clientX < window.innerWidth / 2) {
+						root.style.setProperty('--backgroundColor', '#1e90ff');
+						root.style.setProperty('--titleColor', '#1eff4f');
+					} else {
+						root.style.setProperty('--backgroundColor', '#ffb01e');
+						root.style.setProperty('--titleColor', '#1e5aff');
+					}
+				}
+			}
+		</script>
+</body>
+</html>

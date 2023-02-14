@@ -5,7 +5,7 @@
     /* grid-template-columns: 100px 1fr 1fr 1fr; */
     /* grid-template-columns: 130px auto 225px 10%; */
     /* grid-template-rows: 2fr 3fr 150px; */
-    grid-template-columns: 2fr 1fr;
-    /* grid-template-rows: repeat(5,115px); */
+    grid-template-columns: 2fr auto 1fr;
+    grid-template-rows: repeat(5, 115px);
     /* grid-gap: 10px; */
 }

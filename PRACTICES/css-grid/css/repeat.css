@@ -1,7 +1,7 @@
 /* grid file # 3 */
 .contenedor {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 200px repeat(5,1fr) 200px;
-    grid-template-rows: 1fr repeat(2,2fr) 1fr;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: 200px repeat(5, 1fr) 200px;
+	grid-template-rows: 1fr repeat(2, 3fr) 1fr;
 }
